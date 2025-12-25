@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 250, 250, 250;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 15, 15, 15;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Instagram-style grid */
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+@media (min-width: 768px) {
+  .instagram-grid {
+    gap: 28px;
+  }
+}
+
+/* Product card hover effect */
+.product-card {
+  @apply relative overflow-hidden cursor-pointer;
+}
+
+.product-card::after {
+  content: '';
+  @apply absolute inset-0 bg-black/0 transition-all duration-300;
+}
+
+.product-card:hover::after {
+  @apply bg-black/30;
+}
+
+.product-card .overlay {
+  @apply absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 z-10;
+}
+
+.product-card:hover .overlay {
+  @apply opacity-100;
+}
+
+/* Auction countdown */
+.countdown-digit {
+  @apply bg-gray-900 text-white px-2 py-1 rounded font-mono text-lg font-bold;
+}
+
+/* Price ticker */
+.price-ticker {
+  @apply overflow-hidden whitespace-nowrap;
+}
+
+.price-ticker-content {
+  @apply inline-block animate-ticker;
+}
+
+/* Glass morphism */
+.glass {
+  @apply bg-white/80 backdrop-blur-lg border border-white/20;
+}
+
+.glass-dark {
+  @apply bg-gray-900/80 backdrop-blur-lg border border-gray-700/20;
+}
