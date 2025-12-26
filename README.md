@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Client Commerce Platform
+
+A scalable marketplace and client portal for managing e-commerce on behalf of small businesses who can't or don't want to sell online themselves.
+
+## Overview
+
+Small businesses often lack the time, expertise, or desire to manage online sales. This platform lets them:
+- Submit inventory via a simple portal
+- Get AI-powered market analysis and pricing suggestions
+- Have items listed across multiple channels automatically
+- Remove items easily if sold in-store (QR, SMS, email, barcode)
+- Track sales and payouts
+
+You handle listing, marketing, and sales. They ship to buyers. Everyone profits.
+
+## Tech Stack
+
+- **Frontend:** Next.js 14 (App Router)
+- **Database:** PostgreSQL + Prisma
+- **Auth:** NextAuth.js
+- **AI:** Anthropic Claude (Vision + analysis)
+- **Background Jobs:** Inngest
+- **Notifications:** Twilio (SMS), SendGrid (Email)
+- **Payments:** Stripe
+- **Platforms:** eBay, Etsy, AuctionFlex, Whatnot, HiBid, Proxibid
+
+## Core Features
+
+- Client submission portal with drag-drop uploads
+- AI-powered item identification and market comps
+- Auto-accept/decline based on profitability thresholds
+- Multi-channel listing sync
+- Auction + buy-now support
+- Real-time metal spot pricing integration
+- Multi-method unlisting (QR, barcode, SMS, email, portal)
+- Invoicing and payout tracking
+- Admin dashboard for review workflows
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
+cp .env.example .env.local
+npx prisma db push
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Related
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [45north-site](https://github.com/f0restv/45north-site) - Marketing site / client entry point
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## License
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Proprietary - All rights reserved
