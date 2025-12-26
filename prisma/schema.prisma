@@ -1,6 +1,13 @@
-// Prisma Schema for CoinVault - Collectibles E-commerce Platform
-// This schema covers: Users, Clients, Products, Auctions, Orders, Invoices,
-// Multi-platform integrations, and Price tracking
+// Prisma Schema for Client Commerce Platform
+// Marketplace for small businesses to outsource e-commerce
+// 
+// Core entities:
+// - Clients: Businesses who consign with us
+// - ClientSource: Sites we scrape inventory from
+// - Products: Items being sold (linked to clients)
+// - Users: Staff, admins, buyers
+// - Orders, Invoices, Payouts
+// - Multi-platform integrations (eBay, Etsy, etc.)
 
 generator client {
   provider = "prisma-client-js"
@@ -21,10 +28,12 @@ model User {
   image         String?
   password      String?
   role          UserRole  @default(CLIENT)
+  clientId      String?   // Link to business (for CLIENT role)
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 
   // Relations
+  client        Client?   @relation(fields: [clientId], references: [id])
   accounts      Account[]
   sessions      Session[]
   submissions   Submission[]
@@ -34,6 +43,8 @@ model User {
   watchlist     WatchlistItem[]
   notifications Notification[]
   addresses     Address[]
+  
+  @@index([clientId])
 }
 
 model Account {
@@ -94,6 +105,145 @@ model Address {
   orders Order[]
 }
 
+// ==================== CLIENTS (BUSINESSES) ====================
+
+model Client {
+  id              String       @id @default(cuid())
+  name            String       // Business name
+  slug            String       @unique
+  email           String       @unique
+  phone           String?
+  
+  // Business details
+  address         String?
+  city            String?
+  state           String?
+  zip             String?
+  website         String?
+  
+  // Commission structure
+  commissionRate  Decimal      @default(15) @db.Decimal(5, 2)  // Our cut %
+  
+  // Account status
+  status          ClientStatus @default(PENDING)
+  notes           String?      @db.Text
+  
+  // Stats
+  totalItems      Int          @default(0)
+  totalSold       Int          @default(0)
+  totalEarnings   Decimal      @default(0) @db.Decimal(12, 2)
+  
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+  
+  // Relations
+  users           User[]       // Staff/owners who can access portal
+  products        Product[]
+  sources         ClientSource[]
+  payouts         ClientPayout[]
+}
+
+enum ClientStatus {
+  PENDING
+  ACTIVE
+  PAUSED
+  TERMINATED
+}
+
+// Sites we scrape inventory from for each client
+model ClientSource {
+  id              String           @id @default(cuid())
+  clientId        String
+  name            String           // "Main Website", "eBay Store", etc.
+  type            SourceType
+  url             String           // Base URL to scrape
+  
+  // Scraping config
+  isActive        Boolean          @default(true)
+  scrapeFrequency Int              @default(60)  // minutes between scrapes
+  selectors       Json?            // CSS selectors for scraping
+  config          Json?            // Additional config (auth, pagination, etc.)
+  
+  // Sync status
+  lastScrapedAt   DateTime?
+  lastItemCount   Int              @default(0)
+  lastError       String?
+  
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  
+  client          Client           @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  scrapeHistory   ScrapeHistory[]
+  
+  @@index([clientId])
+  @@index([isActive])
+}
+
+enum SourceType {
+  WEBSITE          // Generic website scraping
+  EBAY_STORE       // eBay seller store
+  ETSY_SHOP        // Etsy shop
+  SHOPIFY          // Shopify store
+  SQUARESPACE      // Squarespace
+  WOOCOMMERCE      // WooCommerce
+  AUCTIONZIP       // AuctionZip
+  HIBID            // HiBid
+  PROXIBID         // Proxibid
+  CSV_IMPORT       // Manual CSV uploads
+  API              // Direct API integration
+}
+
+model ScrapeHistory {
+  id              String       @id @default(cuid())
+  sourceId        String
+  status          JobStatus    @default(PENDING)
+  
+  itemsFound      Int          @default(0)
+  itemsNew        Int          @default(0)
+  itemsUpdated    Int          @default(0)
+  itemsRemoved    Int          @default(0)
+  
+  errors          Json?
+  duration        Int?         // seconds
+  
+  startedAt       DateTime?
+  completedAt     DateTime?
+  createdAt       DateTime     @default(now())
+  
+  source          ClientSource @relation(fields: [sourceId], references: [id], onDelete: Cascade)
+  
+  @@index([sourceId, createdAt])
+}
+
+model ClientPayout {
+  id              String        @id @default(cuid())
+  clientId        String
+  amount          Decimal       @db.Decimal(10, 2)
+  method          String        // "check", "ach", "paypal", etc.
+  reference       String?       // Check #, transaction ID
+  status          PayoutStatus  @default(PENDING)
+  
+  periodStart     DateTime?
+  periodEnd       DateTime?
+  itemsSold       Int           @default(0)
+  
+  notes           String?       @db.Text
+  processedAt     DateTime?
+  createdAt       DateTime      @default(now())
+  
+  client          Client        @relation(fields: [clientId], references: [id])
+  
+  @@index([clientId])
+  @@index([status])
+}
+
+enum PayoutStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+}
+
 // ==================== PRODUCTS & INVENTORY ====================
 
 model Category {
@@ -151,9 +301,11 @@ model Product {
   condition        String?
 
   // Source tracking (for consignment)
+  clientId         String?       // Which client owns this item
   submissionId     String?
   isConsignment    Boolean       @default(false)
   consignmentRate  Decimal?      @db.Decimal(5, 2)   // commission percentage
+  sourceUrl        String?       // Original URL if scraped
 
   // SEO & Display
   featured         Boolean       @default(false)
@@ -163,6 +315,7 @@ model Product {
   updatedAt        DateTime      @updatedAt
 
   // Relations
+  client           Client?       @relation(fields: [clientId], references: [id])
   category         Category      @relation(fields: [categoryId], references: [id])
   submission       Submission?   @relation(fields: [submissionId], references: [id])
   images           ProductImage[]
@@ -173,6 +326,7 @@ model Product {
   priceHistory     PriceHistory[]
   marketAnalysis   MarketAnalysis[]
 
+  @@index([clientId])
   @@index([categoryId])
   @@index([status])
   @@index([metalType])
