@@ -1,54 +1,70 @@
 # Client Commerce Platform
 
-A scalable marketplace and client portal for managing e-commerce on behalf of small businesses who can't or don't want to sell online themselves.
+A scalable marketplace and client portal for managing e-commerce on behalf of small businesses who can't or don't want to sell online. Built by 45° North Collective.
 
-## Overview
+## Business Model
 
-Small businesses often lack the time, expertise, or desire to manage online sales. This platform lets them:
-- Submit inventory via a simple portal
-- Get AI-powered market analysis and pricing suggestions
-- Have items listed across multiple channels automatically
-- Remove items easily if sold in-store (QR, SMS, email, barcode)
-- Track sales and payouts
+Small businesses submit inventory → AI analyzes and prices → Platform lists across multiple channels → Item sells → Business gets paid
 
-You handle listing, marketing, and sales. They ship to buyers. Everyone profits.
-
-## Tech Stack
-
-- **Frontend:** Next.js 14 (App Router)
-- **Database:** PostgreSQL + Prisma
-- **Auth:** NextAuth.js
-- **AI:** Anthropic Claude (Vision + analysis)
-- **Background Jobs:** Inngest
-- **Notifications:** Twilio (SMS), SendGrid (Email)
-- **Payments:** Stripe
-- **Platforms:** eBay, Etsy, AuctionFlex, Whatnot, HiBid, Proxibid
+**Value prop:** We handle all the complexity of online selling (photography, listings, multi-platform sync, customer service) so businesses can focus on what they do best.
 
 ## Core Features
 
-- Client submission portal with drag-drop uploads
-- AI-powered item identification and market comps
-- Auto-accept/decline based on profitability thresholds
-- Multi-channel listing sync
-- Auction + buy-now support
-- Real-time metal spot pricing integration
-- Multi-method unlisting (QR, barcode, SMS, email, portal)
-- Invoicing and payout tracking
-- Admin dashboard for review workflows
+### Client Portal
+- Submit items with photos
+- AI-powered analysis and pricing suggestions
+- Track listing status across all platforms
+- View sales and earnings
+- Multi-method item removal (QR, barcode, SMS, email, portal)
+
+### Multi-Platform Listing
+- eBay
+- Etsy
+- AuctionFlex 360
+- Whatnot
+- HiBid
+- Proxibid
+
+### Pricing Intelligence
+- AI market analysis (Claude Vision)
+- Comparable sales lookup
+- Metal spot price integration (for bullion/coins)
+- Dynamic pricing support
+
+### Auctions & Buy-Now
+- Timed auctions with proxy bidding
+- Reserve prices
+- Buy-now option
+- Real-time bid updates
+
+### Admin Dashboard
+- Submission review queue
+- Auto-accept/decline based on margin thresholds
+- Multi-platform inventory sync
+- Invoicing and payouts
+
+## Tech Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Database:** PostgreSQL + Prisma
+- **Auth:** NextAuth.js
+- **AI:** Anthropic Claude
+- **Payments:** Stripe
+- **Background Jobs:** Inngest (planned)
+- **Notifications:** Twilio SMS, SendGrid Email (planned)
 
 ## Getting Started
 
 ```bash
 npm install
-cp .env.example .env.local
-npx prisma db push
+npm run db:generate
 npm run dev
 ```
 
-## Related
+## Project Status
 
-- [45north-site](https://github.com/f0restv/45north-site) - Marketing site / client entry point
+Active development. See [TODO.md](./TODO.md) for current priorities.
 
 ## License
 
-Proprietary - All rights reserved
+Proprietary - 45° North Collective
