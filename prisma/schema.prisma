@@ -27,10 +27,15 @@ model User {
   emailVerified DateTime?
   image         String?
   password      String?
+  phone         String?
   role          UserRole  @default(CLIENT)
   clientId      String?   // Link to business (for CLIENT role)
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
+
+  // Notification preferences stored as JSON
+  // See NotificationPreferences type in src/lib/services/notifications/types.ts
+  notificationPreferences Json?
 
   // Relations
   client        Client?   @relation(fields: [clientId], references: [id])
@@ -43,7 +48,7 @@ model User {
   watchlist     WatchlistItem[]
   notifications Notification[]
   addresses     Address[]
-  
+
   @@index([clientId])
 }
 

@@ -1,6 +1,21 @@
-import { Inngest, type GetEvents, type GetFunctionInput } from 'inngest';
+import { Inngest } from 'inngest';
 import prisma from '@/lib/db';
 import { scrapeAndSync } from './sync';
+
+/**
+ * Source info type for scraping queries
+ */
+type SourceWithFrequency = {
+  id: string;
+  name: string;
+  scrapeFrequency: number;
+  lastScrapedAt: Date | null;
+};
+
+type BasicSource = {
+  id: string;
+  name: string;
+};
 
 /**
  * Inngest client for background job processing
@@ -119,8 +134,8 @@ export const checkDueSources = inngest.createFunction(
   },
   { cron: '*/5 * * * *' }, // Every 5 minutes
   async ({ step }) => {
-    // Find sources due for scraping
-    const dueSources = await step.run('find-due-sources', async () => {
+    // Find sources due for scraping and trigger them
+    const result = await step.run('find-and-trigger-due-sources', async () => {
       const sources = await prisma.clientSource.findMany({
         where: {
           isActive: true,
@@ -135,7 +150,7 @@ export const checkDueSources = inngest.createFunction(
 
       const now = new Date();
 
-      return sources.filter((source) => {
+      const dueSources = sources.filter((source: SourceWithFrequency) => {
         if (!source.lastScrapedAt) {
           // Never scraped, due immediately
           return true;
@@ -146,33 +161,31 @@ export const checkDueSources = inngest.createFunction(
 
         return minutesSinceLastScrape >= source.scrapeFrequency;
       });
-    });
 
-    if (dueSources.length === 0) {
-      return { triggered: 0, sources: [] };
-    }
+      if (dueSources.length === 0) {
+        return { triggered: 0, sources: [] as Array<{ id: string; name: string; frequency: number; lastScraped: Date | null }> };
+      }
 
-    // Trigger scrape for each due source
-    const triggered = await step.run('trigger-scrapes', async () => {
-      const events = dueSources.map((source) => ({
+      // Trigger scrape for each due source
+      const events = dueSources.map((source: SourceWithFrequency) => ({
         name: 'scraper/source.scrape' as const,
         data: { sourceId: source.id },
       }));
 
       await inngest.send(events);
 
-      return events.length;
+      return {
+        triggered: dueSources.length,
+        sources: dueSources.map((s: SourceWithFrequency) => ({
+          id: s.id,
+          name: s.name,
+          frequency: s.scrapeFrequency,
+          lastScraped: s.lastScrapedAt,
+        })),
+      };
     });
 
-    return {
-      triggered,
-      sources: dueSources.map((s) => ({
-        id: s.id,
-        name: s.name,
-        frequency: s.scrapeFrequency,
-        lastScraped: s.lastScrapedAt,
-      })),
-    };
+    return result;
   }
 );
 
@@ -247,7 +260,7 @@ async function findAndTriggerDueSources(
     },
   });
 
-  const dueSources = sources.filter((source) => {
+  const dueSources = sources.filter((source: SourceWithFrequency) => {
     if (!source.lastScrapedAt) return true;
 
     const minutesSince =
@@ -259,7 +272,7 @@ async function findAndTriggerDueSources(
     return { triggered: 0, sources: [] };
   }
 
-  const events = dueSources.map((source) => ({
+  const events = dueSources.map((source: SourceWithFrequency) => ({
     name: 'scraper/source.scrape' as const,
     data: { sourceId: source.id },
   }));
@@ -268,7 +281,7 @@ async function findAndTriggerDueSources(
 
   return {
     triggered: dueSources.length,
-    sources: dueSources.map((s) => ({ id: s.id, name: s.name })),
+    sources: dueSources.map((s: SourceWithFrequency) => ({ id: s.id, name: s.name })),
   };
 }
 
@@ -286,9 +299,9 @@ export const scrapeAllClientSources = inngest.createFunction(
   async ({ event, step }) => {
     const { clientId } = event.data as { clientId: string };
 
-    // Get all active sources for the client
-    const sources = await step.run('get-sources', async () => {
-      return prisma.clientSource.findMany({
+    // Get all active sources and trigger scrapes
+    const result = await step.run('get-and-trigger-sources', async () => {
+      const sources = await prisma.clientSource.findMany({
         where: {
           clientId,
           isActive: true,
@@ -298,27 +311,32 @@ export const scrapeAllClientSources = inngest.createFunction(
           name: true,
         },
       });
-    });
 
-    if (sources.length === 0) {
-      return { message: 'No active sources found', clientId };
-    }
+      if (sources.length === 0) {
+        return {
+          clientId,
+          message: 'No active sources found',
+          triggeredCount: 0,
+          sources: [] as Array<{ id: string; name: string }>,
+        };
+      }
 
-    // Trigger scrape for each source
-    await step.run('trigger-scrapes', async () => {
-      const events = sources.map((source) => ({
+      // Trigger scrape for each source
+      const events = sources.map((source: BasicSource) => ({
         name: 'scraper/source.scrape' as const,
         data: { sourceId: source.id },
       }));
 
       await inngest.send(events);
+
+      return {
+        clientId,
+        triggeredCount: sources.length,
+        sources: sources.map((s: BasicSource) => ({ id: s.id, name: s.name })),
+      };
     });
 
-    return {
-      clientId,
-      triggeredCount: sources.length,
-      sources: sources.map((s) => ({ id: s.id, name: s.name })),
-    };
+    return result;
   }
 );
 
