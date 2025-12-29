@@ -8,6 +8,10 @@ export * from "./ebay";
 export * from "./etsy";
 export * from "./auctionflex";
 
+// Aliases used by inngest functions
+export { createEbayListing as listToEbay } from "./ebay";
+export { createEtsyListing as listToEtsy } from "./etsy";
+
 type ProductWithRelations = Product & {
   images: ProductImage[];
   auction?: Auction | null;

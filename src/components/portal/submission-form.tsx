@@ -33,6 +33,7 @@ interface AIAnalysis {
 
 interface SubmissionFormProps {
   onSubmit: (data: SubmissionData) => Promise<void>;
+  defaultCategory?: string;
 }
 
 interface SubmissionData {
@@ -44,11 +45,11 @@ interface SubmissionData {
   aiAnalysis?: AIAnalysis;
 }
 
-export function SubmissionForm({ onSubmit }: SubmissionFormProps) {
+export function SubmissionForm({ onSubmit, defaultCategory }: SubmissionFormProps) {
   const [images, setImages] = useState<UploadedImage[]>([]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState(defaultCategory || "");
   const [estimatedValue, setEstimatedValue] = useState("");
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [aiAnalysis, setAiAnalysis] = useState<AIAnalysis | null>(null);
@@ -336,12 +337,12 @@ export function SubmissionForm({ onSubmit }: SubmissionFormProps) {
               required
             >
               <option value="">Select a category</option>
-              <option value="US Coins">US Coins</option>
-              <option value="World Coins">World Coins</option>
-              <option value="Gold Bullion">Gold Bullion</option>
-              <option value="Silver Bullion">Silver Bullion</option>
-              <option value="Paper Money">Paper Money</option>
-              <option value="Collectibles">Other Collectibles</option>
+              <option value="coins-currency">Coins & Currency</option>
+              <option value="comics">Comics</option>
+              <option value="sports">Sports Cards & Memorabilia</option>
+              <option value="vintage">Vintage Items</option>
+              <option value="jewelry">Jewelry</option>
+              <option value="misc">Misc Collectibles</option>
             </select>
           </div>
 
@@ -400,7 +401,7 @@ export function SubmissionForm({ onSubmit }: SubmissionFormProps) {
       </Button>
 
       <p className="text-center text-xs text-gray-500">
-        By submitting, you agree to our consignment terms and conditions.
+        By submitting, you agree to our terms and conditions.
       </p>
     </form>
   );

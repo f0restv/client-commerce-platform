@@ -1,0 +1,403 @@
+{
+  "source": "greysheet.com",
+  "pdfEdition": "Monthly Greysheet January 2026",
+  "extractedAt": "2025-12-29T08:30:00.000Z",
+  "status": "partial",
+  "note": "Session expired during extraction. Re-login required to fetch complete data. Run: npx tsx src/lib/services/market-data/providers/greysheet.ts login",
+  "metalPrices": {
+    "gold": 4472.34,
+    "silver": 76.02,
+    "platinum": 2272.93,
+    "palladium": 1684.42
+  },
+  "coins": [
+    {
+      "gsid": "7437",
+      "name": "1878 7/8TF Morgan Dollar Strong",
+      "series": "Morgan Dollars",
+      "year": 1878,
+      "mintmark": "",
+      "variety": "7/8TF Strong",
+      "type": "MS",
+      "prices": [
+        {
+          "grade": 67,
+          "gradeLabel": "MS67",
+          "isCac": false,
+          "cpg": { "value": 26500.0, "change": 0.0 },
+          "greysheet": { "value": 22000.0, "change": 0.0 },
+          "bluesheet": { "plus": 22000.0, "minus": 14000.0 }
+        },
+        {
+          "grade": 67,
+          "gradeLabel": "MS67",
+          "isCac": true,
+          "cpg": { "value": 31500.0, "change": 0.0 },
+          "greysheet": { "value": 26400.0, "change": 0.0 }
+        },
+        {
+          "grade": 66,
+          "gradeLabel": "MS66",
+          "isCac": false,
+          "cpg": { "value": 9500.0, "change": 0.0 },
+          "greysheet": { "value": 7500.0, "change": 0.0 },
+          "bluesheet": { "plus": 7500.0, "minus": 6000.0 }
+        },
+        {
+          "grade": 66,
+          "gradeLabel": "MS66",
+          "isCac": true,
+          "cpg": { "value": 11000.0, "change": 0.0 },
+          "greysheet": { "value": 9000.0, "change": 0.0 }
+        },
+        {
+          "grade": 65,
+          "gradeLabel": "MS65",
+          "isCac": false,
+          "cpg": { "value": 2250.0, "change": 0.0 },
+          "greysheet": { "value": 1800.0, "change": 0.0 },
+          "bluesheet": { "plus": 1800.0, "minus": 1650.0 }
+        },
+        {
+          "grade": 65,
+          "gradeLabel": "MS65",
+          "isCac": true,
+          "cpg": { "value": 2700.0, "change": 0.0 },
+          "greysheet": { "value": 2160.0, "change": 0.0 }
+        },
+        {
+          "grade": 64,
+          "gradeLabel": "MS64",
+          "isCac": false,
+          "cpg": { "value": 625.0, "change": 0.0 },
+          "greysheet": { "value": 480.0, "change": 0.0 },
+          "bluesheet": { "plus": 480.0, "minus": 480.0 }
+        },
+        {
+          "grade": 64,
+          "gradeLabel": "MS64",
+          "isCac": true,
+          "cpg": { "value": 750.0, "change": 0.0 },
+          "greysheet": { "value": 576.0, "change": 0.0 }
+        },
+        {
+          "grade": 63,
+          "gradeLabel": "MS63",
+          "isCac": false,
+          "cpg": { "value": 470.0, "change": 0.0 },
+          "greysheet": { "value": 360.0, "change": 0.0 },
+          "bluesheet": { "plus": 360.0, "minus": 360.0 }
+        },
+        {
+          "grade": 63,
+          "gradeLabel": "MS63",
+          "isCac": true,
+          "cpg": { "value": 550.0, "change": 0.0 },
+          "greysheet": { "value": 432.0, "change": 0.0 }
+        },
+        {
+          "grade": 62,
+          "gradeLabel": "MS62",
+          "isCac": false,
+          "cpg": { "value": 275.0, "change": 0.0 },
+          "greysheet": { "value": 210.0, "change": 0.0 },
+          "bluesheet": { "plus": 210.0, "minus": 210.0 }
+        },
+        {
+          "grade": 62,
+          "gradeLabel": "MS62",
+          "isCac": true,
+          "cpg": { "value": 330.0, "change": 0.0 },
+          "greysheet": { "value": 252.0, "change": 0.0 }
+        },
+        {
+          "grade": 61,
+          "gradeLabel": "MS61",
+          "isCac": false,
+          "cpg": { "value": 260.0, "change": 0.0 },
+          "greysheet": { "value": 200.0, "change": 0.0 },
+          "bluesheet": { "plus": 200.0, "minus": 200.0 }
+        },
+        {
+          "grade": 61,
+          "gradeLabel": "MS61",
+          "isCac": true,
+          "cpg": { "value": 310.0, "change": 0.0 },
+          "greysheet": { "value": 240.0, "change": 0.0 }
+        },
+        {
+          "grade": 60,
+          "gradeLabel": "MS60",
+          "isCac": false,
+          "cpg": { "value": 240.0, "change": 0.0 },
+          "greysheet": { "value": 185.0, "change": 0.0 }
+        },
+        {
+          "grade": 60,
+          "gradeLabel": "MS60",
+          "isCac": true,
+          "cpg": { "value": 290.0, "change": 0.0 },
+          "greysheet": { "value": 222.0, "change": 0.0 }
+        },
+        {
+          "grade": 58,
+          "gradeLabel": "AU58",
+          "isCac": false,
+          "cpg": { "value": 195.0, "change": 0.0 },
+          "greysheet": { "value": 150.0, "change": 0.0 }
+        },
+        {
+          "grade": 58,
+          "gradeLabel": "AU58",
+          "isCac": true,
+          "cpg": { "value": 235.0, "change": 0.0 },
+          "greysheet": { "value": 180.0, "change": 0.0 }
+        },
+        {
+          "grade": 55,
+          "gradeLabel": "AU55",
+          "isCac": false,
+          "cpg": { "value": 170.0, "change": 15.0 },
+          "greysheet": { "value": 128.89, "change": 8.89 }
+        },
+        {
+          "grade": 55,
+          "gradeLabel": "AU55",
+          "isCac": true,
+          "cpg": { "value": 170.0, "change": -15.0 },
+          "greysheet": { "value": 131.89, "change": -12.11 }
+        },
+        {
+          "grade": 53,
+          "gradeLabel": "AU53",
+          "isCac": false,
+          "cpg": { "value": 145.0, "change": 15.0 },
+          "greysheet": { "value": 113.14, "change": 13.14 }
+        },
+        {
+          "grade": 53,
+          "gradeLabel": "AU53",
+          "isCac": true,
+          "cpg": { "value": 150.0, "change": -5.0 },
+          "greysheet": { "value": 116.14, "change": -3.86 }
+        },
+        {
+          "grade": 50,
+          "gradeLabel": "AU50",
+          "isCac": false,
+          "cpg": { "value": 140.0, "change": 10.0 },
+          "greysheet": { "value": 107.89, "change": 12.89 }
+        },
+        {
+          "grade": 50,
+          "gradeLabel": "AU50",
+          "isCac": true,
+          "cpg": { "value": 145.0, "change": -5.0 },
+          "greysheet": { "value": 110.89, "change": -3.11 }
+        },
+        {
+          "grade": 45,
+          "gradeLabel": "XF45",
+          "isCac": false,
+          "cpg": { "value": 130.0, "change": 30.0 },
+          "greysheet": { "value": 97.89, "change": 22.89 }
+        },
+        {
+          "grade": 45,
+          "gradeLabel": "XF45",
+          "isCac": true,
+          "cpg": { "value": 130.0, "change": 25.0 },
+          "greysheet": { "value": 99.89, "change": 22.89 }
+        },
+        {
+          "grade": 40,
+          "gradeLabel": "XF40",
+          "isCac": false,
+          "cpg": { "value": 125.0, "change": 30.0 },
+          "greysheet": { "value": 91.89, "change": 22.89 }
+        },
+        {
+          "grade": 40,
+          "gradeLabel": "XF40",
+          "isCac": true,
+          "cpg": { "value": 125.0, "change": 30.0 },
+          "greysheet": { "value": 93.89, "change": 22.89 }
+        },
+        {
+          "grade": 35,
+          "gradeLabel": "VF35",
+          "isCac": false,
+          "cpg": { "value": 120.0, "change": 30.0 },
+          "greysheet": { "value": 87.89, "change": 22.89 }
+        },
+        {
+          "grade": 35,
+          "gradeLabel": "VF35",
+          "isCac": true,
+          "cpg": { "value": 120.0, "change": 30.0 },
+          "greysheet": { "value": 89.89, "change": 22.89 }
+        },
+        {
+          "grade": 30,
+          "gradeLabel": "VF30",
+          "isCac": false,
+          "cpg": { "value": 115.0, "change": 30.0 },
+          "greysheet": { "value": 86.89, "change": 22.89 }
+        },
+        {
+          "grade": 30,
+          "gradeLabel": "VF30",
+          "isCac": true,
+          "cpg": { "value": 120.0, "change": 30.0 },
+          "greysheet": { "value": 88.89, "change": 22.89 }
+        },
+        {
+          "grade": 25,
+          "gradeLabel": "VF25",
+          "isCac": false,
+          "cpg": { "value": 115.0, "change": 30.0 },
+          "greysheet": { "value": 85.89, "change": 22.89 }
+        },
+        {
+          "grade": 25,
+          "gradeLabel": "VF25",
+          "isCac": true,
+          "cpg": { "value": 120.0, "change": 30.0 },
+          "greysheet": { "value": 87.89, "change": 22.89 }
+        },
+        {
+          "grade": 20,
+          "gradeLabel": "VF20",
+          "isCac": false,
+          "cpg": { "value": 115.0, "change": 30.0 },
+          "greysheet": { "value": 84.89, "change": 22.89 }
+        },
+        {
+          "grade": 20,
+          "gradeLabel": "VF20",
+          "isCac": true,
+          "cpg": { "value": 115.0, "change": 30.0 },
+          "greysheet": { "value": 86.89, "change": 22.89 }
+        },
+        {
+          "grade": 15,
+          "gradeLabel": "F15",
+          "isCac": false,
+          "cpg": { "value": 110.0, "change": 30.0 },
+          "greysheet": { "value": 82.89, "change": 22.89 }
+        },
+        {
+          "grade": 15,
+          "gradeLabel": "F15",
+          "isCac": true,
+          "cpg": { "value": 115.0, "change": 30.0 },
+          "greysheet": { "value": 84.89, "change": 22.89 }
+        },
+        {
+          "grade": 12,
+          "gradeLabel": "F12",
+          "isCac": false,
+          "cpg": { "value": 110.0, "change": 30.0 },
+          "greysheet": { "value": 81.89, "change": 22.89 }
+        },
+        {
+          "grade": 12,
+          "gradeLabel": "F12",
+          "isCac": true,
+          "cpg": { "value": 115.0, "change": 35.0 },
+          "greysheet": { "value": 83.89, "change": 22.89 }
+        },
+        {
+          "grade": 10,
+          "gradeLabel": "VG10",
+          "isCac": false,
+          "cpg": { "value": 105.0, "change": 30.0 },
+          "greysheet": { "value": 76.89, "change": 22.89 }
+        },
+        {
+          "grade": 10,
+          "gradeLabel": "VG10",
+          "isCac": true,
+          "cpg": { "value": 105.0, "change": 30.0 },
+          "greysheet": { "value": 78.89, "change": 22.89 }
+        },
+        {
+          "grade": 8,
+          "gradeLabel": "VG8",
+          "isCac": false,
+          "cpg": { "value": 100.0, "change": 30.0 },
+          "greysheet": { "value": 74.89, "change": 22.89 }
+        },
+        {
+          "grade": 8,
+          "gradeLabel": "VG8",
+          "isCac": true,
+          "cpg": { "value": 105.0, "change": 30.0 },
+          "greysheet": { "value": 76.89, "change": 22.89 }
+        },
+        {
+          "grade": 6,
+          "gradeLabel": "G6",
+          "isCac": false,
+          "cpg": { "value": 95.0, "change": 30.0 },
+          "greysheet": { "value": 69.89, "change": 22.89 }
+        },
+        {
+          "grade": 6,
+          "gradeLabel": "G6",
+          "isCac": true,
+          "cpg": { "value": 95.0, "change": 30.0 },
+          "greysheet": { "value": 71.89, "change": 22.89 }
+        },
+        {
+          "grade": 4,
+          "gradeLabel": "G4",
+          "isCac": false,
+          "cpg": { "value": 90.0, "change": 30.0 },
+          "greysheet": { "value": 67.89, "change": 22.89 }
+        },
+        {
+          "grade": 4,
+          "gradeLabel": "G4",
+          "isCac": true,
+          "cpg": { "value": 95.0, "change": 30.0 },
+          "greysheet": { "value": 69.89, "change": 22.89 }
+        },
+        {
+          "grade": 3,
+          "gradeLabel": "AG3",
+          "isCac": false,
+          "cpg": { "value": 90.0, "change": 30.0 },
+          "greysheet": { "value": 67.64, "change": 22.89 }
+        },
+        {
+          "grade": 3,
+          "gradeLabel": "AG3",
+          "isCac": true,
+          "cpg": { "value": 95.0, "change": 30.0 },
+          "greysheet": { "value": 69.64, "change": 22.89 }
+        },
+        {
+          "grade": 2,
+          "gradeLabel": "AG2",
+          "isCac": false,
+          "cpg": { "value": 90.0, "change": 30.0 },
+          "greysheet": { "value": 65.64, "change": 22.89 }
+        },
+        {
+          "grade": 2,
+          "gradeLabel": "AG2",
+          "isCac": true,
+          "cpg": { "value": 90.0, "change": 30.0 },
+          "greysheet": { "value": 65.64, "change": 22.89 }
+        }
+      ]
+    }
+  ],
+  "refreshInstructions": {
+    "step1": "Run: npx tsx src/lib/services/market-data/providers/greysheet.ts login",
+    "step2": "Log in to greysheet.com in the browser window that opens",
+    "step3": "Run: npx tsx scripts/extract-greysheet-pdf.ts",
+    "note": "The PDF viewer uses DocuVieware which renders as images. If text extraction fails, screenshots will be saved to data/greysheet-screenshots/"
+  }
+}

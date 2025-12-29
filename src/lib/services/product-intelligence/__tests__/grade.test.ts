@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
-const mockCreate = vi.fn();
+const mockCreate = vi.hoisted(() => vi.fn());
 
 vi.mock('@anthropic-ai/sdk', () => {
   return {

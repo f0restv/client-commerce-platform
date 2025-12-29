@@ -64,7 +64,7 @@ export async function identify(
           ...imageContent,
           {
             type: 'text',
-            text: IDENTIFICATION_PROMPT,
+            text: IDENTIFICATION_PROMPT + '\n\nRespond ONLY with valid JSON, no markdown code blocks.',
           },
         ],
       },
@@ -76,24 +76,58 @@ export async function identify(
     throw new Error('No text response received from Claude');
   }
 
-  const jsonMatch = textBlock.text.match(/\{[\s\S]*\}/);
-  if (!jsonMatch) {
-    throw new Error('Failed to parse identification response as JSON');
+  // Parse JSON properly, handling markdown code blocks if present
+  let jsonText = textBlock.text.trim();
+  
+  // Remove markdown code blocks if present
+  if (jsonText.startsWith('```')) {
+    jsonText = jsonText.replace(/^```(?:json)?\n?/i, '').replace(/\n?```$/, '');
   }
 
-  const parsed = JSON.parse(jsonMatch[0]);
+  let parsed: Record<string, unknown>;
+  try {
+    parsed = JSON.parse(jsonText);
+  } catch {
+    throw new Error(`Failed to parse identification response as JSON: ${jsonText.substring(0, 100)}...`);
+  }
+
+  // Validate the parsed response
+  const validated = validateIdentificationResult(parsed);
+
+  return validated;
+}
+
+/**
+ * Validate and transform parsed JSON to IdentificationResult
+ */
+function validateIdentificationResult(data: Record<string, unknown>): IdentificationResult {
+  const category = validateCategory(data.category as string);
+  
+  const name = typeof data.name === 'string' ? data.name : 'Unknown Item';
+  const year = typeof data.year === 'number' ? data.year : null;
+  const mint = typeof data.mint === 'string' ? data.mint : null;
+  const player = typeof data.player === 'string' ? data.player : null;
+  const set = typeof data.set === 'string' ? data.set : null;
+  const certNumber = typeof data.certNumber === 'string' ? data.certNumber : null;
+  const searchTerms = Array.isArray(data.searchTerms) 
+    ? data.searchTerms.filter((t): t is string => typeof t === 'string')
+    : [];
+  const rawDescription = typeof data.rawDescription === 'string' ? data.rawDescription : '';
+  const confidence = typeof data.confidence === 'number' 
+    ? Math.min(1, Math.max(0, data.confidence)) 
+    : 0.5;
 
   return {
-    category: validateCategory(parsed.category),
-    name: parsed.name || 'Unknown Item',
-    year: typeof parsed.year === 'number' ? parsed.year : null,
-    mint: parsed.mint || null,
-    player: parsed.player || null,
-    set: parsed.set || null,
-    certNumber: parsed.certNumber || null,
-    searchTerms: Array.isArray(parsed.searchTerms) ? parsed.searchTerms : [],
-    rawDescription: parsed.rawDescription || '',
-    confidence: typeof parsed.confidence === 'number' ? Math.min(1, Math.max(0, parsed.confidence)) : 0.5,
+    category,
+    name,
+    year,
+    mint,
+    player,
+    set,
+    certNumber,
+    searchTerms,
+    rawDescription,
+    confidence,
   };
 }
 
@@ -106,6 +140,19 @@ function validateCategory(category: string): CollectibleCategory {
     'stamp',
     'currency',
     'memorabilia',
+    'vinyl-record',
+    'sneakers',
+    'watch',
+    'vintage-toy',
+    'art',
+    'antique',
+    'wine',
+    'autograph',
+    'video-game',
+    'pokemon',
+    'jewelry',
+    'militaria',
+    'sports-memorabilia',
     'unknown',
   ];
   return valid.includes(category as CollectibleCategory) ? (category as CollectibleCategory) : 'unknown';

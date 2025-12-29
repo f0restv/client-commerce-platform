@@ -8,6 +8,16 @@ import {
   fetchMarketData,
 } from '../market-data';
 
+// Mock the unified market-data module to prevent real network calls
+vi.mock('../../market-data', () => {
+  const mockSearch = vi.fn(() => Promise.resolve([]));
+  return {
+    MarketData: {
+      search: mockSearch,
+    },
+  };
+});
+
 const originalEnv = process.env;
 
 describe('market-data', () => {
@@ -138,12 +148,13 @@ describe('market-data', () => {
         ],
       };
 
-      let callCount = 0;
-      (global.fetch as ReturnType<typeof vi.fn>).mockImplementation(() => {
-        callCount++;
+      // Use URL inspection to differentiate between sold and active calls
+      // soldOnly=true adds conditionIds filter, soldOnly=false does not
+      (global.fetch as ReturnType<typeof vi.fn>).mockImplementation((url: string) => {
+        const isSoldQuery = url.includes('conditionIds');
         return Promise.resolve({
           ok: true,
-          json: () => Promise.resolve(callCount === 1 ? mockSoldItems : mockActiveItems),
+          json: () => Promise.resolve(isSoldQuery ? mockSoldItems : mockActiveItems),
         });
       });
 

@@ -54,8 +54,11 @@ describe('evaluate', () => {
     });
 
     it('should recommend review when margin between 5-15%', () => {
+      // Use a payout that creates a margin between 5-15%
+      // With baseMarketData, suggested price is ~236.67 (weighted avg)
+      // For 10% margin: payout = 236.67 * 0.90 = ~213
       const result = evaluate({
-        clientPayout: 200,
+        clientPayout: 210,
         marketData: baseMarketData,
         grade: baseGrade,
       });
@@ -197,8 +200,11 @@ describe('evaluate', () => {
     });
 
     it('should identify thin margin risk', () => {
+      // With baseMarketData, suggested price is ~236.67
+      // For thin margin (<10%), payout needs to be > 236.67 * 0.90 = ~213
+      // Using 220 gives ~7% margin which is < 10%
       const result = evaluate({
-        clientPayout: 215,
+        clientPayout: 220,
         marketData: baseMarketData,
         grade: baseGrade,
       });

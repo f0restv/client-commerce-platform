@@ -3,6 +3,12 @@ import { auth } from "@/lib/auth";
 import { analyzeMarketValue, identifyCoin } from "@/lib/claude";
 import { searchComparables, calculateMarketStats } from "@/lib/scraper";
 
+interface CoinIdentification {
+  possibleIdentification?: string;
+  confidence?: number;
+  suggestedCategory?: string;
+}
+
 export async function POST(request: NextRequest) {
   try {
     const session = await auth();
@@ -14,14 +20,14 @@ export async function POST(request: NextRequest) {
     const { images, title, description, category, year, mint, grade, certification } = body;
 
     // Step 1: If we have images but no title, try to identify the coin
-    let identification = null;
+    let identification: CoinIdentification | null = null;
     if (images?.length > 0 && !title) {
       // In production, convert image URL to base64
       // For now, skip image identification
     }
 
     // Step 2: Search for comparables
-    const searchQuery = title || identification?.possibleIdentification || "";
+    const searchQuery = title || (identification as CoinIdentification | null)?.possibleIdentification || "";
     let comparables: Array<{ title: string; soldPrice: number; soldDate: string }> = [];
 
     if (searchQuery) {

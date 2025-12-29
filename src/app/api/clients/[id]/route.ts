@@ -173,6 +173,102 @@ export async function PATCH(request: NextRequest, context: RouteContext) {
 }
 
 /**
+ * PUT /api/clients/[id]
+ * Replace a client (full update - all required fields must be provided)
+ */
+export async function PUT(request: NextRequest, context: RouteContext) {
+  try {
+    const session = await auth();
+    if (!session?.user || !['ADMIN', 'STAFF'].includes(session.user.role || '')) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    const { id } = await context.params;
+
+    const existing = await db.client.findUnique({ where: { id } });
+    if (!existing) {
+      return NextResponse.json({ error: 'Client not found' }, { status: 404 });
+    }
+
+    const body = await request.json();
+    const {
+      name,
+      email,
+      phone,
+      address,
+      city,
+      state,
+      zip,
+      website,
+      commissionRate,
+      status,
+      notes,
+    } = body;
+
+    // Validate required fields
+    if (!name || !email) {
+      return NextResponse.json(
+        { error: 'Name and email are required' },
+        { status: 400 }
+      );
+    }
+
+    // If email is being changed, check for duplicates
+    if (email !== existing.email) {
+      const emailExists = await db.client.findUnique({ where: { email } });
+      if (emailExists) {
+        return NextResponse.json(
+          { error: 'A client with this email already exists' },
+          { status: 400 }
+        );
+      }
+    }
+
+    // Validate status if provided
+    if (status && !Object.values(ClientStatus).includes(status)) {
+      return NextResponse.json(
+        { error: 'Invalid status value' },
+        { status: 400 }
+      );
+    }
+
+    const client = await db.client.update({
+      where: { id },
+      data: {
+        name,
+        email,
+        phone: phone ?? null,
+        address: address ?? null,
+        city: city ?? null,
+        state: state ?? null,
+        zip: zip ?? null,
+        website: website ?? null,
+        commissionRate: commissionRate ?? 15,
+        status: status ?? existing.status,
+        notes: notes ?? null,
+      },
+      include: {
+        sources: true,
+        _count: {
+          select: {
+            products: true,
+            users: true,
+          },
+        },
+      },
+    });
+
+    return NextResponse.json(client);
+  } catch (error) {
+    console.error('Error replacing client:', error);
+    return NextResponse.json(
+      { error: 'Failed to replace client' },
+      { status: 500 }
+    );
+  }
+}
+
+/**
  * DELETE /api/clients/[id]
  * Delete a client (soft delete by setting status to TERMINATED)
  */

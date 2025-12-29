@@ -11,6 +11,7 @@ import type {
 import { ebayParser } from './parsers/ebay';
 import { shopifyParser, ShopifyParser } from './parsers/shopify';
 import { createGenericParser } from './parsers/generic';
+import { isFirecrawlAvailable, scrapeWithFirecrawl, crawlClientSite } from './firecrawl';
 import prisma from '@/lib/db';
 import { SourceType } from '@prisma/client';
 
@@ -94,10 +95,163 @@ export class ClientScraper {
   }
 
   /**
-   * Scrape a client source
+   * Scrape a client source - tries Firecrawl first, falls back to browser
    */
   async scrape(source: ClientSourceData, options: ScrapeJobOptions = {}): Promise<ScrapeResult> {
     const startedAt = new Date();
+    
+    // Check if we should use Firecrawl (available and source supports it)
+    const useFirecrawl = isFirecrawlAvailable() && 
+      !options.forcePlaywright &&
+      this.shouldUseFirecrawl(source);
+
+    if (useFirecrawl) {
+      try {
+        const result = await this.scrapeWithFirecrawl(source, options, startedAt);
+        if (result.status === 'COMPLETED' && result.itemsFound > 0) {
+          return result;
+        }
+        // Fall through to browser scraping if Firecrawl returned no items
+        console.log(`Firecrawl returned no items for ${source.url}, falling back to browser`);
+      } catch (err) {
+        console.warn(`Firecrawl failed for ${source.url}, falling back to browser:`, err);
+      }
+    }
+
+    // Browser-based scraping (original implementation)
+    return this.scrapeWithBrowser(source, options, startedAt);
+  }
+
+  /**
+   * Determine if source should use Firecrawl
+   */
+  private shouldUseFirecrawl(source: ClientSourceData): boolean {
+    // Use Firecrawl for JS-heavy sites or generic websites
+    const firecrawlTypes: SourceType[] = [
+      SourceType.WEBSITE,
+      SourceType.WOOCOMMERCE,
+      SourceType.SQUARESPACE,
+    ];
+    
+    // Also check if source config explicitly requests Firecrawl
+    if (source.config?.useFirecrawl === true) return true;
+    if (source.config?.useFirecrawl === false) return false;
+    
+    return firecrawlTypes.includes(source.type);
+  }
+
+  /**
+   * Scrape using Firecrawl
+   */
+  private async scrapeWithFirecrawl(
+    source: ClientSourceData,
+    options: ScrapeJobOptions,
+    startedAt: Date
+  ): Promise<ScrapeResult> {
+    const errors: ScrapeError[] = [];
+    const items: ScrapedItem[] = [];
+    const maxPages = options.maxPages || 50;
+
+    try {
+      // Crawl the site
+      const crawlResult = await crawlClientSite(source.url, {
+        maxDepth: 2,
+        limit: maxPages,
+        includePaths: source.config?.includePaths,
+        excludePaths: source.config?.excludePaths,
+      });
+
+      if (!crawlResult.success) {
+        errors.push({
+          type: 'navigation',
+          message: crawlResult.error || 'Firecrawl crawl failed',
+          url: source.url,
+        });
+      } else {
+        // Extract items from crawled pages
+        // TODO: Use AI to extract product data from markdown content
+        for (const page of crawlResult.pages) {
+          if (page.content && page.url) {
+            // Basic extraction - look for product-like pages
+            // This is a placeholder - should integrate with ProductIntelligence
+            const item = this.extractItemFromFirecrawl(page, source);
+            if (item) {
+              items.push(item);
+            }
+          }
+        }
+      }
+    } catch (err) {
+      errors.push({
+        type: 'unknown',
+        message: err instanceof Error ? err.message : 'Firecrawl error',
+        url: source.url,
+      });
+    }
+
+    const completedAt = new Date();
+    const duration = Math.round((completedAt.getTime() - startedAt.getTime()) / 1000);
+
+    return {
+      sourceId: source.id,
+      status: errors.some((e) => e.type !== 'parse') ? 'FAILED' : 'COMPLETED',
+      items,
+      itemsFound: items.length,
+      errors,
+      duration,
+      startedAt,
+      completedAt,
+    };
+  }
+
+  /**
+   * Extract a scraped item from Firecrawl page data
+   */
+  private extractItemFromFirecrawl(
+    page: { url: string; title?: string; content?: string; metadata?: Record<string, unknown> },
+    source: ClientSourceData
+  ): ScrapedItem | null {
+    // Skip non-product pages
+    const skipPatterns = ['/cart', '/checkout', '/account', '/login', '/about', '/contact', '/blog'];
+    if (skipPatterns.some(pattern => page.url.includes(pattern))) {
+      return null;
+    }
+
+    // Basic item structure - real extraction would use AI
+    if (!page.title || !page.content) {
+      return null;
+    }
+
+    // Look for price patterns in content
+    const priceMatch = page.content.match(/\$[\d,]+\.?\d*/);
+    const price = priceMatch ? parseFloat(priceMatch[0].replace(/[$,]/g, '')) : undefined;
+
+    // Extract images from metadata or content
+    const images: string[] = [];
+    if (page.metadata?.ogImage) {
+      images.push(page.metadata.ogImage as string);
+    }
+
+    return {
+      externalId: page.url,
+      sourceUrl: page.url,
+      title: page.title,
+      description: page.content.substring(0, 500),
+      price,
+      images,
+      inStock: true,
+      attributes: {},
+    };
+  }
+
+  /**
+   * Scrape using browser (original implementation)
+   */
+  private async scrapeWithBrowser(
+    source: ClientSourceData,
+    options: ScrapeJobOptions,
+    startedAt: Date
+  ): Promise<ScrapeResult> {
     const errors: ScrapeError[] = [];
     const items: ScrapedItem[] = [];
     const config = { ...DEFAULT_CONFIG, ...source.config };
