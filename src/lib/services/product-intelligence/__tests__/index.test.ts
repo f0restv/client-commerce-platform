@@ -65,6 +65,8 @@ describe('analyze pipeline', () => {
     redbookPrice: 225,
     greysheetPrice: { bid: 210, ask: 250 },
     buyNow: { price: 275, url: 'https://ebay.com/item', seller: 'dealer' },
+    unifiedPrices: null,
+    estimatedValue: null,
     fetchedAt: new Date(),
   };
 
@@ -133,6 +135,8 @@ describe('analyze pipeline', () => {
       expect(result.marketData.redbookPrice).toBeNull();
       expect(result.marketData.greysheetPrice).toBeNull();
       expect(result.marketData.buyNow).toBeNull();
+      expect(result.marketData.unifiedPrices).toBeNull();
+      expect(result.marketData.estimatedValue).toBeNull();
     });
 
     it('should pass coin details to fetchMarketData for coins', async () => {
@@ -145,7 +149,8 @@ describe('analyze pipeline', () => {
           denomination: '1921 Morgan Silver Dollar',
           mint: 'P',
           grade: 'MS-65',
-        })
+        }),
+        'coin'
       );
     });
 
@@ -155,7 +160,7 @@ describe('analyze pipeline', () => {
 
       await analyze([{ type: 'url', url: 'https://example.com/card.jpg' }]);
 
-      expect(fetchMarketData).toHaveBeenCalledWith(mockIdentification.searchTerms, undefined);
+      expect(fetchMarketData).toHaveBeenCalledWith(mockIdentification.searchTerms, undefined, 'sports-card');
     });
 
     it('should pass grade to evaluate', async () => {

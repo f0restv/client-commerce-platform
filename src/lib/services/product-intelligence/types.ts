@@ -6,6 +6,19 @@ export type CollectibleCategory =
   | 'stamp'
   | 'currency'
   | 'memorabilia'
+  | 'vinyl-record'
+  | 'sneakers'
+  | 'watch'
+  | 'vintage-toy'
+  | 'art'
+  | 'antique'
+  | 'wine'
+  | 'autograph'
+  | 'video-game'
+  | 'pokemon'
+  | 'jewelry'
+  | 'militaria'
+  | 'sports-memorabilia'
   | 'unknown';
 
 export interface IdentificationResult {
@@ -64,7 +77,28 @@ export interface MarketData {
     url: string;
     seller: string;
   } | null;
+  /** Unified market data from multiple price guide providers */
+  unifiedPrices: UnifiedMarketPrice[] | null;
+  /** Aggregated estimated value from all sources */
+  estimatedValue: {
+    low: number;
+    mid: number;
+    high: number;
+  } | null;
   fetchedAt: Date;
+}
+
+export interface UnifiedMarketPrice {
+  itemId: string;
+  name: string;
+  category: string;
+  source: string;
+  sourceUrl?: string;
+  prices: {
+    raw?: { low: number; mid: number; high: number };
+    graded?: Record<string, { low: number; mid: number; high: number }>;
+  };
+  lastUpdated: string;
 }
 
 export type EvaluationRecommendation = 'accept' | 'decline' | 'review';

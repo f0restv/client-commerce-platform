@@ -1,4 +1,5 @@
-import type { MarketData, MarketComparable } from './types';
+import type { MarketData, MarketComparable, UnifiedMarketPrice } from './types';
+import { MarketData as UnifiedMarketData, type MarketPrice, type CollectibleCategory as UnifiedCategory } from '../market-data';
 
 const EBAY_FINDING_API = 'https://svcs.ebay.com/services/search/FindingService/v1';
 const EBAY_BROWSE_API = 'https://api.ebay.com/buy/browse/v1';
@@ -196,11 +197,95 @@ export async function findCheapestBuyNow(
   };
 }
 
+/**
+ * Map ProductIntelligence category to market-data CollectibleCategory
+ */
+function mapToUnifiedCategory(category?: string): UnifiedCategory | undefined {
+  if (!category) return undefined;
+
+  const categoryMap: Record<string, UnifiedCategory> = {
+    'coin': 'coin',
+    'currency': 'coin',
+    'sports-card': 'sports-card',
+    'trading-card': 'tcg',
+    'pokemon': 'pokemon',
+    'comic': 'comic',
+    'funko': 'funko',
+  };
+
+  return categoryMap[category] || 'other';
+}
+
+/**
+ * Convert MarketPrice from unified service to UnifiedMarketPrice type
+ */
+function toUnifiedMarketPrice(mp: MarketPrice): UnifiedMarketPrice {
+  return {
+    itemId: mp.itemId,
+    name: mp.name,
+    category: mp.category,
+    source: mp.source,
+    sourceUrl: mp.sourceUrl,
+    prices: mp.prices,
+    lastUpdated: mp.lastUpdated,
+  };
+}
+
+/**
+ * Calculate estimated value by aggregating prices from all sources
+ */
+function calculateEstimatedValue(
+  prices: MarketPrice[],
+  grade?: string
+): { low: number; mid: number; high: number } | null {
+  if (prices.length === 0) return null;
+
+  const allMids: number[] = [];
+
+  for (const p of prices) {
+    // Try to get graded price if grade is specified
+    if (grade && p.prices.graded) {
+      // Look for matching grade (case-insensitive, partial match)
+      const normalizedGrade = grade.toUpperCase();
+      for (const [gradeKey, range] of Object.entries(p.prices.graded)) {
+        if (gradeKey.toUpperCase().includes(normalizedGrade) ||
+            normalizedGrade.includes(gradeKey.toUpperCase())) {
+          allMids.push(range.mid);
+          break;
+        }
+      }
+    }
+
+    // Fall back to raw price or first graded price
+    if (allMids.length === 0 || !grade) {
+      if (p.prices.raw?.mid) {
+        allMids.push(p.prices.raw.mid);
+      } else if (p.prices.graded) {
+        const firstGrade = Object.values(p.prices.graded)[0];
+        if (firstGrade?.mid) {
+          allMids.push(firstGrade.mid);
+        }
+      }
+    }
+  }
+
+  if (allMids.length === 0) return null;
+
+  const avg = allMids.reduce((a, b) => a + b, 0) / allMids.length;
+  return {
+    low: Math.round(avg * 0.8),
+    mid: Math.round(avg),
+    high: Math.round(avg * 1.2),
+  };
+}
+
 export async function fetchMarketData(
   searchTerms: string[],
-  coinDetails?: { year: number | null; denomination: string; mint: string | null; grade: string }
+  coinDetails?: { year: number | null; denomination: string; mint: string | null; grade: string },
+  category?: string
 ): Promise<MarketData> {
-  const [ebayStats, buyNow, redbookPrice, greysheetPrice] = await Promise.all([
+  // Run legacy eBay/Redbook/Greysheet fetches in parallel with unified market data
+  const [ebayStats, buyNow, redbookPrice, greysheetPrice, unifiedResults] = await Promise.all([
     getEbayStats(searchTerms),
     findCheapestBuyNow(searchTerms),
     coinDetails
@@ -209,13 +294,33 @@ export async function fetchMarketData(
     coinDetails
       ? getGreysheetPrice(coinDetails.year, coinDetails.denomination, coinDetails.mint, coinDetails.grade)
       : Promise.resolve(null),
+    // Fetch from unified market data service
+    UnifiedMarketData.search(searchTerms.join(' '), {
+      category: mapToUnifiedCategory(category),
+      limit: 10,
+    }).catch((err) => {
+      console.warn('Unified market data fetch failed:', err);
+      return [] as MarketPrice[];
+    }),
   ]);
+
+  // Convert unified results to our type
+  const unifiedPrices = unifiedResults.length > 0
+    ? unifiedResults.map(toUnifiedMarketPrice)
+    : null;
+
+  // Calculate aggregated estimated value from unified prices
+  const estimatedValue = unifiedResults.length > 0
+    ? calculateEstimatedValue(unifiedResults, coinDetails?.grade)
+    : null;
 
   return {
     ebayStats,
     redbookPrice,
     greysheetPrice,
     buyNow,
+    unifiedPrices,
+    estimatedValue,
     fetchedAt: new Date(),
   };
 }

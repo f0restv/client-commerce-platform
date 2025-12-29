@@ -51,6 +51,8 @@ export async function analyze(
       redbookPrice: null,
       greysheetPrice: null,
       buyNow: null,
+      unifiedPrices: null,
+      estimatedValue: null,
       fetchedAt: new Date(),
     };
   } else {
@@ -64,7 +66,11 @@ export async function analyze(
           }
         : undefined;
 
-    marketData = await fetchMarketData(identification.searchTerms, coinDetails);
+    marketData = await fetchMarketData(
+      identification.searchTerms,
+      coinDetails,
+      identification.category
+    );
   }
 
   let evaluation: EvaluationResult | null = null;

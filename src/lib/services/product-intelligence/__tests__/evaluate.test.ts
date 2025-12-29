@@ -16,6 +16,8 @@ describe('evaluate', () => {
     redbookPrice: 225,
     greysheetPrice: { bid: 210, ask: 250 },
     buyNow: { price: 275, url: 'https://ebay.com/item/123', seller: 'coindealer' },
+    unifiedPrices: null,
+    estimatedValue: null,
     fetchedAt: new Date(),
   };
 
@@ -90,6 +92,8 @@ describe('evaluate', () => {
         redbookPrice: null,
         greysheetPrice: null,
         buyNow: null,
+        unifiedPrices: null,
+        estimatedValue: null,
         fetchedAt: new Date(),
       };
 
@@ -108,6 +112,8 @@ describe('evaluate', () => {
         redbookPrice: null,
         greysheetPrice: null,
         buyNow: null,
+        unifiedPrices: null,
+        estimatedValue: null,
         fetchedAt: new Date(),
       };
 
@@ -245,6 +251,8 @@ describe('evaluate', () => {
         redbookPrice: null,
         greysheetPrice: null,
         buyNow: null,
+        unifiedPrices: null,
+        estimatedValue: null,
         fetchedAt: new Date(),
       };
 
