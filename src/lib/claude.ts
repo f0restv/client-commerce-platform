@@ -1,8 +1,42 @@
 import Anthropic from "@anthropic-ai/sdk";
+import { createLogger } from "./logger";
 
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
-});
+const log = createLogger({ service: "claude" });
+
+// ============================================================================
+// LAZY INITIALIZATION
+// ============================================================================
+
+let _anthropic: Anthropic | null = null;
+
+/**
+ * Get the Anthropic client with lazy initialization.
+ * Throws if ANTHROPIC_API_KEY is not set.
+ */
+export function getAnthropic(): Anthropic {
+  if (!_anthropic) {
+    const apiKey = process.env.ANTHROPIC_API_KEY;
+    if (!apiKey) {
+      throw new Error(
+        "ANTHROPIC_API_KEY is not set. Please add it to your environment variables."
+      );
+    }
+    _anthropic = new Anthropic({ apiKey });
+    log.info("Anthropic client initialized");
+  }
+  return _anthropic;
+}
+
+/**
+ * Check if Anthropic is configured (without throwing).
+ */
+export function isAnthropicConfigured(): boolean {
+  return !!process.env.ANTHROPIC_API_KEY;
+}
+
+// ============================================================================
+// TYPES
+// ============================================================================
 
 export interface MarketAnalysisResult {
   estimatedValue: {
@@ -32,6 +66,10 @@ export interface CoinAnalysisInput {
   category?: string;
   imageUrls?: string[];
 }
+
+// ============================================================================
+// MARKET ANALYSIS
+// ============================================================================
 
 export async function analyzeMarketValue(
   input: CoinAnalysisInput,
@@ -85,6 +123,7 @@ Consider:
 Respond ONLY with the JSON object, no additional text.`;
 
   try {
+    const anthropic = getAnthropic();
     const message = await anthropic.messages.create({
       model: "claude-sonnet-4-20250514",
       max_tokens: 1024,
@@ -102,9 +141,10 @@ Respond ONLY with the JSON object, no additional text.`;
     }
 
     const result = JSON.parse(content.text) as MarketAnalysisResult;
+    log.debug({ input: input.title }, "Market analysis completed");
     return result;
   } catch (error) {
-    console.error("Claude analysis error:", error);
+    log.error({ error, input: input.title }, "Claude analysis error");
     // Return default analysis on error
     return {
       estimatedValue: { low: 0, mid: 0, high: 0 },
@@ -119,6 +159,10 @@ Respond ONLY with the JSON object, no additional text.`;
     };
   }
 }
+
+// ============================================================================
+// PRODUCT DESCRIPTION
+// ============================================================================
 
 export async function generateProductDescription(
   input: CoinAnalysisInput
@@ -145,6 +189,7 @@ Write a 2-3 paragraph description that:
 Keep it professional, accurate, and under 200 words.`;
 
   try {
+    const anthropic = getAnthropic();
     const message = await anthropic.messages.create({
       model: "claude-sonnet-4-20250514",
       max_tokens: 500,
@@ -163,10 +208,14 @@ Keep it professional, accurate, and under 200 words.`;
 
     return content.text;
   } catch (error) {
-    console.error("Claude description error:", error);
+    log.error({ error, input: input.title }, "Claude description error");
     return input.description || "";
   }
 }
+
+// ============================================================================
+// COIN IDENTIFICATION
+// ============================================================================
 
 export async function identifyCoin(imageBase64: string): Promise<{
   possibleIdentification: string;
@@ -175,6 +224,7 @@ export async function identifyCoin(imageBase64: string): Promise<{
   additionalNotes: string;
 }> {
   try {
+    const anthropic = getAnthropic();
     const message = await anthropic.messages.create({
       model: "claude-sonnet-4-20250514",
       max_tokens: 500,
@@ -214,7 +264,7 @@ Respond ONLY with the JSON object.`,
 
     return JSON.parse(content.text);
   } catch (error) {
-    console.error("Claude identification error:", error);
+    log.error({ error }, "Claude identification error");
     return {
       possibleIdentification: "Unable to identify",
       confidence: 0,
@@ -223,3 +273,15 @@ Respond ONLY with the JSON object.`,
     };
   }
 }
+
+// ============================================================================
+// EXPORTS
+// ============================================================================
+
+export default {
+  getAnthropic,
+  isAnthropicConfigured,
+  analyzeMarketValue,
+  generateProductDescription,
+  identifyCoin,
+};

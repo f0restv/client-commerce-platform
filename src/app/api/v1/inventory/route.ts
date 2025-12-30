@@ -18,8 +18,8 @@ import type { ProductStatus } from '@prisma/client';
  * - status: Filter by status (default: ACTIVE)
  */
 export async function GET(request: NextRequest) {
-  // Validate API key
-  const validation = validateRequest(request.headers);
+  // Validate API key with rate limiting
+  const validation = await validateRequest(request.headers, { scope: 'inventory' });
   if (!validation.valid) {
     return validation.error;
   }
@@ -179,8 +179,8 @@ export async function GET(request: NextRequest) {
  * Note: This is a separate route file, but we can also handle ID lookups via POST
  */
 export async function POST(request: NextRequest) {
-  // Validate API key
-  const validation = validateRequest(request.headers);
+  // Validate API key with rate limiting
+  const validation = await validateRequest(request.headers, { scope: 'inventory' });
   if (!validation.valid) {
     return validation.error;
   }

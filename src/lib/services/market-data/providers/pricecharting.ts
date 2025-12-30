@@ -1,28 +1,33 @@
 /**
  * PriceCharting.com Scraper
- * 
+ *
  * Free multi-category price guide covering:
  * - Pokemon cards
- * - Sports cards  
+ * - Sports cards
  * - Comic books
  * - Video games
  * - Funko Pops
- * 
- * Uses eBay sold data for pricing
+ *
+ * Uses eBay sold data for pricing.
+ *
+ * Features:
+ * - Uses BaseScraper for retry and rate limiting
+ * - Integrated Redis/memory caching
+ * - Structured logging
  */
 
-import * as cheerio from 'cheerio';
-import * as fs from 'fs';
-import * as path from 'path';
+import { BaseScraper, type ScraperConfig } from '@/lib/services/scraper';
 
 // ============================================================================
 // TYPES
 // ============================================================================
 
+export type PriceChartingCategory = 'pokemon' | 'sports' | 'comics' | 'games' | 'funko';
+
 export interface PriceChartingItem {
   id: string;
   name: string;
-  category: 'pokemon' | 'sports' | 'comics' | 'games' | 'funko';
+  category: PriceChartingCategory;
   prices: {
     ungraded?: number;
     graded?: Record<string, number>; // e.g., { 'PSA 10': 500, 'PSA 9': 200 }
@@ -31,22 +36,33 @@ export interface PriceChartingItem {
   lastUpdated: string;
 }
 
-export interface PriceChartingCache {
-  version: string;
-  lastFetched: string;
-  ttlDays: number;
-  items: Record<string, PriceChartingItem>;
+export interface PriceChartingSearchResult {
+  items: PriceChartingItem[];
+  total: number;
+  cached: boolean;
 }
 
 // ============================================================================
 // CONFIGURATION
 // ============================================================================
 
-const BASE_URL = 'https://www.pricecharting.com';
-const CACHE_TTL_DAYS = 7;
-const CACHE_FILE = path.join(process.cwd(), 'data', 'pricecharting-cache.json');
+const SCRAPER_CONFIG: ScraperConfig = {
+  name: 'pricecharting',
+  baseUrl: 'https://www.pricecharting.com',
+  useBrowser: false, // No Cloudflare protection
+  rateLimit: {
+    requestsPerMinute: 30,
+    minDelayMs: 2000,
+  },
+  retry: {
+    maxAttempts: 3,
+    baseDelayMs: 1000,
+    maxDelayMs: 15000,
+  },
+  cacheTtlSeconds: 60 * 60 * 24 * 7, // 7 days
+};
 
-const CATEGORY_URLS: Record<string, string> = {
+const CATEGORY_URLS: Record<PriceChartingCategory, string> = {
   pokemon: '/category/pokemon-cards',
   sports: '/category/sports-trading-card-singles',
   comics: '/category/comic-books',
@@ -55,196 +71,282 @@ const CATEGORY_URLS: Record<string, string> = {
 };
 
 // ============================================================================
-// CACHE
+// SCRAPER CLASS
 // ============================================================================
 
-function loadCache(): PriceChartingCache | null {
-  try {
-    if (fs.existsSync(CACHE_FILE)) {
-      return JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
-    }
-  } catch (e) {
-    console.error('Cache load error:', e);
+class PriceChartingScraper extends BaseScraper {
+  constructor() {
+    super(SCRAPER_CONFIG);
   }
-  return null;
-}
 
-function saveCache(cache: PriceChartingCache): void {
-  const dir = path.dirname(CACHE_FILE);
-  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2));
-}
-
-// ============================================================================
-// SCRAPING
-// ============================================================================
-
-async function fetchPage(url: string): Promise<string> {
-  const response = await fetch(url, {
-    headers: {
-      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Chrome/120.0.0.0',
-      'Accept': 'text/html',
-    },
-  });
-  if (!response.ok) throw new Error(`HTTP ${response.status}`);
-  return response.text();
-}
-
-function parsePrice(text: string): number {
-  const cleaned = text.replace(/[^0-9.]/g, '');
-  return parseFloat(cleaned) || 0;
-}
-
-export async function scrapeItem(url: string, category: PriceChartingItem['category']): Promise<PriceChartingItem | null> {
-  try {
-    const html = await fetchPage(url);
-    const $ = cheerio.load(html);
-
-    const name = $('h1').first().text().trim();
-    const id = url.split('/').pop() || '';
-
-    // Extract prices from the price table
-    const prices: PriceChartingItem['prices'] = {};
-    
-    // Ungraded price (usually labeled "Ungraded" or "Loose")
-    const ungradedRow = $('tr:contains("Ungraded"), tr:contains("Loose")').first();
-    if (ungradedRow.length) {
-      prices.ungraded = parsePrice(ungradedRow.find('td.price').text());
+  async isAvailable(): Promise<boolean> {
+    try {
+      const result = await this.fetch('/');
+      return result.html.includes('pricecharting');
+    } catch {
+      return false;
     }
+  }
 
-    // Graded prices (PSA, CGC, etc.)
-    const graded: Record<string, number> = {};
-    $('tr').each((_, row) => {
-      const label = $(row).find('td').first().text().trim();
-      const priceMatch = label.match(/(PSA|CGC|BGS|SGC)\s*(\d+)/i);
-      if (priceMatch) {
-        const grade = `${priceMatch[1].toUpperCase()} ${priceMatch[2]}`;
-        const price = parsePrice($(row).find('td.price').text());
-        if (price > 0) graded[grade] = price;
+  /**
+   * Search for items across categories
+   */
+  async search(query: string, category?: PriceChartingCategory): Promise<PriceChartingSearchResult> {
+    const typeParam = category || '';
+    const searchUrl = `/search-products?q=${encodeURIComponent(query)}${typeParam ? `&type=${typeParam}` : ''}`;
+
+    try {
+      const result = await this.fetch(searchUrl);
+      const $ = this.parseHtml(result.html);
+      const items: PriceChartingItem[] = [];
+
+      // Parse search results
+      $('.search-result, table tbody tr, .product').each((_, row) => {
+        const $row = $(row);
+        const link = $row.find('a').first();
+        const name = link.text().trim() || $row.find('.title').text().trim();
+        const href = link.attr('href');
+
+        if (name && href) {
+          // Try to extract price from the row
+          const priceText = $row.find('.price, .used-price, td.price').text();
+          const price = this.parsePrice(priceText);
+
+          items.push({
+            id: href.split('/').pop() || '',
+            name,
+            category: category || this.detectCategory(name, href),
+            prices: price !== null && price > 0 ? { ungraded: price } : {},
+            url: href.startsWith('http') ? href : `${this.config.baseUrl}${href}`,
+            lastUpdated: new Date().toISOString(),
+          });
+        }
+      });
+
+      // Validate results
+      if (items.length === 0 && !result.html.includes('No results')) {
+        this.alert('Search returned no results - selectors may need updating', { query });
       }
-    });
-    
-    if (Object.keys(graded).length > 0) {
-      prices.graded = graded;
+
+      return {
+        items,
+        total: items.length,
+        cached: result.fromCache,
+      };
+    } catch (error) {
+      this.log.error({ error, query }, 'PriceCharting search failed');
+      return { items: [], total: 0, cached: false };
+    }
+  }
+
+  /**
+   * Get detailed pricing for a specific item
+   */
+  async getItemPrices(itemUrl: string, category: PriceChartingCategory): Promise<PriceChartingItem | null> {
+    try {
+      const result = await this.fetch(itemUrl);
+      const $ = this.parseHtml(result.html);
+
+      const name = $('h1').first().text().trim();
+      const id = itemUrl.split('/').pop() || '';
+      const prices: PriceChartingItem['prices'] = {};
+
+      // Extract ungraded price (usually labeled "Ungraded" or "Loose")
+      const ungradedRow = $('tr:contains("Ungraded"), tr:contains("Loose")').first();
+      if (ungradedRow.length) {
+        const price = this.parsePrice(ungradedRow.find('td.price, .price').text());
+        if (price !== null && price > 0) {
+          prices.ungraded = price;
+        }
+      }
+
+      // Extract graded prices (PSA, CGC, etc.)
+      const graded: Record<string, number> = {};
+      $('tr').each((_, row) => {
+        const label = $(row).find('td').first().text().trim();
+        const priceMatch = label.match(/(PSA|CGC|BGS|SGC)\s*(\d+)/i);
+        if (priceMatch) {
+          const grade = `${priceMatch[1].toUpperCase()} ${priceMatch[2]}`;
+          const price = this.parsePrice($(row).find('td.price, .price').text());
+          if (price !== null && price > 0) graded[grade] = price;
+        }
+      });
+
+      if (Object.keys(graded).length > 0) {
+        prices.graded = graded;
+      }
+
+      // Also try to extract from structured data
+      $('[data-price]').each((_, el) => {
+        const $el = $(el);
+        const type = $el.attr('data-type');
+        const price = this.parsePrice($el.attr('data-price') || $el.text());
+        if (type && price !== null && price > 0) {
+          if (type === 'ungraded' || type === 'loose') {
+            prices.ungraded = price;
+          } else {
+            prices.graded = prices.graded || {};
+            prices.graded[type] = price;
+          }
+        }
+      });
+
+      return {
+        id,
+        name: name || id,
+        category,
+        prices,
+        url: itemUrl,
+        lastUpdated: new Date().toISOString(),
+      };
+    } catch (error) {
+      this.log.error({ error, itemUrl }, 'Failed to fetch item prices');
+      return null;
+    }
+  }
+
+  /**
+   * Browse a category
+   */
+  async browseCategory(category: PriceChartingCategory): Promise<PriceChartingItem[]> {
+    const categoryUrl = CATEGORY_URLS[category];
+    if (!categoryUrl) {
+      this.log.warn({ category }, 'Unknown category');
+      return [];
     }
 
-    return {
-      id,
-      name,
-      category,
-      prices,
-      url,
-      lastUpdated: new Date().toISOString(),
-    };
-  } catch (error) {
-    console.error(`Error scraping ${url}:`, error);
-    return null;
+    try {
+      const result = await this.fetch(categoryUrl);
+      const $ = this.parseHtml(result.html);
+      const items: PriceChartingItem[] = [];
+
+      $('table tbody tr, .product').each((_, row) => {
+        const $row = $(row);
+        const link = $row.find('a').first();
+        const name = link.text().trim();
+        const href = link.attr('href');
+
+        if (name && href) {
+          const priceText = $row.find('.price, td:last-child').text();
+          const price = this.parsePrice(priceText);
+
+          items.push({
+            id: href.split('/').pop() || '',
+            name,
+            category,
+            prices: price !== null && price > 0 ? { ungraded: price } : {},
+            url: href.startsWith('http') ? href : `${this.config.baseUrl}${href}`,
+            lastUpdated: new Date().toISOString(),
+          });
+        }
+      });
+
+      this.validateResults(items, 10, `${category} category browse`);
+      return items;
+    } catch (error) {
+      this.log.error({ error, category }, 'Failed to browse category');
+      return [];
+    }
+  }
+
+  /**
+   * Detect category from item name or URL
+   */
+  private detectCategory(name: string, url: string): PriceChartingCategory {
+    const combined = `${name} ${url}`.toLowerCase();
+
+    if (combined.includes('pokemon') || combined.includes('pikachu') || combined.includes('charizard')) {
+      return 'pokemon';
+    }
+    if (combined.includes('funko') || combined.includes('pop!')) {
+      return 'funko';
+    }
+    if (combined.includes('comic') || combined.includes('marvel') || combined.includes('dc comics')) {
+      return 'comics';
+    }
+    if (combined.includes('topps') || combined.includes('panini') || combined.includes('card')) {
+      return 'sports';
+    }
+    return 'games';
   }
 }
 
+// ============================================================================
+// SINGLETON INSTANCE & EXPORTS
+// ============================================================================
+
+let _instance: PriceChartingScraper | null = null;
+
+function getInstance(): PriceChartingScraper {
+  if (!_instance) {
+    _instance = new PriceChartingScraper();
+  }
+  return _instance;
+}
+
+/**
+ * Search PriceCharting
+ */
 export async function searchCategory(
   category: keyof typeof CATEGORY_URLS,
   query: string
 ): Promise<PriceChartingItem[]> {
-  const searchUrl = `${BASE_URL}/search-products?q=${encodeURIComponent(query)}&type=${category}`;
-  const html = await fetchPage(searchUrl);
-  const $ = cheerio.load(html);
-
-  const results: PriceChartingItem[] = [];
-
-  // PriceCharting uses #offer_list table with tr.offer rows
-  $('#offer_list table tr.offer').each((_, row) => {
-    const $row = $(row);
-
-    // Product name is in h2.product_name
-    const nameEl = $row.find('h2.product_name, .product_name');
-    const name = nameEl.text().trim();
-
-    // Get the product link - can be /offers?product=ID or /game/slug
-    const link = $row.find('a[href*="/offers"], a[href*="/game"]').first();
-    let href = link.attr('href') || '';
-
-    // Extract product ID from various URL formats
-    let productId = '';
-    const productMatch = href.match(/product[=\/](\d+)/);
-    const gameMatch = href.match(/\/game\/([^?]+)/);
-    if (productMatch) {
-      productId = productMatch[1];
-    } else if (gameMatch) {
-      productId = gameMatch[1];
-    }
-
-    // Price is typically in a <p> containing $
-    const priceText = $row.find('p').filter((_, el) => $(el).text().includes('$')).first().text();
-    const price = parsePrice(priceText);
-
-    if (name && productId) {
-      // Build proper product URL
-      const productUrl = href.startsWith('http') ? href :
-        (href.startsWith('/') ? `${BASE_URL}${href}` : `${BASE_URL}/${href}`);
-
-      results.push({
-        id: productId,
-        name,
-        category: category as PriceChartingItem['category'],
-        prices: { ungraded: price > 0 ? price : undefined },
-        url: productUrl,
-        lastUpdated: new Date().toISOString(),
-      });
-    }
-  });
-
-  return results;
+  const result = await getInstance().search(query, category);
+  return result.items;
 }
 
-// ============================================================================
-// PUBLIC API
-// ============================================================================
-
-export async function search(query: string, category?: keyof typeof CATEGORY_URLS): Promise<PriceChartingItem[]> {
-  if (category) {
-    return searchCategory(category, query);
-  }
-  
-  // Search all categories
-  const allResults: PriceChartingItem[] = [];
-  for (const cat of Object.keys(CATEGORY_URLS) as (keyof typeof CATEGORY_URLS)[]) {
-    const results = await searchCategory(cat, query);
-    allResults.push(...results);
-    await new Promise(r => setTimeout(r, 300)); // Rate limit
-  }
-  return allResults;
+/**
+ * Search PriceCharting (legacy export for backwards compatibility)
+ */
+export async function search(
+  query: string,
+  category?: PriceChartingCategory
+): Promise<PriceChartingItem[]> {
+  const result = await getInstance().search(query, category);
+  return result.items;
 }
 
+/**
+ * Scrape a specific item page
+ */
+export async function scrapeItem(
+  url: string,
+  category: PriceChartingCategory
+): Promise<PriceChartingItem | null> {
+  return getInstance().getItemPrices(url, category);
+}
+
+/**
+ * Get item prices (legacy export for backwards compatibility)
+ */
 export async function getItem(url: string): Promise<PriceChartingItem | null> {
-  const cache = loadCache();
-  const id = url.split('/').pop() || '';
-  
-  // Check cache
-  if (cache?.items[id]) {
-    const cached = cache.items[id];
-    const age = (Date.now() - new Date(cached.lastUpdated).getTime()) / (1000 * 60 * 60 * 24);
-    if (age < CACHE_TTL_DAYS) return cached;
-  }
+  // Detect category from URL
+  const category = url.includes('pokemon') ? 'pokemon' :
+                   url.includes('funko') ? 'funko' :
+                   url.includes('comic') ? 'comics' :
+                   url.includes('card') ? 'sports' : 'games';
+  return getInstance().getItemPrices(url, category);
+}
 
-  // Determine category from URL
-  let category: PriceChartingItem['category'] = 'games';
-  if (url.includes('pokemon')) category = 'pokemon';
-  else if (url.includes('sports') || url.includes('card')) category = 'sports';
-  else if (url.includes('comic')) category = 'comics';
-  else if (url.includes('funko')) category = 'funko';
+/**
+ * Browse a category
+ */
+export async function browseCategory(category: PriceChartingCategory): Promise<PriceChartingItem[]> {
+  return getInstance().browseCategory(category);
+}
 
-  const item = await scrapeItem(url, category);
-  
-  // Update cache
-  if (item) {
-    const newCache = cache || { version: '1.0', lastFetched: new Date().toISOString(), ttlDays: CACHE_TTL_DAYS, items: {} };
-    newCache.items[id] = item;
-    newCache.lastFetched = new Date().toISOString();
-    saveCache(newCache);
-  }
+/**
+ * Check if scraper is available
+ */
+export async function isAvailable(): Promise<boolean> {
+  return getInstance().isAvailable();
+}
 
-  return item;
+/**
+ * Get scraper status
+ */
+export function getStatus() {
+  return getInstance().getStatus();
 }
 
 // ============================================================================
@@ -252,43 +354,65 @@ export async function getItem(url: string): Promise<PriceChartingItem | null> {
 // ============================================================================
 
 async function main() {
+  console.log('PriceCharting Scraper (BaseScraper)');
+  console.log('');
+
   const args = process.argv.slice(2);
   const command = args[0];
 
   switch (command) {
-    case 'search':
-      const query = args.slice(1).join(' ');
+    case 'search': {
+      const category = args[1] as PriceChartingCategory;
+      const query = args.slice(2).join(' ');
       if (!query) {
-        console.log('Usage: npx tsx pricecharting.ts search <query>');
+        console.log('Usage: npx tsx pricecharting.ts search <category> <query>');
+        console.log('Categories: pokemon, sports, comics, games, funko');
         return;
       }
-      console.log(`Searching for "${query}"...`);
-      const results = await search(query);
+      console.log(`Searching ${category} for "${query}"...`);
+      const results = await searchCategory(category, query);
       console.log(`Found ${results.length} results:`);
-      results.slice(0, 10).forEach(r => {
-        console.log(`  [${r.category}] ${r.name}: $${r.prices.ungraded || 'N/A'}`);
+      results.slice(0, 10).forEach((item) => {
+        console.log(`  ${item.name}`);
+        if (item.prices.ungraded) {
+          console.log(`    Price: $${item.prices.ungraded}`);
+        }
       });
       break;
+    }
 
-    case 'get':
-      const url = args[1];
-      if (!url) {
-        console.log('Usage: npx tsx pricecharting.ts get <url>');
+    case 'browse': {
+      const category = args[1] as PriceChartingCategory;
+      if (!category || !CATEGORY_URLS[category]) {
+        console.log('Usage: npx tsx pricecharting.ts browse <category>');
+        console.log('Categories: pokemon, sports, comics, games, funko');
         return;
       }
-      const item = await getItem(url);
-      if (item) {
-        console.log('Item:', item.name);
-        console.log('Category:', item.category);
-        console.log('Prices:', JSON.stringify(item.prices, null, 2));
-      }
+      console.log(`Browsing ${category}...`);
+      const items = await browseCategory(category);
+      console.log(`Found ${items.length} items:`);
+      items.slice(0, 10).forEach((item) => {
+        console.log(`  ${item.name}`);
+      });
       break;
+    }
 
-    default:
-      console.log('PriceCharting Scraper');
+    case 'status':
+    default: {
+      const status = getStatus();
+      const available = await isAvailable();
+      console.log('Scraper Status:');
+      console.log(`  Name: ${status.name}`);
+      console.log(`  Base URL: ${status.baseUrl}`);
+      console.log(`  Uses Browser: ${status.useBrowser}`);
+      console.log(`  Available: ${available}`);
+      console.log('');
       console.log('Commands:');
-      console.log('  search <query>  - Search for items');
-      console.log('  get <url>       - Get item details');
+      console.log('  search <category> <query>  - Search for items');
+      console.log('  browse <category>          - Browse a category');
+      console.log('  status                     - Show scraper status');
+      break;
+    }
   }
 }
 

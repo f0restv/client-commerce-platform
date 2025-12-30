@@ -3,7 +3,12 @@
     "allow": [
       "Bash(mkdir:*)",
       "Bash(npx tsc:*)",
-      "Bash(npm install playwright)"
+      "Bash(npm install playwright)",
+      "Bash(cat:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run test:*)",
+      "Bash(npm run type-check:*)",
+      "Bash(npm run build:*)"
     ]
   }
 }

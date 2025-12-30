@@ -144,8 +144,8 @@ function calculateEstimate(
  * Returns identification, grade estimate, and market pricing.
  */
 export async function POST(request: NextRequest) {
-  // Validate API key
-  const validation = validateRequest(request.headers);
+  // Validate API key with rate limiting
+  const validation = await validateRequest(request.headers, { scope: 'analyze' });
   if (!validation.valid) {
     return validation.error;
   }

@@ -13,7 +13,7 @@ Execute existing scraper scripts to collect 500+ labeled coin images.
    npx tsx scripts/scrape-ebay-trueview.ts
 
 3. If they don't exist, CREATE them:
-   - Reddit scraper: fetch r/coins posts with "guess the grade", extract images + revealed grades
+   - Reddit scraper: fetch r/coins posts with "guess the grade", extract images + revealed grades. When implementing this scraper, use Reddit's official API where possible, respect documented API rate limits, and ensure full compliance with Reddit's terms of service and robots.txt; avoid aggressive scraping or downloading more data than is necessary for this task.
    - eBay scraper: search PCGS/NGC slabbed coins, download TrueView images
 
 4. Output to:

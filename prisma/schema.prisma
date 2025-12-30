@@ -31,6 +31,7 @@ model User {
   clientId      String? // Link to business (for CLIENT role)
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
+  deletedAt     DateTime? // Soft delete - null means active
 
   // Notification preferences stored as JSON
   // See NotificationPreferences type in src/lib/services/notifications/types.ts
@@ -151,8 +152,9 @@ model Client {
   totalSold     Int     @default(0)
   totalEarnings Decimal @default(0) @db.Decimal(12, 2)
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime? // Soft delete - null means active
 
   // Relations
   users        User[] // Staff/owners who can access portal
@@ -358,8 +360,9 @@ model Product {
   featured Boolean @default(false)
   views    Int     @default(0)
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime? // Soft delete - null means active
 
   // Relations
   client           Client?           @relation(fields: [clientId], references: [id])
@@ -518,8 +521,9 @@ model Submission {
   trackingNumber String?
   receivedAt     DateTime?
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime? // Soft delete - null means active
 
   user     User              @relation(fields: [userId], references: [id])
   images   SubmissionImage[]
@@ -579,8 +583,9 @@ model Order {
 
   notes String? @db.Text
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime? // Soft delete - null means active
 
   user    User          @relation(fields: [userId], references: [id])
   address Address?      @relation(fields: [addressId], references: [id])

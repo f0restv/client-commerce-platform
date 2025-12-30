@@ -476,13 +476,10 @@ export async function checkProviders(): Promise<Record<string, ProviderStatus>> 
   };
 
   // PSA Cards (free public data, but may be blocked by Cloudflare)
-  const psaCache = PSACards.getCachedCards();
   status['PSACards'] = {
     name: 'PSA Cards',
     available: true,
     lastCheck: new Date().toISOString(),
-    itemCount: psaCache?.cards ? Object.keys(psaCache.cards).length : 0,
-    lastRefresh: psaCache?.lastFetched,
   };
 
   saveStatus(status);

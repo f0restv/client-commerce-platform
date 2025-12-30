@@ -7,7 +7,7 @@ Enable Pro subscription tier with Stripe.
 1. Review existing Stripe setup in src/lib/stripe/
 2. Create subscription products in Stripe dashboard (or via API):
    - Free tier: 5 scans/month
-   - Pro tier: $9.99/month, unlimited scans, aggregated pricing
+   - Pro tier: $9.99/month, unlimited scans, display aggregate pricing data
 3. Build /pricing page showing tiers
 4. Build /api/stripe/create-checkout endpoint
 5. Build /api/stripe/webhook to handle subscription events

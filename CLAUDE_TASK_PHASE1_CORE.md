@@ -1,10 +1,10 @@
 # Task: Build Phase 1 Core Loop
 
 ## Objective
-Create unified /api/v1/scan endpoint that powers: Scan → ID → Grade → Price → List
+Create unified /api/v1/analyze endpoint that powers: Scan → ID → Grade → Price → List
 
 ## Steps
-1. Create /api/v1/scan endpoint that:
+1. Create /api/v1/analyze endpoint that:
    - Accepts image upload (base64 or multipart)
    - Identifies coin type (Morgan, Peace, etc.)
    - Estimates grade using grading-criteria.ts

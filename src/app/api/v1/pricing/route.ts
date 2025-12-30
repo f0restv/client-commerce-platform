@@ -14,8 +14,8 @@ import type { CollectibleCategory } from '@/lib/services/market-data';
  * - limit: Max results (default: 10)
  */
 export async function GET(request: NextRequest) {
-  // Validate API key
-  const validation = validateRequest(request.headers);
+  // Validate API key with rate limiting
+  const validation = await validateRequest(request.headers, { scope: 'pricing' });
   if (!validation.valid) {
     return validation.error;
   }
@@ -80,8 +80,8 @@ export async function GET(request: NextRequest) {
  * Get market pricing for a specific item by ID.
  */
 export async function POST(request: NextRequest) {
-  // Validate API key
-  const validation = validateRequest(request.headers);
+  // Validate API key with rate limiting
+  const validation = await validateRequest(request.headers, { scope: 'pricing' });
   if (!validation.valid) {
     return validation.error;
   }
