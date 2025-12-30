@@ -28,7 +28,10 @@
       "Bash(vercel domains ls:*)",
       "Bash(vercel inspect:*)",
       "Bash(vercel project:*)",
-      "WebFetch(domain:collektiq.com)"
+      "WebFetch(domain:collektiq.com)",
+      "Bash(npx prisma db seed:*)",
+      "Bash(npx tsx:*)",
+      "Bash(source .env.local)"
     ]
   }
 }
