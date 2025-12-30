@@ -7,6 +7,7 @@ interface CoinIdentification {
   possibleIdentification?: string;
   confidence?: number;
   suggestedCategory?: string;
+  additionalNotes?: string;
 }
 
 export async function POST(request: NextRequest) {
@@ -17,13 +18,21 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { images, title, description, category, year, mint, grade, certification } = body;
+    const { images, image, title, description, category, year, mint, grade, certification } = body;
 
-    // Step 1: If we have images but no title, try to identify the coin
+    // Step 1: If we have images but no title, identify the coin using AI vision
     let identification: CoinIdentification | null = null;
-    if (images?.length > 0 && !title) {
-      // In production, convert image URL to base64
-      // For now, skip image identification
+    const imageData = image || images?.[0];
+
+    if (imageData && !title) {
+      // Extract base64 from data URL if needed
+      let base64Data = imageData;
+      if (imageData.startsWith("data:")) {
+        base64Data = imageData.split(",")[1];
+      }
+
+      // Call Claude vision to identify the item
+      identification = await identifyCoin(base64Data);
     }
 
     // Step 2: Search for comparables
