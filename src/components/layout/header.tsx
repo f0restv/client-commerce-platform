@@ -263,7 +263,7 @@ function DropdownMenuTrigger({
   asChild?: boolean;
 }) {
   const [isOpen, setIsOpen] = useState(false);
-  return React.cloneElement(children as React.ReactElement, {
+  return React.cloneElement(children as React.ReactElement<{ onClick?: () => void }>, {
     onClick: () => setIsOpen(!isOpen),
   });
 }
@@ -306,10 +306,11 @@ function DropdownMenuItem({
   asChild?: boolean;
 }) {
   if (asChild) {
-    return React.cloneElement(children as React.ReactElement, {
+    const child = children as React.ReactElement<{ className?: string }>;
+    return React.cloneElement(child, {
       className: cn(
         "block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100",
-        (children as React.ReactElement).props.className
+        child.props.className
       ),
     });
   }

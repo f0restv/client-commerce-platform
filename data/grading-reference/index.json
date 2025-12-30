@@ -1,0 +1,53 @@
+{
+  "updatedAt": "2025-12-30T04:21:32.339Z",
+  "sources": [
+    "heritage",
+    "ebay"
+  ],
+  "totalSeries": 7,
+  "totalImages": 115,
+  "series": [
+    {
+      "name": "buffalo-nickel",
+      "displayName": "Buffalo Nickel",
+      "gradeCount": 0,
+      "imageCount": 0
+    },
+    {
+      "name": "lincoln-wheat-cent",
+      "displayName": "Lincoln Wheat Cent",
+      "gradeCount": 0,
+      "imageCount": 0
+    },
+    {
+      "name": "mercury-dime",
+      "displayName": "Mercury Dime",
+      "gradeCount": 0,
+      "imageCount": 0
+    },
+    {
+      "name": "morgan-dollar",
+      "displayName": "Morgan Dollar",
+      "gradeCount": 8,
+      "imageCount": 40
+    },
+    {
+      "name": "peace-dollar",
+      "displayName": "Peace Dollar",
+      "gradeCount": 8,
+      "imageCount": 40
+    },
+    {
+      "name": "saint-gaudens-double-eagle",
+      "displayName": "Saint-Gaudens Double Eagle",
+      "gradeCount": 0,
+      "imageCount": 0
+    },
+    {
+      "name": "walking-liberty-half",
+      "displayName": "Walking Liberty Half Dollar",
+      "gradeCount": 7,
+      "imageCount": 35
+    }
+  ]
+}

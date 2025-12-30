@@ -51,7 +51,7 @@ export class EbayParser implements Parser {
       '.b-list__items_nofooter .s-item',
     ];
 
-    let listings: cheerio.Cheerio<cheerio.Element> | null = null;
+    let listings: cheerio.Cheerio<any> | null = null;
 
     for (const selector of listingSelectors) {
       const found = $(selector);

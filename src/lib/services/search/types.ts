@@ -23,6 +23,8 @@ export interface SearchResult {
   total: number;
   page: number;
   pageSize: number;
+  perPage: number; // Alias for pageSize
+  totalPages: number;
   facets: SearchFacets;
 }
 

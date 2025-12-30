@@ -51,6 +51,13 @@ export interface ScraperConfig {
   includeOutOfStock?: boolean;
   minPrice?: number;
   maxPrice?: number;
+
+  // Scraping method
+  useFirecrawl?: boolean;
+
+  // Path filtering (for Firecrawl crawl)
+  includePaths?: string[];
+  excludePaths?: string[];
 }
 
 /**
@@ -179,6 +186,7 @@ export interface ScrapeJobOptions {
   maxPages?: number;
   fullRescrape?: boolean;
   dryRun?: boolean;
+  forcePlaywright?: boolean;
 }
 
 /**
@@ -203,7 +211,7 @@ export interface ItemComparison {
     id: string;
     sku: string;
     title: string;
-    price: number | null;
+    price: unknown; // Prisma Decimal or null
     status: string;
     sourceUrl: string | null;
   } | null;

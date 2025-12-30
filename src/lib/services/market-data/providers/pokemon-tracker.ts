@@ -367,13 +367,13 @@ async function main() {
       if (card) {
         console.log('Card:', card.name);
         console.log('Set:', card.setName);
-        if (card.prices.tcgplayer) {
+        if (card.prices?.tcgplayer) {
           console.log('TCGPlayer Prices:');
           console.log(`  Market: $${card.prices.tcgplayer.market}`);
           console.log(`  Low: $${card.prices.tcgplayer.low}`);
           console.log(`  High: $${card.prices.tcgplayer.high}`);
         }
-        if (card.prices.psa) {
+        if (card.prices?.psa) {
           console.log('PSA Graded:');
           Object.entries(card.prices.psa).forEach(([grade, price]) => {
             console.log(`  PSA ${grade}: $${price}`);

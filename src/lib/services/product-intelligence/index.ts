@@ -1,6 +1,6 @@
 export * from './types';
 export { identify } from './identify';
-export { estimateGrade } from './grade';
+export { estimateGrade, estimateGradeWithTwoPass, type GradeOptions } from './grade';
 export {
   scrapeEbayComps,
   getEbayStats,
@@ -10,6 +10,31 @@ export {
   fetchMarketData,
 } from './market-data';
 export { evaluate, quickEvaluate } from './evaluate';
+export {
+  generateGradingPrompt,
+  generateQuickGradingPrompt,
+  generateAdaptiveGradingPrompt,
+  getGradingCriteria,
+  detectCoinType,
+  PROBLEM_DETECTION_CRITERIA,
+  REFERENCE_IMAGE_SOURCES,
+  type CoinType,
+  type CoinGradingCriteria,
+  type WearPoint,
+  type GradeDistinction,
+  type ProblemIndicator,
+  type ReferenceImageSource,
+} from './grading-criteria';
+export {
+  hasReferenceImages,
+  loadReferenceImages,
+  selectComparisonImages,
+  getAvailableSeries,
+  getReferenceImageStats,
+  type ReferenceImage,
+  type ReferenceImageSet,
+  type SeriesReferenceData,
+} from './reference-images';
 
 import type {
   AnalysisResult,
@@ -35,13 +60,13 @@ export async function analyze(
   let identification: IdentificationResult;
   let grade: GradeEstimate;
 
-  const [identResult, gradeResult] = await Promise.all([
-    identify(images),
-    identify(images).then((id) => estimateGrade(images, id.category)),
-  ]);
+  // First identify the item
+  identification = await identify(images);
 
-  identification = identResult;
-  grade = gradeResult;
+  // Then grade with coin-specific criteria if applicable
+  grade = await estimateGrade(images, identification.category, {
+    coinIdentification: identification.category === 'coin' ? identification.name : undefined,
+  });
 
   let marketData: MarketData;
 

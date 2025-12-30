@@ -224,7 +224,7 @@ export class ClientScraper {
 
     // Look for price patterns in content
     const priceMatch = page.content.match(/\$[\d,]+\.?\d*/);
-    const price = priceMatch ? parseFloat(priceMatch[0].replace(/[$,]/g, '')) : undefined;
+    const price = priceMatch ? parseFloat(priceMatch[0].replace(/[$,]/g, '')) : null;
 
     // Extract images from metadata or content
     const images: string[] = [];
@@ -239,8 +239,9 @@ export class ClientScraper {
       description: page.content.substring(0, 500),
       price,
       images,
-      inStock: true,
+      quantity: 1,
       attributes: {},
+      scrapedAt: new Date(),
     };
   }
 
@@ -674,7 +675,7 @@ export async function runScrapeJob(
       data: {
         status: result.status,
         itemsFound: result.itemsFound,
-        errors: result.errors.length > 0 ? result.errors : undefined,
+        errors: result.errors.length > 0 ? JSON.parse(JSON.stringify(result.errors)) : undefined,
         duration: result.duration,
         completedAt: result.completedAt,
       },

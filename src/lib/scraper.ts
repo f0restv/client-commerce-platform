@@ -219,7 +219,7 @@ export async function createScrapingJob(
     data: {
       source: sourceUrl,
       status: "PENDING",
-      config: config || {},
+      config: config ? JSON.parse(JSON.stringify(config)) : undefined,
     },
   });
 

@@ -66,8 +66,8 @@ export async function addLotToAuction(
   const lot: AuctionFlexLot = {
     title: product.title,
     description: product.description,
-    starting_bid: product.auction?.startPrice
-      ? Number(product.auction.startPrice)
+    starting_bid: product.auction?.startingPrice
+      ? Number(product.auction.startingPrice)
       : Number(product.price) || 1,
     reserve_price: product.auction?.reservePrice
       ? Number(product.auction.reservePrice)

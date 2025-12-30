@@ -10,11 +10,15 @@ export const analyzeSubmission = inngest.createFunction(
   { id: "analyze-submission", name: "Analyze Submission" },
   { event: "submission/created" },
   async ({ event, step }) => {
-    const { submissionId, clientId, imageUrls } = event.data;
+    const { submissionId, imageUrls } = event.data as {
+      submissionId: string;
+      clientId: string;
+      imageUrls: string[];
+    };
 
     const analysis = await step.run("run-analysis", async () => {
       return analyze(
-        imageUrls.map((url) => ({ type: "url" as const, url })),
+        imageUrls.map((url: string) => ({ type: "url" as const, url })),
         { skipMarketData: false }
       );
     });
@@ -23,10 +27,9 @@ export const analyzeSubmission = inngest.createFunction(
       await prisma.submission.update({
         where: { id: submissionId },
         data: {
-          status: "ANALYZED",
-          analysisResult: analysis as any,
-          suggestedPrice: analysis.marketData?.ebayStats?.avgPrice,
-          confidence: analysis.grade?.confidence,
+          status: "UNDER_REVIEW",
+          aiAnalysis: analysis as object,
+          suggestedPrice: analysis.marketData?.ebayStats?.soldAverage,
         },
       });
     });
@@ -37,8 +40,8 @@ export const analyzeSubmission = inngest.createFunction(
         await prisma.submission.update({
           where: { id: submissionId },
           data: {
-            status: action === "accept" ? "AUTO_ACCEPTED" : 
-                   action === "decline" ? "AUTO_DECLINED" : "PENDING_REVIEW",
+            status: action === "accept" ? "APPROVED" :
+                   action === "decline" ? "REJECTED" : "UNDER_REVIEW",
           },
         });
       });
@@ -55,20 +58,23 @@ export const listToChannels = inngest.createFunction(
   { id: "list-to-channels", name: "List to Sales Channels" },
   { event: "product/accepted" },
   async ({ event, step }) => {
-    const { productId, clientId, channels } = event.data;
-
-    const product = await step.run("get-product", async () => {
-      return prisma.product.findUniqueOrThrow({
-        where: { id: productId },
-        include: { client: true, images: true },
-      });
-    });
+    const { productId, channels } = event.data as {
+      productId: string;
+      clientId: string;
+      channels: string[];
+    };
 
     const results: Record<string, { success: boolean; listingId?: string; error?: string }> = {};
 
     for (const channel of channels) {
       results[channel] = await step.run(`list-to-${channel}`, async () => {
         try {
+          // Fetch product fresh inside step to get proper types
+          const product = await prisma.product.findUniqueOrThrow({
+            where: { id: productId },
+            include: { client: true, images: true },
+          });
+
           let listingId: string;
           if (channel === "ebay") {
             const result = await listToEbay(product);
@@ -91,10 +97,6 @@ export const listToChannels = inngest.createFunction(
         where: { id: productId },
         data: {
           status: "ACTIVE",
-          ebayListingId: results.ebay?.listingId,
-          etsyListingId: results.etsy?.listingId,
-          shopifyProductId: results.shopify?.listingId,
-          listedAt: new Date(),
         },
       });
     });
@@ -110,7 +112,12 @@ export const processPayouts = inngest.createFunction(
   { id: "process-payouts", name: "Process Payouts" },
   { event: "product/sold" },
   async ({ event, step }) => {
-    const { productId, clientId, soldPrice, platform } = event.data;
+    const { productId, clientId, soldPrice, platform } = event.data as {
+      productId: string;
+      clientId: string;
+      soldPrice: number;
+      platform: string;
+    };
 
     const product = await step.run("get-product", async () => {
       return prisma.product.findUniqueOrThrow({
@@ -127,20 +134,18 @@ export const processPayouts = inngest.createFunction(
       };
       const fee = platformFees[platform] || 0.10;
       const platformCost = soldPrice * fee;
-      const netProfit = soldPrice - product.clientPayout - platformCost;
-      return { soldPrice, clientPayout: product.clientPayout, platformFee: platformCost, netProfit };
+      const consignmentRate = Number(product.consignmentRate || 15);
+      const clientPayout = soldPrice * (1 - consignmentRate / 100) - platformCost;
+      const netProfit = soldPrice - clientPayout - platformCost;
+      return { soldPrice, clientPayout, platformFee: platformCost, netProfit };
     });
 
     await step.run("create-payout", async () => {
-      await prisma.payout.create({
+      await prisma.stripePayout.create({
         data: {
           clientId,
-          productId,
-          amount: product.clientPayout,
+          amount: payout.clientPayout,
           status: "PENDING",
-          soldPrice,
-          platformFee: payout.platformFee,
-          netProfit: payout.netProfit,
         },
       });
     });
@@ -148,7 +153,7 @@ export const processPayouts = inngest.createFunction(
     await step.run("update-product", async () => {
       await prisma.product.update({
         where: { id: productId },
-        data: { status: "SOLD", soldAt: new Date(), soldPrice, soldPlatform: platform },
+        data: { status: "SOLD" },
       });
     });
 

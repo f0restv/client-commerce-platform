@@ -48,12 +48,12 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
 
   try {
     const body = await request.json();
-    const { name, description, visibility } = body;
+    const { name, description, isPublic } = body;
 
     const collection = await updateCollection(id, session.user.id, {
       name: name?.trim(),
       description: description?.trim(),
-      visibility,
+      isPublic,
     });
 
     return NextResponse.json({ collection });

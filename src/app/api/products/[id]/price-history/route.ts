@@ -38,13 +38,13 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     const history = await prisma.priceHistory.findMany({
       where: {
         productId,
-        recordedAt: { gte: startDate },
+        createdAt: { gte: startDate },
       },
-      orderBy: { recordedAt: "asc" },
+      orderBy: { createdAt: "asc" },
       select: {
         price: true,
-        source: true,
-        recordedAt: true,
+        reason: true,
+        createdAt: true,
       },
     });
 
@@ -60,9 +60,9 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
 
     // Format for chart
     const formattedHistory = history.map((h) => ({
-      date: h.recordedAt.toISOString(),
+      date: h.createdAt.toISOString(),
       price: h.price,
-      source: h.source,
+      source: h.reason || "manual",
     }));
 
     // If we have history, add current price as latest point if different
@@ -80,9 +80,9 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     // Calculate stats
     let stats = null;
     if (formattedHistory.length > 0) {
-      const prices = formattedHistory.map((h) => h.price);
+      const prices = formattedHistory.map((h) => Number(h.price));
       const firstPrice = prices[0];
-      const currentPrice = product.price || prices[prices.length - 1];
+      const currentPrice = product.price ? Number(product.price) : prices[prices.length - 1];
       const change = currentPrice - firstPrice;
       const changePercent = firstPrice > 0 ? (change / firstPrice) * 100 : 0;
 

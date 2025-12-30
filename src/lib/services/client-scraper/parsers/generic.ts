@@ -155,7 +155,7 @@ export class GenericParser implements Parser {
   /**
    * Try to automatically detect product listings on the page
    */
-  private autoDetectProducts($: cheerio.CheerioAPI): cheerio.Cheerio<cheerio.Element> {
+  private autoDetectProducts($: cheerio.CheerioAPI): cheerio.Cheerio<any> {
     const commonSelectors = [
       // E-commerce patterns
       '.product',
@@ -191,7 +191,7 @@ export class GenericParser implements Parser {
   }
 
   private parseAutoDetectedProducts(
-    products: cheerio.Cheerio<cheerio.Element>,
+    products: cheerio.Cheerio<any>,
     $: cheerio.CheerioAPI,
     baseUrl: string
   ): PageScrapeResult {
@@ -240,7 +240,7 @@ export class GenericParser implements Parser {
   }
 
   private parseListItem(
-    $item: cheerio.Cheerio<cheerio.Element>,
+    $item: cheerio.Cheerio<any>,
     $: cheerio.CheerioAPI,
     baseUrl: string
   ): ScrapedItem | null {

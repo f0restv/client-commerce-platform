@@ -63,21 +63,14 @@ export async function scrapeWithFirecrawl(
   try {
     const client = getFirecrawlClient();
 
-    const response = await client.scrapeUrl(url, {
+    const response = await client.scrape(url, {
       formats: options.formats || ['markdown', 'links'],
       onlyMainContent: options.onlyMainContent ?? true,
       waitFor: options.waitFor,
       timeout: options.timeout || 30000,
     });
 
-    if (!response.success) {
-      return {
-        success: false,
-        url,
-        error: response.error || 'Scrape failed',
-      };
-    }
-
+    // The newer SDK returns the document directly or throws on error
     return {
       success: true,
       url,
@@ -114,6 +107,7 @@ export interface FirecrawlCrawlResult {
 
 /**
  * Crawl an entire site with Firecrawl
+ * Note: Firecrawl SDK API has changed. This uses the crawlUrl method with polling.
  */
 export async function crawlClientSite(
   baseUrl: string,
@@ -122,7 +116,14 @@ export async function crawlClientSite(
   try {
     const client = getFirecrawlClient();
 
-    const response = await client.crawlUrl(baseUrl, {
+    // Use the crawl method which handles async internally in newer versions
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const crawlMethod = (client as any).crawl || (client as any).crawlUrl || (client as any).asyncCrawlUrl;
+    if (!crawlMethod) {
+      throw new Error('Firecrawl SDK version not supported - no crawl method found');
+    }
+
+    const response = await crawlMethod.call(client, baseUrl, {
       maxDepth: options.maxDepth ?? 2,
       limit: options.limit ?? 50,
       includePaths: options.includePaths,
@@ -132,18 +133,11 @@ export async function crawlClientSite(
       allowBackwardLinks: options.allowBackwardLinks ?? false,
     });
 
-    if (!response.success) {
-      return {
-        success: false,
-        pages: [],
-        totalCrawled: 0,
-        error: response.error || 'Crawl failed',
-      };
-    }
-
-    const pages: FirecrawlScrapeResult[] = (response.data || []).map((page: any) => ({
+    // Handle different response formats from different SDK versions
+    const data = response.data || response.documents || response || [];
+    const pages: FirecrawlScrapeResult[] = (Array.isArray(data) ? data : []).map((page: { url?: string; sourceURL?: string; metadata?: { title?: string }; markdown?: string; html?: string; links?: string[] }) => ({
       success: true,
-      url: page.url || page.sourceURL,
+      url: page.url || page.sourceURL || '',
       title: page.metadata?.title,
       content: page.markdown,
       html: page.html,

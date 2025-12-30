@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastFetched": "2025-12-29T08:42:06.856Z",
+  "lastFetched": "2025-12-29T22:44:29.743Z",
   "ttlHours": 24,
   "items": {
     "7437": {
@@ -425,6 +425,5222 @@
           "cac": true,
           "cpg_retail": 90,
           "greysheet_wholesale": 65.64,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        }
+      ],
+      "recent_auctions": []
+    },
+    "7456": {
+      "source": "greysheet.com",
+      "gsid": 7456,
+      "item": "1879-S $1  MS",
+      "category": "Morgan silver dollar",
+      "mintage": 9110000,
+      "scraped_at": "2025-12-29T22:43:46.209Z",
+      "url": "https://www.greysheet.com/prices/item/1879-s-morgan-silver-dollar-coin-values/gsid/7456",
+      "prices": [
+        {
+          "grade": "MS68",
+          "cac": false,
+          "cpg_retail": 5250,
+          "greysheet_wholesale": 4200,
+          "bluesheet_pcgs": 4200,
+          "bluesheet_ngc": 3600
+        },
+        {
+          "grade": "MS68",
+          "cac": true,
+          "cpg_retail": 6500,
+          "greysheet_wholesale": 5200,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS67",
+          "cac": false,
+          "cpg_retail": 1100,
+          "greysheet_wholesale": 840,
+          "bluesheet_pcgs": 840,
+          "bluesheet_ngc": 800
+        },
+        {
+          "grade": "MS67",
+          "cac": true,
+          "cpg_retail": 1250,
+          "greysheet_wholesale": 1000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS66",
+          "cac": false,
+          "cpg_retail": 345,
+          "greysheet_wholesale": 265,
+          "bluesheet_pcgs": 265,
+          "bluesheet_ngc": 265
+        },
+        {
+          "grade": "MS66",
+          "cac": true,
+          "cpg_retail": 490,
+          "greysheet_wholesale": 375,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS65",
+          "cac": false,
+          "cpg_retail": 185,
+          "greysheet_wholesale": 144,
+          "bluesheet_pcgs": 144,
+          "bluesheet_ngc": 144
+        },
+        {
+          "grade": "MS65",
+          "cac": true,
+          "cpg_retail": 290,
+          "greysheet_wholesale": 225,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS64",
+          "cac": false,
+          "cpg_retail": 110,
+          "greysheet_wholesale": 83.08,
+          "bluesheet_pcgs": 82.58,
+          "bluesheet_ngc": 82.58
+        },
+        {
+          "grade": "MS64",
+          "cac": true,
+          "cpg_retail": 150,
+          "greysheet_wholesale": 115,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS63",
+          "cac": false,
+          "cpg_retail": 100,
+          "greysheet_wholesale": 75.08,
+          "bluesheet_pcgs": 74.58,
+          "bluesheet_ngc": 74.58
+        },
+        {
+          "grade": "MS63",
+          "cac": true,
+          "cpg_retail": 110,
+          "greysheet_wholesale": 80.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS62",
+          "cac": false,
+          "cpg_retail": 100,
+          "greysheet_wholesale": 73.08,
+          "bluesheet_pcgs": 72.58,
+          "bluesheet_ngc": 72.58
+        },
+        {
+          "grade": "MS62",
+          "cac": true,
+          "cpg_retail": 105,
+          "greysheet_wholesale": 78.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS61",
+          "cac": false,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 72.08,
+          "bluesheet_pcgs": 71.58,
+          "bluesheet_ngc": 71.58
+        },
+        {
+          "grade": "MS61",
+          "cac": true,
+          "cpg_retail": 105,
+          "greysheet_wholesale": 76.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS60",
+          "cac": false,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 71.08,
+          "bluesheet_pcgs": 70.58,
+          "bluesheet_ngc": 70.58
+        },
+        {
+          "grade": "MS60",
+          "cac": true,
+          "cpg_retail": 100,
+          "greysheet_wholesale": 74.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": false,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 69.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 72.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": false,
+          "cpg_retail": 90,
+          "greysheet_wholesale": 67.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 70.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": false,
+          "cpg_retail": 90,
+          "greysheet_wholesale": 66.33,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 69.33,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": false,
+          "cpg_retail": 90,
+          "greysheet_wholesale": 66.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 69.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 61.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": true,
+          "cpg_retail": 85,
+          "greysheet_wholesale": 63.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": true,
+          "cpg_retail": 85,
+          "greysheet_wholesale": 62.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 59.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 59.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 56.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 56.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 55.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": true,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 55.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": true,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 54.83,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": true,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 56.83,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        }
+      ],
+      "recent_auctions": []
+    },
+    "7476": {
+      "source": "greysheet.com",
+      "gsid": 7476,
+      "item": "1880-S $1  MS",
+      "category": "Morgan silver dollar",
+      "mintage": 8900000,
+      "scraped_at": "2025-12-29T22:43:48.795Z",
+      "url": "https://www.greysheet.com/prices/item/1880-s-morgan-silver-dollar-coin-values/gsid/7476",
+      "prices": [
+        {
+          "grade": "MS69",
+          "cac": false,
+          "cpg_retail": 66000,
+          "greysheet_wholesale": 55000,
+          "bluesheet_pcgs": 55000,
+          "bluesheet_ngc": 40000
+        },
+        {
+          "grade": "MS69",
+          "cac": true,
+          "cpg_retail": 96000,
+          "greysheet_wholesale": 80000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS68",
+          "cac": false,
+          "cpg_retail": 5000,
+          "greysheet_wholesale": 4000,
+          "bluesheet_pcgs": 4000,
+          "bluesheet_ngc": 3300
+        },
+        {
+          "grade": "MS68",
+          "cac": true,
+          "cpg_retail": 6250,
+          "greysheet_wholesale": 5000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS67",
+          "cac": false,
+          "cpg_retail": 900,
+          "greysheet_wholesale": 700,
+          "bluesheet_pcgs": 700,
+          "bluesheet_ngc": 700
+        },
+        {
+          "grade": "MS67",
+          "cac": true,
+          "cpg_retail": 1200,
+          "greysheet_wholesale": 950,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS66",
+          "cac": false,
+          "cpg_retail": 345,
+          "greysheet_wholesale": 265,
+          "bluesheet_pcgs": 265,
+          "bluesheet_ngc": 265
+        },
+        {
+          "grade": "MS66",
+          "cac": true,
+          "cpg_retail": 490,
+          "greysheet_wholesale": 375,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS65",
+          "cac": false,
+          "cpg_retail": 180,
+          "greysheet_wholesale": 139,
+          "bluesheet_pcgs": 139,
+          "bluesheet_ngc": 139
+        },
+        {
+          "grade": "MS65",
+          "cac": true,
+          "cpg_retail": 285,
+          "greysheet_wholesale": 220,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS64",
+          "cac": false,
+          "cpg_retail": 105,
+          "greysheet_wholesale": 78.08,
+          "bluesheet_pcgs": 77.58,
+          "bluesheet_ngc": 77.58
+        },
+        {
+          "grade": "MS64",
+          "cac": true,
+          "cpg_retail": 145,
+          "greysheet_wholesale": 110,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS63",
+          "cac": false,
+          "cpg_retail": 100,
+          "greysheet_wholesale": 75.08,
+          "bluesheet_pcgs": 74.58,
+          "bluesheet_ngc": 74.58
+        },
+        {
+          "grade": "MS63",
+          "cac": true,
+          "cpg_retail": 110,
+          "greysheet_wholesale": 80.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS62",
+          "cac": false,
+          "cpg_retail": 100,
+          "greysheet_wholesale": 73.08,
+          "bluesheet_pcgs": 72.58,
+          "bluesheet_ngc": 72.58
+        },
+        {
+          "grade": "MS62",
+          "cac": true,
+          "cpg_retail": 105,
+          "greysheet_wholesale": 78.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS61",
+          "cac": false,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 72.08,
+          "bluesheet_pcgs": 71.58,
+          "bluesheet_ngc": 71.58
+        },
+        {
+          "grade": "MS61",
+          "cac": true,
+          "cpg_retail": 105,
+          "greysheet_wholesale": 76.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS60",
+          "cac": false,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 71.08,
+          "bluesheet_pcgs": 70.58,
+          "bluesheet_ngc": 70.58
+        },
+        {
+          "grade": "MS60",
+          "cac": true,
+          "cpg_retail": 100,
+          "greysheet_wholesale": 74.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": false,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 69.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 72.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": false,
+          "cpg_retail": 90,
+          "greysheet_wholesale": 67.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 70.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": false,
+          "cpg_retail": 90,
+          "greysheet_wholesale": 66.33,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 69.33,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": false,
+          "cpg_retail": 90,
+          "greysheet_wholesale": 66.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 69.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 61.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": true,
+          "cpg_retail": 85,
+          "greysheet_wholesale": 63.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": true,
+          "cpg_retail": 85,
+          "greysheet_wholesale": 62.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 59.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 59.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 56.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 56.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 55.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": true,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 55.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": true,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 54.83,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": true,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 56.83,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        }
+      ],
+      "recent_auctions": []
+    },
+    "7486": {
+      "source": "greysheet.com",
+      "gsid": 7486,
+      "item": "1881-S $1  MS",
+      "category": "Morgan silver dollar",
+      "mintage": 12760000,
+      "scraped_at": "2025-12-29T22:43:51.514Z",
+      "url": "https://www.greysheet.com/prices/item/1881-s-morgan-silver-dollar-coin-values/gsid/7486",
+      "prices": [
+        {
+          "grade": "MS69",
+          "cac": false,
+          "cpg_retail": 66000,
+          "greysheet_wholesale": 55000,
+          "bluesheet_pcgs": 55000,
+          "bluesheet_ngc": 40000
+        },
+        {
+          "grade": "MS69",
+          "cac": true,
+          "cpg_retail": 96000,
+          "greysheet_wholesale": 80000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS68",
+          "cac": false,
+          "cpg_retail": 5000,
+          "greysheet_wholesale": 4000,
+          "bluesheet_pcgs": 4000,
+          "bluesheet_ngc": 3300
+        },
+        {
+          "grade": "MS68",
+          "cac": true,
+          "cpg_retail": 6250,
+          "greysheet_wholesale": 5000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS67",
+          "cac": false,
+          "cpg_retail": 900,
+          "greysheet_wholesale": 700,
+          "bluesheet_pcgs": 700,
+          "bluesheet_ngc": 700
+        },
+        {
+          "grade": "MS67",
+          "cac": true,
+          "cpg_retail": 1200,
+          "greysheet_wholesale": 950,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS66",
+          "cac": false,
+          "cpg_retail": 345,
+          "greysheet_wholesale": 265,
+          "bluesheet_pcgs": 265,
+          "bluesheet_ngc": 265
+        },
+        {
+          "grade": "MS66",
+          "cac": true,
+          "cpg_retail": 490,
+          "greysheet_wholesale": 375,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS65",
+          "cac": false,
+          "cpg_retail": 180,
+          "greysheet_wholesale": 139,
+          "bluesheet_pcgs": 139,
+          "bluesheet_ngc": 139
+        },
+        {
+          "grade": "MS65",
+          "cac": true,
+          "cpg_retail": 285,
+          "greysheet_wholesale": 220,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS64",
+          "cac": false,
+          "cpg_retail": 105,
+          "greysheet_wholesale": 78.08,
+          "bluesheet_pcgs": 77.58,
+          "bluesheet_ngc": 77.58
+        },
+        {
+          "grade": "MS64",
+          "cac": true,
+          "cpg_retail": 145,
+          "greysheet_wholesale": 110,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS63",
+          "cac": false,
+          "cpg_retail": 100,
+          "greysheet_wholesale": 75.08,
+          "bluesheet_pcgs": 74.58,
+          "bluesheet_ngc": 74.58
+        },
+        {
+          "grade": "MS63",
+          "cac": true,
+          "cpg_retail": 110,
+          "greysheet_wholesale": 80.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS62",
+          "cac": false,
+          "cpg_retail": 100,
+          "greysheet_wholesale": 73.08,
+          "bluesheet_pcgs": 72.58,
+          "bluesheet_ngc": 72.58
+        },
+        {
+          "grade": "MS62",
+          "cac": true,
+          "cpg_retail": 105,
+          "greysheet_wholesale": 78.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS61",
+          "cac": false,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 72.08,
+          "bluesheet_pcgs": 71.58,
+          "bluesheet_ngc": 71.58
+        },
+        {
+          "grade": "MS61",
+          "cac": true,
+          "cpg_retail": 105,
+          "greysheet_wholesale": 76.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS60",
+          "cac": false,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 71.08,
+          "bluesheet_pcgs": 70.58,
+          "bluesheet_ngc": 70.58
+        },
+        {
+          "grade": "MS60",
+          "cac": true,
+          "cpg_retail": 100,
+          "greysheet_wholesale": 74.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": false,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 69.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 72.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": false,
+          "cpg_retail": 90,
+          "greysheet_wholesale": 67.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 70.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": false,
+          "cpg_retail": 90,
+          "greysheet_wholesale": 66.33,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 69.33,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": false,
+          "cpg_retail": 90,
+          "greysheet_wholesale": 66.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 69.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 61.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": true,
+          "cpg_retail": 85,
+          "greysheet_wholesale": 63.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": true,
+          "cpg_retail": 85,
+          "greysheet_wholesale": 62.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 59.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 59.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 56.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 56.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 55.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": true,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 55.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": true,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 54.83,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": true,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 56.83,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        }
+      ],
+      "recent_auctions": []
+    },
+    "7496": {
+      "source": "greysheet.com",
+      "gsid": 7496,
+      "item": "1886 $1  MS",
+      "category": "Morgan silver dollar",
+      "mintage": 19963000,
+      "scraped_at": "2025-12-29T22:44:13.318Z",
+      "url": "https://www.greysheet.com/prices/item/1886-morgan-silver-dollar-coin-values/gsid/7496",
+      "prices": [
+        {
+          "grade": "MS68",
+          "cac": false,
+          "cpg_retail": 13000,
+          "greysheet_wholesale": 10800,
+          "bluesheet_pcgs": 10800,
+          "bluesheet_ngc": 5400
+        },
+        {
+          "grade": "MS68",
+          "cac": true,
+          "cpg_retail": 16000,
+          "greysheet_wholesale": 13500,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS67",
+          "cac": false,
+          "cpg_retail": 1200,
+          "greysheet_wholesale": 930,
+          "bluesheet_pcgs": 930,
+          "bluesheet_ngc": 900
+        },
+        {
+          "grade": "MS67",
+          "cac": true,
+          "cpg_retail": 1900,
+          "greysheet_wholesale": 1500,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS66",
+          "cac": false,
+          "cpg_retail": 395,
+          "greysheet_wholesale": 305,
+          "bluesheet_pcgs": 290,
+          "bluesheet_ngc": 265
+        },
+        {
+          "grade": "MS66",
+          "cac": true,
+          "cpg_retail": 525,
+          "greysheet_wholesale": 410,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS65",
+          "cac": false,
+          "cpg_retail": 180,
+          "greysheet_wholesale": 139,
+          "bluesheet_pcgs": 139,
+          "bluesheet_ngc": 139
+        },
+        {
+          "grade": "MS65",
+          "cac": true,
+          "cpg_retail": 285,
+          "greysheet_wholesale": 220,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS64",
+          "cac": false,
+          "cpg_retail": 110,
+          "greysheet_wholesale": 83.08,
+          "bluesheet_pcgs": 82.58,
+          "bluesheet_ngc": 82.58
+        },
+        {
+          "grade": "MS64",
+          "cac": true,
+          "cpg_retail": 150,
+          "greysheet_wholesale": 115,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS63",
+          "cac": false,
+          "cpg_retail": 110,
+          "greysheet_wholesale": 80.08,
+          "bluesheet_pcgs": 74.58,
+          "bluesheet_ngc": 74.58
+        },
+        {
+          "grade": "MS63",
+          "cac": true,
+          "cpg_retail": 115,
+          "greysheet_wholesale": 85.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS62",
+          "cac": false,
+          "cpg_retail": 105,
+          "greysheet_wholesale": 76.08,
+          "bluesheet_pcgs": 72.58,
+          "bluesheet_ngc": 72.58
+        },
+        {
+          "grade": "MS62",
+          "cac": true,
+          "cpg_retail": 110,
+          "greysheet_wholesale": 81.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS61",
+          "cac": false,
+          "cpg_retail": 100,
+          "greysheet_wholesale": 75.08,
+          "bluesheet_pcgs": 71.58,
+          "bluesheet_ngc": 71.58
+        },
+        {
+          "grade": "MS61",
+          "cac": true,
+          "cpg_retail": 105,
+          "greysheet_wholesale": 79.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS60",
+          "cac": false,
+          "cpg_retail": 100,
+          "greysheet_wholesale": 74.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS60",
+          "cac": true,
+          "cpg_retail": 105,
+          "greysheet_wholesale": 77.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": false,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 72.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": true,
+          "cpg_retail": 100,
+          "greysheet_wholesale": 75.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": false,
+          "cpg_retail": 90,
+          "greysheet_wholesale": 67.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 70.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": false,
+          "cpg_retail": 90,
+          "greysheet_wholesale": 66.33,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 69.33,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": false,
+          "cpg_retail": 90,
+          "greysheet_wholesale": 66.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 69.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 61.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": true,
+          "cpg_retail": 85,
+          "greysheet_wholesale": 63.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": true,
+          "cpg_retail": 85,
+          "greysheet_wholesale": 62.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 59.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 59.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 56.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 56.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 55.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": true,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 55.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": true,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 54.83,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": true,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 56.83,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        }
+      ],
+      "recent_auctions": []
+    },
+    "7498": {
+      "source": "greysheet.com",
+      "gsid": 7498,
+      "item": "1887 $1  MS",
+      "category": "Morgan silver dollar",
+      "mintage": 20290000,
+      "scraped_at": "2025-12-29T22:44:24.009Z",
+      "url": "https://www.greysheet.com/prices/item/1887-morgan-silver-dollar-coin-values/gsid/7498",
+      "prices": [
+        {
+          "grade": "MS68",
+          "cac": false,
+          "cpg_retail": 19000,
+          "greysheet_wholesale": 16000,
+          "bluesheet_pcgs": 16000,
+          "bluesheet_ngc": 9600
+        },
+        {
+          "grade": "MS68",
+          "cac": true,
+          "cpg_retail": 21500,
+          "greysheet_wholesale": 18000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS67",
+          "cac": false,
+          "cpg_retail": 1550,
+          "greysheet_wholesale": 1250,
+          "bluesheet_pcgs": 1250,
+          "bluesheet_ngc": 1150
+        },
+        {
+          "grade": "MS67",
+          "cac": true,
+          "cpg_retail": 1800,
+          "greysheet_wholesale": 1450,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS66",
+          "cac": false,
+          "cpg_retail": 370,
+          "greysheet_wholesale": 285,
+          "bluesheet_pcgs": 285,
+          "bluesheet_ngc": 285
+        },
+        {
+          "grade": "MS66",
+          "cac": true,
+          "cpg_retail": 495,
+          "greysheet_wholesale": 380,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS65",
+          "cac": false,
+          "cpg_retail": 195,
+          "greysheet_wholesale": 149,
+          "bluesheet_pcgs": 149,
+          "bluesheet_ngc": 149
+        },
+        {
+          "grade": "MS65",
+          "cac": true,
+          "cpg_retail": 300,
+          "greysheet_wholesale": 230,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS64",
+          "cac": false,
+          "cpg_retail": 105,
+          "greysheet_wholesale": 78.08,
+          "bluesheet_pcgs": 77.58,
+          "bluesheet_ngc": 77.58
+        },
+        {
+          "grade": "MS64",
+          "cac": true,
+          "cpg_retail": 150,
+          "greysheet_wholesale": 115,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS63",
+          "cac": false,
+          "cpg_retail": 100,
+          "greysheet_wholesale": 75.08,
+          "bluesheet_pcgs": 74.58,
+          "bluesheet_ngc": 74.58
+        },
+        {
+          "grade": "MS63",
+          "cac": true,
+          "cpg_retail": 110,
+          "greysheet_wholesale": 80.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS62",
+          "cac": false,
+          "cpg_retail": 100,
+          "greysheet_wholesale": 73.08,
+          "bluesheet_pcgs": 72.58,
+          "bluesheet_ngc": 72.58
+        },
+        {
+          "grade": "MS62",
+          "cac": true,
+          "cpg_retail": 105,
+          "greysheet_wholesale": 78.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS61",
+          "cac": false,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 72.08,
+          "bluesheet_pcgs": 71.58,
+          "bluesheet_ngc": 71.58
+        },
+        {
+          "grade": "MS61",
+          "cac": true,
+          "cpg_retail": 105,
+          "greysheet_wholesale": 76.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS60",
+          "cac": false,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 71.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS60",
+          "cac": true,
+          "cpg_retail": 100,
+          "greysheet_wholesale": 74.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": false,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 69.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 72.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": false,
+          "cpg_retail": 90,
+          "greysheet_wholesale": 67.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 70.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": false,
+          "cpg_retail": 90,
+          "greysheet_wholesale": 66.33,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 69.33,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": false,
+          "cpg_retail": 90,
+          "greysheet_wholesale": 66.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 69.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 61.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": true,
+          "cpg_retail": 85,
+          "greysheet_wholesale": 63.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": true,
+          "cpg_retail": 85,
+          "greysheet_wholesale": 62.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 59.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 59.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 56.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 56.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 55.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": true,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 55.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": true,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 54.83,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": true,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 56.83,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        }
+      ],
+      "recent_auctions": []
+    },
+    "7508": {
+      "source": "greysheet.com",
+      "gsid": 7508,
+      "item": "1882-CC $1  MS",
+      "category": "Morgan silver dollar",
+      "mintage": 1133000,
+      "scraped_at": "2025-12-29T22:43:53.544Z",
+      "url": "https://www.greysheet.com/prices/item/1882-cc-morgan-silver-dollar-coin-values/gsid/7508",
+      "prices": [
+        {
+          "grade": "MS67",
+          "cac": false,
+          "cpg_retail": 7000,
+          "greysheet_wholesale": 5600,
+          "bluesheet_pcgs": 5000,
+          "bluesheet_ngc": 4100
+        },
+        {
+          "grade": "MS67",
+          "cac": true,
+          "cpg_retail": 7500,
+          "greysheet_wholesale": 6000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS66",
+          "cac": false,
+          "cpg_retail": 1300,
+          "greysheet_wholesale": 1050,
+          "bluesheet_pcgs": 1050,
+          "bluesheet_ngc": 1000
+        },
+        {
+          "grade": "MS66",
+          "cac": true,
+          "cpg_retail": 1900,
+          "greysheet_wholesale": 1500,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS65",
+          "cac": false,
+          "cpg_retail": 625,
+          "greysheet_wholesale": 490,
+          "bluesheet_pcgs": 490,
+          "bluesheet_ngc": 490
+        },
+        {
+          "grade": "MS65",
+          "cac": true,
+          "cpg_retail": 725,
+          "greysheet_wholesale": 560,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS64",
+          "cac": false,
+          "cpg_retail": 495,
+          "greysheet_wholesale": 380,
+          "bluesheet_pcgs": 380,
+          "bluesheet_ngc": 380
+        },
+        {
+          "grade": "MS64",
+          "cac": true,
+          "cpg_retail": 525,
+          "greysheet_wholesale": 405,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS63",
+          "cac": false,
+          "cpg_retail": 435,
+          "greysheet_wholesale": 335,
+          "bluesheet_pcgs": 335,
+          "bluesheet_ngc": 335
+        },
+        {
+          "grade": "MS63",
+          "cac": true,
+          "cpg_retail": 475,
+          "greysheet_wholesale": 365,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS62",
+          "cac": false,
+          "cpg_retail": 390,
+          "greysheet_wholesale": 300,
+          "bluesheet_pcgs": 300,
+          "bluesheet_ngc": 300
+        },
+        {
+          "grade": "MS62",
+          "cac": true,
+          "cpg_retail": 455,
+          "greysheet_wholesale": 350,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS61",
+          "cac": false,
+          "cpg_retail": 355,
+          "greysheet_wholesale": 272,
+          "bluesheet_pcgs": 272,
+          "bluesheet_ngc": 272
+        },
+        {
+          "grade": "MS61",
+          "cac": true,
+          "cpg_retail": 410,
+          "greysheet_wholesale": 315,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS60",
+          "cac": false,
+          "cpg_retail": 350,
+          "greysheet_wholesale": 270,
+          "bluesheet_pcgs": 270,
+          "bluesheet_ngc": 270
+        },
+        {
+          "grade": "MS60",
+          "cac": true,
+          "cpg_retail": 410,
+          "greysheet_wholesale": 315,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": false,
+          "cpg_retail": 340,
+          "greysheet_wholesale": 260,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": true,
+          "cpg_retail": 370,
+          "greysheet_wholesale": 286,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": false,
+          "cpg_retail": 300,
+          "greysheet_wholesale": 232,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": true,
+          "cpg_retail": 330,
+          "greysheet_wholesale": 255.2,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": false,
+          "cpg_retail": 285,
+          "greysheet_wholesale": 218,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": true,
+          "cpg_retail": 310,
+          "greysheet_wholesale": 239.8,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": false,
+          "cpg_retail": 280,
+          "greysheet_wholesale": 215,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": true,
+          "cpg_retail": 305,
+          "greysheet_wholesale": 236.5,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": false,
+          "cpg_retail": 240,
+          "greysheet_wholesale": 185,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": true,
+          "cpg_retail": 275,
+          "greysheet_wholesale": 212.75,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": false,
+          "cpg_retail": 230,
+          "greysheet_wholesale": 175,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": true,
+          "cpg_retail": 260,
+          "greysheet_wholesale": 201.25,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": false,
+          "cpg_retail": 210,
+          "greysheet_wholesale": 160,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": true,
+          "cpg_retail": 250,
+          "greysheet_wholesale": 192,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": false,
+          "cpg_retail": 195,
+          "greysheet_wholesale": 150,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": true,
+          "cpg_retail": 235,
+          "greysheet_wholesale": 180,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": false,
+          "cpg_retail": 190,
+          "greysheet_wholesale": 145,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": true,
+          "cpg_retail": 225,
+          "greysheet_wholesale": 174,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": false,
+          "cpg_retail": 180,
+          "greysheet_wholesale": 140,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": true,
+          "cpg_retail": 220,
+          "greysheet_wholesale": 168,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": false,
+          "cpg_retail": 175,
+          "greysheet_wholesale": 135,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": true,
+          "cpg_retail": 210,
+          "greysheet_wholesale": 162,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": false,
+          "cpg_retail": 175,
+          "greysheet_wholesale": 135,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": true,
+          "cpg_retail": 210,
+          "greysheet_wholesale": 162,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": false,
+          "cpg_retail": 160,
+          "greysheet_wholesale": 125,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": true,
+          "cpg_retail": 195,
+          "greysheet_wholesale": 150,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": false,
+          "cpg_retail": 155,
+          "greysheet_wholesale": 120,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": true,
+          "cpg_retail": 185,
+          "greysheet_wholesale": 144,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": false,
+          "cpg_retail": 150,
+          "greysheet_wholesale": 115,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": true,
+          "cpg_retail": 180,
+          "greysheet_wholesale": 138,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": false,
+          "cpg_retail": 145,
+          "greysheet_wholesale": 110,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": true,
+          "cpg_retail": 170,
+          "greysheet_wholesale": 132,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": false,
+          "cpg_retail": 110,
+          "greysheet_wholesale": 80,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": true,
+          "cpg_retail": 130,
+          "greysheet_wholesale": 96,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        }
+      ],
+      "recent_auctions": []
+    },
+    "7518": {
+      "source": "greysheet.com",
+      "gsid": 7518,
+      "item": "1883-CC $1  MS",
+      "category": "Morgan silver dollar",
+      "mintage": 1204000,
+      "scraped_at": "2025-12-29T22:43:55.877Z",
+      "url": "https://www.greysheet.com/prices/item/1883-cc-morgan-silver-dollar-coin-values/gsid/7518",
+      "prices": [
+        {
+          "grade": "MS68",
+          "cac": false,
+          "cpg_retail": 60000,
+          "greysheet_wholesale": 50000,
+          "bluesheet_pcgs": 50000,
+          "bluesheet_ngc": 37000
+        },
+        {
+          "grade": "MS68",
+          "cac": true,
+          "cpg_retail": 102000,
+          "greysheet_wholesale": 85000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS67",
+          "cac": false,
+          "cpg_retail": 3900,
+          "greysheet_wholesale": 3100,
+          "bluesheet_pcgs": 3100,
+          "bluesheet_ngc": 2700
+        },
+        {
+          "grade": "MS67",
+          "cac": true,
+          "cpg_retail": 6000,
+          "greysheet_wholesale": 4800,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS66",
+          "cac": false,
+          "cpg_retail": 1100,
+          "greysheet_wholesale": 870,
+          "bluesheet_pcgs": 870,
+          "bluesheet_ngc": 870
+        },
+        {
+          "grade": "MS66",
+          "cac": true,
+          "cpg_retail": 1500,
+          "greysheet_wholesale": 1200,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS65",
+          "cac": false,
+          "cpg_retail": 575,
+          "greysheet_wholesale": 440,
+          "bluesheet_pcgs": 440,
+          "bluesheet_ngc": 440
+        },
+        {
+          "grade": "MS65",
+          "cac": true,
+          "cpg_retail": 750,
+          "greysheet_wholesale": 570,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS64",
+          "cac": false,
+          "cpg_retail": 460,
+          "greysheet_wholesale": 355,
+          "bluesheet_pcgs": 355,
+          "bluesheet_ngc": 355
+        },
+        {
+          "grade": "MS64",
+          "cac": true,
+          "cpg_retail": 495,
+          "greysheet_wholesale": 380,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS63",
+          "cac": false,
+          "cpg_retail": 405,
+          "greysheet_wholesale": 310,
+          "bluesheet_pcgs": 310,
+          "bluesheet_ngc": 310
+        },
+        {
+          "grade": "MS63",
+          "cac": true,
+          "cpg_retail": 440,
+          "greysheet_wholesale": 340,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS62",
+          "cac": false,
+          "cpg_retail": 360,
+          "greysheet_wholesale": 275,
+          "bluesheet_pcgs": 275,
+          "bluesheet_ngc": 275
+        },
+        {
+          "grade": "MS62",
+          "cac": true,
+          "cpg_retail": 420,
+          "greysheet_wholesale": 325,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS61",
+          "cac": false,
+          "cpg_retail": 355,
+          "greysheet_wholesale": 272,
+          "bluesheet_pcgs": 272,
+          "bluesheet_ngc": 272
+        },
+        {
+          "grade": "MS61",
+          "cac": true,
+          "cpg_retail": 410,
+          "greysheet_wholesale": 315,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS60",
+          "cac": false,
+          "cpg_retail": 350,
+          "greysheet_wholesale": 270,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS60",
+          "cac": true,
+          "cpg_retail": 410,
+          "greysheet_wholesale": 315,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": false,
+          "cpg_retail": 340,
+          "greysheet_wholesale": 260,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": true,
+          "cpg_retail": 370,
+          "greysheet_wholesale": 286,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": false,
+          "cpg_retail": 300,
+          "greysheet_wholesale": 232,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": true,
+          "cpg_retail": 330,
+          "greysheet_wholesale": 255.2,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": false,
+          "cpg_retail": 285,
+          "greysheet_wholesale": 218,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": true,
+          "cpg_retail": 310,
+          "greysheet_wholesale": 239.8,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": false,
+          "cpg_retail": 280,
+          "greysheet_wholesale": 215,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": true,
+          "cpg_retail": 305,
+          "greysheet_wholesale": 236.5,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": false,
+          "cpg_retail": 240,
+          "greysheet_wholesale": 185,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": true,
+          "cpg_retail": 275,
+          "greysheet_wholesale": 212.75,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": false,
+          "cpg_retail": 230,
+          "greysheet_wholesale": 175,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": true,
+          "cpg_retail": 260,
+          "greysheet_wholesale": 201.25,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": false,
+          "cpg_retail": 210,
+          "greysheet_wholesale": 160,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": true,
+          "cpg_retail": 250,
+          "greysheet_wholesale": 192,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": false,
+          "cpg_retail": 195,
+          "greysheet_wholesale": 150,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": true,
+          "cpg_retail": 235,
+          "greysheet_wholesale": 180,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": false,
+          "cpg_retail": 190,
+          "greysheet_wholesale": 145,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": true,
+          "cpg_retail": 225,
+          "greysheet_wholesale": 174,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": false,
+          "cpg_retail": 180,
+          "greysheet_wholesale": 140,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": true,
+          "cpg_retail": 220,
+          "greysheet_wholesale": 168,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": false,
+          "cpg_retail": 175,
+          "greysheet_wholesale": 135,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": true,
+          "cpg_retail": 210,
+          "greysheet_wholesale": 162,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": false,
+          "cpg_retail": 175,
+          "greysheet_wholesale": 135,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": true,
+          "cpg_retail": 210,
+          "greysheet_wholesale": 162,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": false,
+          "cpg_retail": 160,
+          "greysheet_wholesale": 125,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": true,
+          "cpg_retail": 195,
+          "greysheet_wholesale": 150,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": false,
+          "cpg_retail": 155,
+          "greysheet_wholesale": 120,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": true,
+          "cpg_retail": 185,
+          "greysheet_wholesale": 144,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": false,
+          "cpg_retail": 150,
+          "greysheet_wholesale": 115,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": true,
+          "cpg_retail": 180,
+          "greysheet_wholesale": 138,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": false,
+          "cpg_retail": 145,
+          "greysheet_wholesale": 110,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": true,
+          "cpg_retail": 170,
+          "greysheet_wholesale": 132,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": false,
+          "cpg_retail": 110,
+          "greysheet_wholesale": 80,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": true,
+          "cpg_retail": 130,
+          "greysheet_wholesale": 96,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG2",
+          "cac": false,
+          "cpg_retail": 100,
+          "greysheet_wholesale": 75,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG2",
+          "cac": true,
+          "cpg_retail": 115,
+          "greysheet_wholesale": 85,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "P1",
+          "cac": false,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 70,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "P1",
+          "cac": true,
+          "cpg_retail": 110,
+          "greysheet_wholesale": 80,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        }
+      ],
+      "recent_auctions": []
+    },
+    "7524": {
+      "source": "greysheet.com",
+      "gsid": 7524,
+      "item": "1884-CC $1  MS",
+      "category": "Morgan silver dollar",
+      "mintage": 1136000,
+      "scraped_at": "2025-12-29T22:43:58.264Z",
+      "url": "https://www.greysheet.com/prices/item/1884-cc-morgan-silver-dollar-coin-values/gsid/7524",
+      "prices": [
+        {
+          "grade": "MS68",
+          "cac": false,
+          "cpg_retail": 62500,
+          "greysheet_wholesale": 52000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS68",
+          "cac": true,
+          "cpg_retail": 74500,
+          "greysheet_wholesale": 62000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS67",
+          "cac": false,
+          "cpg_retail": 3900,
+          "greysheet_wholesale": 3100,
+          "bluesheet_pcgs": 3100,
+          "bluesheet_ngc": 2700
+        },
+        {
+          "grade": "MS67",
+          "cac": true,
+          "cpg_retail": 6000,
+          "greysheet_wholesale": 4800,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS66",
+          "cac": false,
+          "cpg_retail": 1100,
+          "greysheet_wholesale": 870,
+          "bluesheet_pcgs": 870,
+          "bluesheet_ngc": 870
+        },
+        {
+          "grade": "MS66",
+          "cac": true,
+          "cpg_retail": 1600,
+          "greysheet_wholesale": 1300,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS65",
+          "cac": false,
+          "cpg_retail": 575,
+          "greysheet_wholesale": 440,
+          "bluesheet_pcgs": 440,
+          "bluesheet_ngc": 440
+        },
+        {
+          "grade": "MS65",
+          "cac": true,
+          "cpg_retail": 725,
+          "greysheet_wholesale": 550,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS64",
+          "cac": false,
+          "cpg_retail": 460,
+          "greysheet_wholesale": 355,
+          "bluesheet_pcgs": 355,
+          "bluesheet_ngc": 355
+        },
+        {
+          "grade": "MS64",
+          "cac": true,
+          "cpg_retail": 525,
+          "greysheet_wholesale": 400,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS63",
+          "cac": false,
+          "cpg_retail": 405,
+          "greysheet_wholesale": 310,
+          "bluesheet_pcgs": 310,
+          "bluesheet_ngc": 310
+        },
+        {
+          "grade": "MS63",
+          "cac": true,
+          "cpg_retail": 440,
+          "greysheet_wholesale": 340,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS62",
+          "cac": false,
+          "cpg_retail": 360,
+          "greysheet_wholesale": 275,
+          "bluesheet_pcgs": 275,
+          "bluesheet_ngc": 275
+        },
+        {
+          "grade": "MS62",
+          "cac": true,
+          "cpg_retail": 420,
+          "greysheet_wholesale": 325,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS61",
+          "cac": false,
+          "cpg_retail": 355,
+          "greysheet_wholesale": 272,
+          "bluesheet_pcgs": 272,
+          "bluesheet_ngc": 272
+        },
+        {
+          "grade": "MS61",
+          "cac": true,
+          "cpg_retail": 410,
+          "greysheet_wholesale": 315,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS60",
+          "cac": false,
+          "cpg_retail": 350,
+          "greysheet_wholesale": 270,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS60",
+          "cac": true,
+          "cpg_retail": 410,
+          "greysheet_wholesale": 315,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": false,
+          "cpg_retail": 340,
+          "greysheet_wholesale": 260,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": true,
+          "cpg_retail": 370,
+          "greysheet_wholesale": 286,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": false,
+          "cpg_retail": 300,
+          "greysheet_wholesale": 232,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": true,
+          "cpg_retail": 330,
+          "greysheet_wholesale": 255.2,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": false,
+          "cpg_retail": 285,
+          "greysheet_wholesale": 218,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": true,
+          "cpg_retail": 310,
+          "greysheet_wholesale": 239.8,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": false,
+          "cpg_retail": 280,
+          "greysheet_wholesale": 215,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": true,
+          "cpg_retail": 305,
+          "greysheet_wholesale": 236.5,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": false,
+          "cpg_retail": 240,
+          "greysheet_wholesale": 185,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": true,
+          "cpg_retail": 275,
+          "greysheet_wholesale": 212.75,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": false,
+          "cpg_retail": 230,
+          "greysheet_wholesale": 175,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": true,
+          "cpg_retail": 260,
+          "greysheet_wholesale": 201.25,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": false,
+          "cpg_retail": 210,
+          "greysheet_wholesale": 160,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": true,
+          "cpg_retail": 250,
+          "greysheet_wholesale": 192,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": false,
+          "cpg_retail": 195,
+          "greysheet_wholesale": 150,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": true,
+          "cpg_retail": 235,
+          "greysheet_wholesale": 180,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": false,
+          "cpg_retail": 190,
+          "greysheet_wholesale": 145,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": true,
+          "cpg_retail": 225,
+          "greysheet_wholesale": 174,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": false,
+          "cpg_retail": 180,
+          "greysheet_wholesale": 140,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": true,
+          "cpg_retail": 220,
+          "greysheet_wholesale": 168,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": false,
+          "cpg_retail": 175,
+          "greysheet_wholesale": 135,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": true,
+          "cpg_retail": 210,
+          "greysheet_wholesale": 162,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": false,
+          "cpg_retail": 175,
+          "greysheet_wholesale": 135,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": true,
+          "cpg_retail": 210,
+          "greysheet_wholesale": 162,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": false,
+          "cpg_retail": 160,
+          "greysheet_wholesale": 125,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": true,
+          "cpg_retail": 195,
+          "greysheet_wholesale": 150,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": false,
+          "cpg_retail": 155,
+          "greysheet_wholesale": 120,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": true,
+          "cpg_retail": 185,
+          "greysheet_wholesale": 144,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": false,
+          "cpg_retail": 150,
+          "greysheet_wholesale": 115,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": true,
+          "cpg_retail": 180,
+          "greysheet_wholesale": 138,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": false,
+          "cpg_retail": 145,
+          "greysheet_wholesale": 110,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": true,
+          "cpg_retail": 170,
+          "greysheet_wholesale": 132,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": false,
+          "cpg_retail": 110,
+          "greysheet_wholesale": 80,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": true,
+          "cpg_retail": 130,
+          "greysheet_wholesale": 96,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        }
+      ],
+      "recent_auctions": []
+    },
+    "7532": {
+      "source": "greysheet.com",
+      "gsid": 7532,
+      "item": "1885-O $1  MS",
+      "category": "Morgan silver dollar",
+      "mintage": 9185000,
+      "scraped_at": "2025-12-29T22:44:00.327Z",
+      "url": "https://www.greysheet.com/prices/item/1885-o-morgan-silver-dollar-coin-values/gsid/7532",
+      "prices": [
+        {
+          "grade": "MS68",
+          "cac": false,
+          "cpg_retail": 25000,
+          "greysheet_wholesale": 21000,
+          "bluesheet_pcgs": 20400,
+          "bluesheet_ngc": 6200
+        },
+        {
+          "grade": "MS68",
+          "cac": true,
+          "cpg_retail": 31000,
+          "greysheet_wholesale": 26000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS67",
+          "cac": false,
+          "cpg_retail": 1300,
+          "greysheet_wholesale": 1050,
+          "bluesheet_pcgs": 1050,
+          "bluesheet_ngc": 870
+        },
+        {
+          "grade": "MS67",
+          "cac": true,
+          "cpg_retail": 1750,
+          "greysheet_wholesale": 1400,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS66",
+          "cac": false,
+          "cpg_retail": 345,
+          "greysheet_wholesale": 265,
+          "bluesheet_pcgs": 265,
+          "bluesheet_ngc": 265
+        },
+        {
+          "grade": "MS66",
+          "cac": true,
+          "cpg_retail": 525,
+          "greysheet_wholesale": 400,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS65",
+          "cac": false,
+          "cpg_retail": 195,
+          "greysheet_wholesale": 149,
+          "bluesheet_pcgs": 139,
+          "bluesheet_ngc": 139
+        },
+        {
+          "grade": "MS65",
+          "cac": true,
+          "cpg_retail": 300,
+          "greysheet_wholesale": 230,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS64",
+          "cac": false,
+          "cpg_retail": 110,
+          "greysheet_wholesale": 83.08,
+          "bluesheet_pcgs": 77.58,
+          "bluesheet_ngc": 77.58
+        },
+        {
+          "grade": "MS64",
+          "cac": true,
+          "cpg_retail": 150,
+          "greysheet_wholesale": 115,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS63",
+          "cac": false,
+          "cpg_retail": 110,
+          "greysheet_wholesale": 80.08,
+          "bluesheet_pcgs": 74.58,
+          "bluesheet_ngc": 74.58
+        },
+        {
+          "grade": "MS63",
+          "cac": true,
+          "cpg_retail": 115,
+          "greysheet_wholesale": 85.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS62",
+          "cac": false,
+          "cpg_retail": 105,
+          "greysheet_wholesale": 76.08,
+          "bluesheet_pcgs": 72.58,
+          "bluesheet_ngc": 72.58
+        },
+        {
+          "grade": "MS62",
+          "cac": true,
+          "cpg_retail": 110,
+          "greysheet_wholesale": 81.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS61",
+          "cac": false,
+          "cpg_retail": 100,
+          "greysheet_wholesale": 75.08,
+          "bluesheet_pcgs": 71.58,
+          "bluesheet_ngc": 71.58
+        },
+        {
+          "grade": "MS61",
+          "cac": true,
+          "cpg_retail": 105,
+          "greysheet_wholesale": 79.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS60",
+          "cac": false,
+          "cpg_retail": 100,
+          "greysheet_wholesale": 74.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS60",
+          "cac": true,
+          "cpg_retail": 105,
+          "greysheet_wholesale": 77.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": false,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 72.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": true,
+          "cpg_retail": 100,
+          "greysheet_wholesale": 75.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": false,
+          "cpg_retail": 90,
+          "greysheet_wholesale": 67.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 70.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": false,
+          "cpg_retail": 90,
+          "greysheet_wholesale": 66.33,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 69.33,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": false,
+          "cpg_retail": 90,
+          "greysheet_wholesale": 66.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": true,
+          "cpg_retail": 95,
+          "greysheet_wholesale": 69.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 61.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": true,
+          "cpg_retail": 85,
+          "greysheet_wholesale": 63.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": true,
+          "cpg_retail": 85,
+          "greysheet_wholesale": 62.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": false,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 60.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 59.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 59.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 56.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 56.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": true,
+          "cpg_retail": 80,
+          "greysheet_wholesale": 58.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 55.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": true,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 55.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": true,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 57.08,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": false,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 54.83,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": true,
+          "cpg_retail": 75,
+          "greysheet_wholesale": 56.83,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        }
+      ],
+      "recent_auctions": []
+    },
+    "7554": {
+      "source": "greysheet.com",
+      "gsid": 7554,
+      "item": "1889-CC $1  MS",
+      "category": "Morgan silver dollar",
+      "mintage": 350000,
+      "scraped_at": "2025-12-29T22:44:26.546Z",
+      "url": "https://www.greysheet.com/prices/item/1889-cc-morgan-silver-dollar-coin-values/gsid/7554",
+      "prices": [
+        {
+          "grade": "MS68",
+          "cac": false,
+          "cpg_retail": 1200000,
+          "greysheet_wholesale": 1000000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS68",
+          "cac": true,
+          "cpg_retail": 1380000,
+          "greysheet_wholesale": 1150000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS67",
+          "cac": false,
+          "cpg_retail": 660000,
+          "greysheet_wholesale": 550000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS67",
+          "cac": true,
+          "cpg_retail": 759000,
+          "greysheet_wholesale": 632500,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS66",
+          "cac": false,
+          "cpg_retail": 450000,
+          "greysheet_wholesale": 375000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS66",
+          "cac": true,
+          "cpg_retail": 517500,
+          "greysheet_wholesale": 431250,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS65",
+          "cac": false,
+          "cpg_retail": 288000,
+          "greysheet_wholesale": 240000,
+          "bluesheet_pcgs": 240000,
+          "bluesheet_ngc": 200000
+        },
+        {
+          "grade": "MS65",
+          "cac": true,
+          "cpg_retail": 360000,
+          "greysheet_wholesale": 300000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS64",
+          "cac": false,
+          "cpg_retail": 108000,
+          "greysheet_wholesale": 90000,
+          "bluesheet_pcgs": 90000,
+          "bluesheet_ngc": 70000
+        },
+        {
+          "grade": "MS64",
+          "cac": true,
+          "cpg_retail": 156000,
+          "greysheet_wholesale": 130000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS63",
+          "cac": false,
+          "cpg_retail": 48000,
+          "greysheet_wholesale": 40000,
+          "bluesheet_pcgs": 40000,
+          "bluesheet_ngc": 33500
+        },
+        {
+          "grade": "MS63",
+          "cac": true,
+          "cpg_retail": 54000,
+          "greysheet_wholesale": 45000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS62",
+          "cac": false,
+          "cpg_retail": 37000,
+          "greysheet_wholesale": 31000,
+          "bluesheet_pcgs": 31000,
+          "bluesheet_ngc": 28000
+        },
+        {
+          "grade": "MS62",
+          "cac": true,
+          "cpg_retail": 40500,
+          "greysheet_wholesale": 33600,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS61",
+          "cac": false,
+          "cpg_retail": 30000,
+          "greysheet_wholesale": 25000,
+          "bluesheet_pcgs": 25000,
+          "bluesheet_ngc": 21600
+        },
+        {
+          "grade": "MS61",
+          "cac": true,
+          "cpg_retail": 34500,
+          "greysheet_wholesale": 28750,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS60",
+          "cac": false,
+          "cpg_retail": 26500,
+          "greysheet_wholesale": 22000,
+          "bluesheet_pcgs": 22000,
+          "bluesheet_ngc": 20000
+        },
+        {
+          "grade": "MS60",
+          "cac": true,
+          "cpg_retail": 30500,
+          "greysheet_wholesale": 25300,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": false,
+          "cpg_retail": 18000,
+          "greysheet_wholesale": 15000,
+          "bluesheet_pcgs": 15000,
+          "bluesheet_ngc": 11400
+        },
+        {
+          "grade": "AU58",
+          "cac": true,
+          "cpg_retail": 23000,
+          "greysheet_wholesale": 19000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": false,
+          "cpg_retail": 12000,
+          "greysheet_wholesale": 10200,
+          "bluesheet_pcgs": 10200,
+          "bluesheet_ngc": 9000
+        },
+        {
+          "grade": "AU55",
+          "cac": true,
+          "cpg_retail": 14500,
+          "greysheet_wholesale": 12000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": false,
+          "cpg_retail": 10000,
+          "greysheet_wholesale": 8000,
+          "bluesheet_pcgs": 8000,
+          "bluesheet_ngc": 6800
+        },
+        {
+          "grade": "AU53",
+          "cac": true,
+          "cpg_retail": 11500,
+          "greysheet_wholesale": 9200,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": false,
+          "cpg_retail": 9750,
+          "greysheet_wholesale": 7800,
+          "bluesheet_pcgs": 7800,
+          "bluesheet_ngc": 6600
+        },
+        {
+          "grade": "AU50",
+          "cac": true,
+          "cpg_retail": 11000,
+          "greysheet_wholesale": 9000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": false,
+          "cpg_retail": 5000,
+          "greysheet_wholesale": 4100,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": true,
+          "cpg_retail": 6000,
+          "greysheet_wholesale": 4885,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": false,
+          "cpg_retail": 4750,
+          "greysheet_wholesale": 3800,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": true,
+          "cpg_retail": 5500,
+          "greysheet_wholesale": 4400,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": false,
+          "cpg_retail": 3000,
+          "greysheet_wholesale": 2400,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": true,
+          "cpg_retail": 3450,
+          "greysheet_wholesale": 2760,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": false,
+          "cpg_retail": 2500,
+          "greysheet_wholesale": 1980,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": true,
+          "cpg_retail": 2900,
+          "greysheet_wholesale": 2300,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": false,
+          "cpg_retail": 2250,
+          "greysheet_wholesale": 1800,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": true,
+          "cpg_retail": 2600,
+          "greysheet_wholesale": 2100,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": false,
+          "cpg_retail": 2050,
+          "greysheet_wholesale": 1650,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": true,
+          "cpg_retail": 2350,
+          "greysheet_wholesale": 1897.5,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": false,
+          "cpg_retail": 1700,
+          "greysheet_wholesale": 1350,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": true,
+          "cpg_retail": 2000,
+          "greysheet_wholesale": 1585,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": false,
+          "cpg_retail": 1400,
+          "greysheet_wholesale": 1100,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": true,
+          "cpg_retail": 1600,
+          "greysheet_wholesale": 1300,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": false,
+          "cpg_retail": 1250,
+          "greysheet_wholesale": 990,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": true,
+          "cpg_retail": 1400,
+          "greysheet_wholesale": 1138.5,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": false,
+          "cpg_retail": 1200,
+          "greysheet_wholesale": 950,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": true,
+          "cpg_retail": 1400,
+          "greysheet_wholesale": 1100,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": false,
+          "cpg_retail": 900,
+          "greysheet_wholesale": 690,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": true,
+          "cpg_retail": 1000,
+          "greysheet_wholesale": 793.5,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": false,
+          "cpg_retail": 800,
+          "greysheet_wholesale": 610,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": true,
+          "cpg_retail": 900,
+          "greysheet_wholesale": 701.5,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": false,
+          "cpg_retail": 650,
+          "greysheet_wholesale": 500,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": true,
+          "cpg_retail": 750,
+          "greysheet_wholesale": 575,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG2",
+          "cac": false,
+          "cpg_retail": 550,
+          "greysheet_wholesale": 420,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG2",
+          "cac": true,
+          "cpg_retail": 625,
+          "greysheet_wholesale": 483,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "P1",
+          "cac": false,
+          "cpg_retail": 525,
+          "greysheet_wholesale": 400,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "P1",
+          "cac": true,
+          "cpg_retail": 600,
+          "greysheet_wholesale": 460,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        }
+      ],
+      "recent_auctions": []
+    },
+    "7614": {
+      "source": "greysheet.com",
+      "gsid": 7614,
+      "item": "1893-S $1  MS",
+      "category": "Morgan silver dollar",
+      "mintage": 100000,
+      "scraped_at": "2025-12-29T22:44:28.301Z",
+      "url": "https://www.greysheet.com/prices/item/1893-s-morgan-silver-dollar-coin-values/gsid/7614",
+      "prices": [
+        {
+          "grade": "MS67",
+          "cac": false,
+          "cpg_retail": 2220000,
+          "greysheet_wholesale": 1850000,
+          "bluesheet_pcgs": 1850000,
+          "bluesheet_ngc": 1150000
+        },
+        {
+          "grade": "MS67",
+          "cac": true,
+          "cpg_retail": 2664000,
+          "greysheet_wholesale": 2220000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS66",
+          "cac": false,
+          "cpg_retail": 1020000,
+          "greysheet_wholesale": 850000,
+          "bluesheet_pcgs": 850000,
+          "bluesheet_ngc": 650000
+        },
+        {
+          "grade": "MS66",
+          "cac": true,
+          "cpg_retail": 1224000,
+          "greysheet_wholesale": 1020000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS65",
+          "cac": false,
+          "cpg_retail": 756000,
+          "greysheet_wholesale": 630000,
+          "bluesheet_pcgs": 630000,
+          "bluesheet_ngc": 480000
+        },
+        {
+          "grade": "MS65",
+          "cac": true,
+          "cpg_retail": 907000,
+          "greysheet_wholesale": 756000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS64",
+          "cac": false,
+          "cpg_retail": 480000,
+          "greysheet_wholesale": 400000,
+          "bluesheet_pcgs": 400000,
+          "bluesheet_ngc": 350000
+        },
+        {
+          "grade": "MS64",
+          "cac": true,
+          "cpg_retail": 576000,
+          "greysheet_wholesale": 480000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS63",
+          "cac": false,
+          "cpg_retail": 330000,
+          "greysheet_wholesale": 275000,
+          "bluesheet_pcgs": 275000,
+          "bluesheet_ngc": 250000
+        },
+        {
+          "grade": "MS63",
+          "cac": true,
+          "cpg_retail": 396000,
+          "greysheet_wholesale": 330000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS62",
+          "cac": false,
+          "cpg_retail": 288000,
+          "greysheet_wholesale": 240000,
+          "bluesheet_pcgs": 240000,
+          "bluesheet_ngc": 210000
+        },
+        {
+          "grade": "MS62",
+          "cac": true,
+          "cpg_retail": 345500,
+          "greysheet_wholesale": 288000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS61",
+          "cac": false,
+          "cpg_retail": 252000,
+          "greysheet_wholesale": 210000,
+          "bluesheet_pcgs": 210000,
+          "bluesheet_ngc": 180000
+        },
+        {
+          "grade": "MS61",
+          "cac": true,
+          "cpg_retail": 302500,
+          "greysheet_wholesale": 252000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "MS60",
+          "cac": false,
+          "cpg_retail": 228000,
+          "greysheet_wholesale": 190000,
+          "bluesheet_pcgs": 190000,
+          "bluesheet_ngc": 160000
+        },
+        {
+          "grade": "MS60",
+          "cac": true,
+          "cpg_retail": 273500,
+          "greysheet_wholesale": 228000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": false,
+          "cpg_retail": 138000,
+          "greysheet_wholesale": 115000,
+          "bluesheet_pcgs": 115000,
+          "bluesheet_ngc": 78000
+        },
+        {
+          "grade": "AU58",
+          "cac": true,
+          "cpg_retail": 165500,
+          "greysheet_wholesale": 138000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": false,
+          "cpg_retail": 60000,
+          "greysheet_wholesale": 50000,
+          "bluesheet_pcgs": 50000,
+          "bluesheet_ngc": 36000
+        },
+        {
+          "grade": "AU55",
+          "cac": true,
+          "cpg_retail": 78000,
+          "greysheet_wholesale": 65000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": false,
+          "cpg_retail": 35500,
+          "greysheet_wholesale": 29500,
+          "bluesheet_pcgs": 29500,
+          "bluesheet_ngc": 26500
+        },
+        {
+          "grade": "AU53",
+          "cac": true,
+          "cpg_retail": 42500,
+          "greysheet_wholesale": 35400,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": false,
+          "cpg_retail": 32000,
+          "greysheet_wholesale": 26500,
+          "bluesheet_pcgs": 26500,
+          "bluesheet_ngc": 22500
+        },
+        {
+          "grade": "AU50",
+          "cac": true,
+          "cpg_retail": 38000,
+          "greysheet_wholesale": 31800,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": false,
+          "cpg_retail": 19000,
+          "greysheet_wholesale": 16000,
+          "bluesheet_pcgs": 16000,
+          "bluesheet_ngc": 14000
+        },
+        {
+          "grade": "XF45",
+          "cac": true,
+          "cpg_retail": 23000,
+          "greysheet_wholesale": 19200,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": false,
+          "cpg_retail": 16000,
+          "greysheet_wholesale": 13500,
+          "bluesheet_pcgs": 13500,
+          "bluesheet_ngc": 11500
+        },
+        {
+          "grade": "XF40",
+          "cac": true,
+          "cpg_retail": 19500,
+          "greysheet_wholesale": 16200,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": false,
+          "cpg_retail": 11000,
+          "greysheet_wholesale": 9000,
+          "bluesheet_pcgs": 9000,
+          "bluesheet_ngc": 8000
+        },
+        {
+          "grade": "VF35",
+          "cac": true,
+          "cpg_retail": 13000,
+          "greysheet_wholesale": 10800,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": false,
+          "cpg_retail": 8750,
+          "greysheet_wholesale": 7000,
+          "bluesheet_pcgs": 7000,
+          "bluesheet_ngc": 7000
+        },
+        {
+          "grade": "VF30",
+          "cac": true,
+          "cpg_retail": 10500,
+          "greysheet_wholesale": 8400,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": false,
+          "cpg_retail": 8250,
+          "greysheet_wholesale": 6600,
+          "bluesheet_pcgs": 6600,
+          "bluesheet_ngc": 6400
+        },
+        {
+          "grade": "VF25",
+          "cac": true,
+          "cpg_retail": 10000,
+          "greysheet_wholesale": 7920,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": false,
+          "cpg_retail": 7750,
+          "greysheet_wholesale": 6200,
+          "bluesheet_pcgs": 6200,
+          "bluesheet_ngc": 6200
+        },
+        {
+          "grade": "VF20",
+          "cac": true,
+          "cpg_retail": 9250,
+          "greysheet_wholesale": 7440,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": false,
+          "cpg_retail": 6500,
+          "greysheet_wholesale": 5200,
+          "bluesheet_pcgs": 5200,
+          "bluesheet_ngc": 5200
+        },
+        {
+          "grade": "F15",
+          "cac": true,
+          "cpg_retail": 7750,
+          "greysheet_wholesale": 6240,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": false,
+          "cpg_retail": 5750,
+          "greysheet_wholesale": 4600,
+          "bluesheet_pcgs": 4600,
+          "bluesheet_ngc": 4600
+        },
+        {
+          "grade": "F12",
+          "cac": true,
+          "cpg_retail": 7000,
+          "greysheet_wholesale": 5520,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": false,
+          "cpg_retail": 5500,
+          "greysheet_wholesale": 4350,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": true,
+          "cpg_retail": 6500,
+          "greysheet_wholesale": 5220,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": false,
+          "cpg_retail": 5000,
+          "greysheet_wholesale": 4000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": true,
+          "cpg_retail": 6000,
+          "greysheet_wholesale": 4800,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": false,
+          "cpg_retail": 4500,
+          "greysheet_wholesale": 3600,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": true,
+          "cpg_retail": 5500,
+          "greysheet_wholesale": 4320,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": false,
+          "cpg_retail": 4000,
+          "greysheet_wholesale": 3200,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": true,
+          "cpg_retail": 4800,
+          "greysheet_wholesale": 3840,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": false,
+          "cpg_retail": 3300,
+          "greysheet_wholesale": 2650,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG3",
+          "cac": true,
+          "cpg_retail": 4000,
+          "greysheet_wholesale": 3180,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG2",
+          "cac": false,
+          "cpg_retail": 2900,
+          "greysheet_wholesale": 2300,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AG2",
+          "cac": true,
+          "cpg_retail": 3450,
+          "greysheet_wholesale": 2760,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "P1",
+          "cac": false,
+          "cpg_retail": 2600,
+          "greysheet_wholesale": 2100,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "P1",
+          "cac": true,
+          "cpg_retail": 3150,
+          "greysheet_wholesale": 2520,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        }
+      ],
+      "recent_auctions": []
+    },
+    "7841": {
+      "source": "greysheet.com",
+      "gsid": 7841,
+      "item": "1895 $1  PR",
+      "category": "Morgan silver dollar",
+      "mintage": 880,
+      "scraped_at": "2025-12-29T22:44:29.743Z",
+      "url": "https://www.greysheet.com/prices/item/1895-1-morgan-dollar-proof/gsid/7841",
+      "prices": [
+        {
+          "grade": "PR68",
+          "cac": false,
+          "cpg_retail": 180000,
+          "greysheet_wholesale": 150000,
+          "bluesheet_pcgs": 150000,
+          "bluesheet_ngc": 125000
+        },
+        {
+          "grade": "PR68",
+          "cac": true,
+          "cpg_retail": 240000,
+          "greysheet_wholesale": 200000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "PR67",
+          "cac": false,
+          "cpg_retail": 150000,
+          "greysheet_wholesale": 125000,
+          "bluesheet_pcgs": 125000,
+          "bluesheet_ngc": 108000
+        },
+        {
+          "grade": "PR67",
+          "cac": true,
+          "cpg_retail": 180000,
+          "greysheet_wholesale": 150000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "PR66",
+          "cac": false,
+          "cpg_retail": 108000,
+          "greysheet_wholesale": 90000,
+          "bluesheet_pcgs": 90000,
+          "bluesheet_ngc": 82000
+        },
+        {
+          "grade": "PR66",
+          "cac": true,
+          "cpg_retail": 132000,
+          "greysheet_wholesale": 110000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "PR65",
+          "cac": false,
+          "cpg_retail": 89000,
+          "greysheet_wholesale": 74000,
+          "bluesheet_pcgs": 74000,
+          "bluesheet_ngc": 70000
+        },
+        {
+          "grade": "PR65",
+          "cac": true,
+          "cpg_retail": 100000,
+          "greysheet_wholesale": 83500,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "PR64",
+          "cac": false,
+          "cpg_retail": 75500,
+          "greysheet_wholesale": 63000,
+          "bluesheet_pcgs": 63000,
+          "bluesheet_ngc": 62000
+        },
+        {
+          "grade": "PR64",
+          "cac": true,
+          "cpg_retail": 87000,
+          "greysheet_wholesale": 72500,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "PR63",
+          "cac": false,
+          "cpg_retail": 69000,
+          "greysheet_wholesale": 57500,
+          "bluesheet_pcgs": 55500,
+          "bluesheet_ngc": 55000
+        },
+        {
+          "grade": "PR63",
+          "cac": true,
+          "cpg_retail": 79000,
+          "greysheet_wholesale": 66000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "PR62",
+          "cac": false,
+          "cpg_retail": 65000,
+          "greysheet_wholesale": 54000,
+          "bluesheet_pcgs": 54000,
+          "bluesheet_ngc": 53000
+        },
+        {
+          "grade": "PR62",
+          "cac": true,
+          "cpg_retail": 74000,
+          "greysheet_wholesale": 61500,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "PR61",
+          "cac": false,
+          "cpg_retail": 62500,
+          "greysheet_wholesale": 52000,
+          "bluesheet_pcgs": 52000,
+          "bluesheet_ngc": 50000
+        },
+        {
+          "grade": "PR61",
+          "cac": true,
+          "cpg_retail": 72000,
+          "greysheet_wholesale": 60000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "PR60",
+          "cac": false,
+          "cpg_retail": 60000,
+          "greysheet_wholesale": 50000,
+          "bluesheet_pcgs": 50000,
+          "bluesheet_ngc": 46500
+        },
+        {
+          "grade": "PR60",
+          "cac": true,
+          "cpg_retail": 70000,
+          "greysheet_wholesale": 58500,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": false,
+          "cpg_retail": 55000,
+          "greysheet_wholesale": 46000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU58",
+          "cac": true,
+          "cpg_retail": 60500,
+          "greysheet_wholesale": 50600,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": false,
+          "cpg_retail": 54500,
+          "greysheet_wholesale": 45500,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU55",
+          "cac": true,
+          "cpg_retail": 60000,
+          "greysheet_wholesale": 50050,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": false,
+          "cpg_retail": 53000,
+          "greysheet_wholesale": 44000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU53",
+          "cac": true,
+          "cpg_retail": 58000,
+          "greysheet_wholesale": 48400,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": false,
+          "cpg_retail": 51500,
+          "greysheet_wholesale": 43000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "AU50",
+          "cac": true,
+          "cpg_retail": 57000,
+          "greysheet_wholesale": 47300,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": false,
+          "cpg_retail": 50000,
+          "greysheet_wholesale": 41500,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF45",
+          "cac": true,
+          "cpg_retail": 55000,
+          "greysheet_wholesale": 45650,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": false,
+          "cpg_retail": 48000,
+          "greysheet_wholesale": 40000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "XF40",
+          "cac": true,
+          "cpg_retail": 53000,
+          "greysheet_wholesale": 44000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": false,
+          "cpg_retail": 45500,
+          "greysheet_wholesale": 38000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF35",
+          "cac": true,
+          "cpg_retail": 50000,
+          "greysheet_wholesale": 41800,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": false,
+          "cpg_retail": 44500,
+          "greysheet_wholesale": 37000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF30",
+          "cac": true,
+          "cpg_retail": 49000,
+          "greysheet_wholesale": 40700,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": false,
+          "cpg_retail": 43000,
+          "greysheet_wholesale": 36000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF25",
+          "cac": true,
+          "cpg_retail": 47500,
+          "greysheet_wholesale": 39600,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": false,
+          "cpg_retail": 42000,
+          "greysheet_wholesale": 35000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VF20",
+          "cac": true,
+          "cpg_retail": 46000,
+          "greysheet_wholesale": 38500,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": false,
+          "cpg_retail": 39500,
+          "greysheet_wholesale": 33000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F15",
+          "cac": true,
+          "cpg_retail": 43500,
+          "greysheet_wholesale": 36300,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": false,
+          "cpg_retail": 38500,
+          "greysheet_wholesale": 32000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "F12",
+          "cac": true,
+          "cpg_retail": 42000,
+          "greysheet_wholesale": 35200,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": false,
+          "cpg_retail": 37000,
+          "greysheet_wholesale": 31000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG10",
+          "cac": true,
+          "cpg_retail": 41000,
+          "greysheet_wholesale": 34100,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": false,
+          "cpg_retail": 36000,
+          "greysheet_wholesale": 30000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "VG8",
+          "cac": true,
+          "cpg_retail": 39500,
+          "greysheet_wholesale": 33000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": false,
+          "cpg_retail": 35000,
+          "greysheet_wholesale": 29000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G6",
+          "cac": true,
+          "cpg_retail": 38500,
+          "greysheet_wholesale": 31900,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": false,
+          "cpg_retail": 33500,
+          "greysheet_wholesale": 28000,
+          "bluesheet_pcgs": null,
+          "bluesheet_ngc": null
+        },
+        {
+          "grade": "G4",
+          "cac": true,
+          "cpg_retail": 37000,
+          "greysheet_wholesale": 30800,
           "bluesheet_pcgs": null,
           "bluesheet_ngc": null
         }

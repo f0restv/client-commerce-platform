@@ -87,6 +87,8 @@ export async function searchProducts(
     total,
     page,
     pageSize,
+    perPage: pageSize,
+    totalPages: Math.ceil(total / pageSize),
     facets,
   };
 }
@@ -121,14 +123,14 @@ function buildWhereClause(filters: SearchFilters): Prisma.ProductWhereInput {
 
   // Price range
   if (filters.minPrice !== undefined || filters.maxPrice !== undefined) {
-    const priceCondition: Prisma.ProductWhereInput = {};
+    const priceRange: { gte?: number; lte?: number } = {};
     if (filters.minPrice !== undefined) {
-      priceCondition.price = { ...priceCondition.price, gte: filters.minPrice };
+      priceRange.gte = filters.minPrice;
     }
     if (filters.maxPrice !== undefined) {
-      priceCondition.price = { ...priceCondition.price, lte: filters.maxPrice };
+      priceRange.lte = filters.maxPrice;
     }
-    conditions.push(priceCondition);
+    conditions.push({ price: priceRange });
   }
 
   // Metal type
@@ -154,14 +156,14 @@ function buildWhereClause(filters: SearchFilters): Prisma.ProductWhereInput {
 
   // Year range
   if (filters.yearMin !== undefined || filters.yearMax !== undefined) {
-    const yearCondition: Prisma.ProductWhereInput = {};
+    const yearRange: { gte?: number; lte?: number } = {};
     if (filters.yearMin !== undefined) {
-      yearCondition.year = { ...yearCondition.year, gte: filters.yearMin };
+      yearRange.gte = filters.yearMin;
     }
     if (filters.yearMax !== undefined) {
-      yearCondition.year = { ...yearCondition.year, lte: filters.yearMax };
+      yearRange.lte = filters.yearMax;
     }
-    conditions.push(yearCondition);
+    conditions.push({ year: yearRange });
   }
 
   // Listing type

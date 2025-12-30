@@ -10,7 +10,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   session: { strategy: "jwt" },
   pages: {
     signIn: "/auth/login",
-    signUp: "/auth/register",
     error: "/auth/error",
   },
   providers: [
@@ -52,6 +51,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           name: user.name,
           image: user.image,
           role: user.role,
+          clientId: user.clientId,
         };
       },
     }),
@@ -61,6 +61,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       if (user) {
         token.id = user.id;
         token.role = (user as { role?: string }).role;
+        token.clientId = (user as { clientId?: string }).clientId;
       }
       return token;
     },
@@ -68,6 +69,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       if (session.user) {
         session.user.id = token.id as string;
         session.user.role = token.role as string;
+        session.user.clientId = token.clientId as string | null | undefined;
       }
       return session;
     },

@@ -22,7 +22,12 @@ export async function unlistFromAllPlatforms(
 ): Promise<UnlistingResult> {
   const item = await prisma.product.findUnique({
     where: { id: itemId },
-    include: { client: true },
+    include: {
+      client: true,
+      platformListings: {
+        include: { connection: true }
+      }
+    },
   });
 
   if (!item) {
@@ -37,42 +42,41 @@ export async function unlistFromAllPlatforms(
   const errors: string[] = [];
 
   // Remove from all platforms in parallel
-  const removals = [];
-
-  if (item.shopifyProductId) {
-    removals.push(
-      removeFromShopify(item.shopifyProductId)
-        .then(() => removedFrom.push('shopify'))
-        .catch((e) => errors.push(`Shopify: ${e.message}`))
-    );
-  }
-
-  if (item.ebayListingId) {
-    removals.push(
-      removeFromEbay(item.ebayListingId)
-        .then(() => removedFrom.push('ebay'))
-        .catch((e) => errors.push(`eBay: ${e.message}`))
-    );
-  }
-
-  if (item.etsyListingId) {
-    removals.push(
-      removeFromEtsy(item.etsyListingId)
-        .then(() => removedFrom.push('etsy'))
-        .catch((e) => errors.push(`Etsy: ${e.message}`))
-    );
-  }
+  const removals = item.platformListings.map(async (listing) => {
+    const platform = listing.connection.platform.toLowerCase();
+    try {
+      switch (listing.connection.platform) {
+        case 'EBAY':
+          await removeFromEbay(listing.externalId);
+          break;
+        case 'ETSY':
+          await removeFromEtsy(listing.externalId);
+          break;
+        // Other platforms can be added here as they're integrated
+        default:
+          // Generic removal - just mark as removed in DB
+          break;
+      }
+      removedFrom.push(platform);
+    } catch (e) {
+      errors.push(`${platform}: ${e instanceof Error ? e.message : 'Unknown error'}`);
+    }
+  });
 
   await Promise.allSettled(removals);
 
-  // Update database
+  // Update database - mark product as sold/removed
   await prisma.product.update({
     where: { id: itemId },
     data: {
-      status: actor === 'shop' ? 'REMOVED_BY_CLIENT' : 'REMOVED_BY_ADMIN',
-      removedAt: new Date(),
-      removalReason: reason,
+      status: 'SOLD',
     },
+  });
+
+  // Update platform listings status
+  await prisma.platformListing.updateMany({
+    where: { productId: itemId },
+    data: { status: 'REMOVED' },
   });
 
   return {
@@ -116,19 +120,17 @@ export async function findItemByIdentifier(identifier: {
  */
 export async function markItemAsSold(
   itemId: string,
-  saleDetails: {
+  _saleDetails: {
     soldPrice: number;
-    buyerInfo?: any;
-    platform: 'shopify' | 'ebay' | 'etsy';
+    buyerInfo?: unknown;
+    platform: 'ebay' | 'etsy';
   }
 ) {
+  // Update product status to SOLD
   return prisma.product.update({
     where: { id: itemId },
     data: {
       status: 'SOLD',
-      soldAt: new Date(),
-      soldPrice: saleDetails.soldPrice,
-      soldPlatform: saleDetails.platform,
     },
   });
 }

@@ -158,7 +158,7 @@ export default async function ShopPage({ searchParams }: ShopPageProps) {
             {/* Search Results */}
             {searchResult.products.length > 0 ? (
               <>
-                <ProductGrid 
+                <ProductGrid
                   products={searchResult.products.map(p => ({
                     id: p.id,
                     title: p.title,
@@ -169,9 +169,13 @@ export default async function ShopPage({ searchParams }: ShopPageProps) {
                     grade: p.grade || undefined,
                     certification: p.certification || undefined,
                     status: "ACTIVE",
-                    auction: p.auction,
-                  }))} 
-                  columns={3} 
+                    auction: p.auction ? {
+                      currentBid: p.auction.currentBid,
+                      endTime: p.auction.endTime.toISOString(),
+                      bidCount: p.auction.bidCount,
+                    } : null,
+                  }))}
+                  columns={3}
                 />
                 
                 {/* Pagination */}

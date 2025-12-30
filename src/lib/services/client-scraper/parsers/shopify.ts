@@ -123,7 +123,7 @@ export class ShopifyParser implements Parser {
       '.ProductItem',
     ];
 
-    let products: cheerio.Cheerio<cheerio.Element> | null = null;
+    let products: cheerio.Cheerio<any> | null = null;
 
     for (const selector of productSelectors) {
       const found = $(selector);

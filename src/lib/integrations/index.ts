@@ -87,7 +87,8 @@ export async function crossListProduct(
           if (!auctionFlexEventId) {
             throw new Error("AuctionFlex event ID required");
           }
-          result = await addLotToAuction(auctionFlexEventId, product);
+          const auctionFlexResult = await addLotToAuction(auctionFlexEventId, product);
+          result = { listingId: auctionFlexResult.lotId, url: auctionFlexResult.url };
           break;
 
         default:

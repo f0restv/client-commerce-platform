@@ -4,7 +4,7 @@ import { prisma } from "@/lib/db";
 export interface CollectionInput {
   name: string;
   description?: string;
-  visibility?: "PUBLIC" | "PRIVATE" | "UNLISTED";
+  isPublic?: boolean;
 }
 
 export interface CollectionItemInput {
@@ -36,7 +36,7 @@ export async function getUserCollections(userId: string) {
             },
           },
         },
-        orderBy: { addedAt: "desc" },
+        orderBy: { createdAt: "desc" },
         take: 4, // Preview images
       },
       _count: {
@@ -60,13 +60,13 @@ export async function getCollection(collectionId: string, userId?: string) {
           product: {
             include: {
               images: true,
-              seller: {
+              client: {
                 select: { id: true, name: true },
               },
             },
           },
         },
-        orderBy: { addedAt: "desc" },
+        orderBy: { createdAt: "desc" },
       },
       _count: {
         select: { items: true },
@@ -76,8 +76,8 @@ export async function getCollection(collectionId: string, userId?: string) {
 
   if (!collection) return null;
 
-  // Check visibility
-  if (collection.visibility === "PRIVATE" && collection.userId !== userId) {
+  // Check visibility - only owner can see private collections
+  if (!collection.isPublic && collection.userId !== userId) {
     return null;
   }
 
@@ -91,7 +91,7 @@ export async function createCollection(userId: string, input: CollectionInput) {
       userId,
       name: input.name,
       description: input.description,
-      visibility: input.visibility || "PRIVATE",
+      isPublic: input.isPublic ?? false,
     },
   });
 }
@@ -110,7 +110,7 @@ export async function updateCollection(
     data: {
       name: input.name,
       description: input.description,
-      visibility: input.visibility,
+      isPublic: input.isPublic,
     },
   });
 }
@@ -157,11 +157,10 @@ export async function addToCollection(userId: string, input: CollectionItemInput
       customTitle: input.customItem?.title,
       customDescription: input.customItem?.description,
       customCategory: input.customItem?.category,
-      acquiredPrice: input.customItem?.acquiredPrice,
-      acquiredDate: input.customItem?.acquiredDate,
+      purchasePrice: input.customItem?.acquiredPrice,
+      purchaseDate: input.customItem?.acquiredDate,
       currentValue: input.customItem?.currentValue,
-      customImageUrls: input.customItem?.imageUrls || [],
-      metadata: input.customItem?.metadata,
+      customImages: input.customItem?.imageUrls || [],
     },
   });
 }
@@ -230,11 +229,11 @@ export async function getCollectionStats(collectionId: string) {
   for (const item of items) {
     const value = item.currentValue || item.product?.price;
     if (value) {
-      totalValue += value;
+      totalValue += parseFloat(value.toString());
       itemsWithValue++;
     }
-    if (item.acquiredPrice) {
-      totalAcquiredCost += item.acquiredPrice;
+    if (item.purchasePrice) {
+      totalAcquiredCost += parseFloat(item.purchasePrice.toString());
     }
   }
 

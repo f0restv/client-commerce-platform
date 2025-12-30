@@ -1,0 +1,327 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-01-01",
+    "sources": [
+      "https://www.ngccoin.com/coin-grading/grading-scale/",
+      "https://www.coinstudy.com/",
+      "https://coinauctionshelp.com/",
+      "https://www.pcgs.com/photograde",
+      "https://www.coincommunity.com/"
+    ]
+  },
+  "sheldonScale": {
+    "description": "The Sheldon scale (1-70) is the internationally recognized standard for coin grading",
+    "grades": {
+      "PO-1": { "name": "Poor", "description": "Barely identifiable, heavily worn" },
+      "FR-2": { "name": "Fair", "description": "Mostly worn smooth but type is identifiable" },
+      "AG-3": { "name": "About Good", "description": "Very heavily worn, outline visible, some detail" },
+      "G-4": { "name": "Good", "description": "Heavily worn, design visible but faint in spots" },
+      "G-6": { "name": "Good", "description": "Heavily worn, design clear, flat in spots" },
+      "VG-8": { "name": "Very Good", "description": "Well worn, main features clear but flat" },
+      "VG-10": { "name": "Very Good", "description": "Well worn, design clear, some detail visible" },
+      "F-12": { "name": "Fine", "description": "Moderate to heavy even wear, all lettering visible" },
+      "F-15": { "name": "Fine", "description": "Moderate even wear, some high points flat" },
+      "VF-20": { "name": "Very Fine", "description": "Moderate wear on high points" },
+      "VF-25": { "name": "Very Fine", "description": "Moderate wear, all features sharp" },
+      "VF-30": { "name": "Choice Very Fine", "description": "Light to moderate even wear, all major features sharp" },
+      "VF-35": { "name": "Choice Very Fine", "description": "Light even wear, all lettering and major features sharp" },
+      "EF-40": { "name": "Extremely Fine", "description": "Light wear on high points" },
+      "EF-45": { "name": "Choice Extremely Fine", "description": "Light wear on high points, all design details sharp" },
+      "AU-50": { "name": "About Uncirculated", "description": "Trace wear on high points, half of mint luster present" },
+      "AU-53": { "name": "About Uncirculated", "description": "Obvious wear on high points, 50%+ mint luster" },
+      "AU-55": { "name": "Choice About Uncirculated", "description": "Slight wear on high points, 75%+ mint luster" },
+      "AU-58": { "name": "Choice About Uncirculated", "description": "Slightest trace of wear, nearly full luster" },
+      "MS-60": { "name": "Mint State Basal", "description": "No wear, weak strike, heavy marks possible" },
+      "MS-61": { "name": "Mint State", "description": "No wear, weak strike, multiple abrasions" },
+      "MS-62": { "name": "Mint State", "description": "No wear, more abrasions than MS-63" },
+      "MS-63": { "name": "Choice Mint State", "description": "No wear, moderate contact marks, hairlines visible" },
+      "MS-64": { "name": "Choice Mint State", "description": "No wear, few obvious marks, good eye appeal" },
+      "MS-65": { "name": "Gem Mint State", "description": "No wear, moderate marks, strong luster, above average eye appeal" },
+      "MS-66": { "name": "Gem Mint State", "description": "No wear, minimal marks, full luster, exceptional eye appeal" },
+      "MS-67": { "name": "Superb Gem Mint State", "description": "No wear, virtually flawless, outstanding eye appeal" },
+      "MS-68": { "name": "Superb Gem Mint State", "description": "No wear, nearly perfect, very sharp strike" },
+      "MS-69": { "name": "Superb Gem Mint State", "description": "Nearly flawless, imperceptible imperfections at 5x" },
+      "MS-70": { "name": "Perfect Mint State", "description": "Perfect, no imperfections at 5x magnification" }
+    },
+    "proofGrades": {
+      "PF-60": { "name": "Proof", "description": "Proof finish, heavy hairlines and marks" },
+      "PF-63": { "name": "Choice Proof", "description": "Proof finish, moderate hairlines" },
+      "PF-65": { "name": "Gem Proof", "description": "Proof finish, minor hairlines" },
+      "PF-67": { "name": "Superb Gem Proof", "description": "Proof finish, virtually no flaws" },
+      "PF-69": { "name": "Near Perfect Proof", "description": "Proof finish, nearly perfect" },
+      "PF-70": { "name": "Perfect Proof", "description": "Proof finish, no imperfections at 5x" }
+    }
+  },
+  "coinTypes": {
+    "morgan-dollar": {
+      "name": "Morgan Dollar",
+      "years": "1878-1921",
+      "obverseWearPoints": [
+        { "area": "cheek", "description": "Liberty's cheek is the primary focal point. First to show wear as smoothing and loss of texture. In MS grades, should have full luster and no flattening." },
+        { "area": "hairAboveEar", "description": "Hair directly above the ear shows wear early. Look for separation of hair strands. AU coins show slight friction here." },
+        { "area": "hairAboveForehead", "description": "Hair above the forehead and eye. In EF, shows slight wear. In VF, displays wide flat areas." },
+        { "area": "cottonLeaves", "description": "Edges of cotton leaves flatten with wear. Check for detail in the cotton blossoms." },
+        { "area": "capFold", "description": "High upper fold of cap shows trace wear in AU grades." }
+      ],
+      "reverseWearPoints": [
+        { "area": "eagleBreast", "description": "Center of eagle's breast shows wear first. In VF, almost all feathers gone from breast." },
+        { "area": "wingEdges", "description": "Wing edges near shoulder retain luster longest. Tips wear first." },
+        { "area": "legTops", "description": "Tops of legs show wear in AU and lower grades." },
+        { "area": "talons", "description": "Eagle's talons flatten with wear. In AU, slight trace of wear on talons." }
+      ],
+      "gradeDistinctions": {
+        "MS-65+": "Nearly mark-free, especially on cheek and left obverse field. Full cartwheel luster.",
+        "MS-63-64": "Some marks visible but none particularly heavy or distracting.",
+        "MS-60-62": "Heavily bag-marked, but no wear. Full luster present.",
+        "AU-58": "Slightest wear on hair above ear and eagle breast. Most luster remains.",
+        "AU-50": "Traces of wear on cheek, hair, breast. 3/4 of luster present.",
+        "EF-40": "Light wear on hair and cheek. Eagle breast high points lightly worn.",
+        "VF-20": "Hair above forehead has flat areas. Breast feathers mostly gone.",
+        "F-12": "Hair merged with forehead. Eagle outline visible.",
+        "G-4": "Liberty outlined. Date and lettering visible."
+      },
+      "gradingWeight": "Two-thirds of grading weight given to obverse. Cheek and hair are critical.",
+      "commonIssues": ["Bag marks on cheek", "Weak strikes on hair details", "Hairlines from cleaning"]
+    },
+    "peace-dollar": {
+      "name": "Peace Dollar",
+      "years": "1921-1935",
+      "obverseWearPoints": [
+        { "area": "hairAboveForehead", "description": "Hair just above the forehead shows wear first. Look for separation of strands." },
+        { "area": "hairBun", "description": "Hair bun at back of head. Loose knot should have full luster in MS grades." },
+        { "area": "hairByCheek", "description": "Hair by cheek is a high point prone to early wear." },
+        { "area": "neckline", "description": "Neck line above the date exposed to early circulation wear." }
+      ],
+      "reverseWearPoints": [
+        { "area": "eagleWing", "description": "High point of eagle's wing on reverse shows wear first." },
+        { "area": "wingMeetsLeg", "description": "Where wing meets leg is a key wear checkpoint." },
+        { "area": "rightShoulder", "description": "Top of right shoulder of eagle. Must retain mint luster in MS grades." },
+        { "area": "leftWingEdge", "description": "Outer edge of left wing should retain texture and fine design lines." }
+      ],
+      "gradeDistinctions": {
+        "MS-65+": "Slight defects only. Well-struck with average or better luster. No marks in focal areas.",
+        "MS-60-64": "Full luster but may have stains, marks, or abrasions.",
+        "AU-55-58": "Slight trace of wear. Most mint luster present.",
+        "AU-50": "Some mint luster remains. High points show slight wear.",
+        "EF-40": "Light even wear on highest areas. Silver grey sheen replaces luster.",
+        "VF-20": "Hairlines over brow worn slightly. Wing feathers visible but faint.",
+        "F-12": "Major details heavily worn. Hair and feathers appear flat.",
+        "G-4": "Well-worn eagle outline without visible feathers."
+      },
+      "specialConsiderations": {
+        "1921HighRelief": "Struck in high relief. Often displays flatness on hairline that is NOT wear. Must examine other areas to grade properly.",
+        "strikeVsWear": "Perhaps no other series has such a high percentage of specimens that are almost, but not quite, uncirculated. Distinguishing weak strike from wear is critical."
+      },
+      "gradingTip": "Look for fine lines or luster breaks as evidence of rub vs strike weakness."
+    },
+    "walking-liberty-half": {
+      "name": "Walking Liberty Half Dollar",
+      "years": "1916-1947",
+      "obverseWearPoints": [
+        { "area": "leftLeg", "description": "First signs of wear appear on Liberty's left leg. Key area for AU grading." },
+        { "area": "leftBreast", "description": "Liberty's left breast shows wear early. Should be outlined in VF." },
+        { "area": "leftHand", "description": "Liberty's left hand often weak due to metal flow, not wear." },
+        { "area": "hairToForehead", "description": "Separation of hair from forehead is key for EF grade." }
+      ],
+      "reverseWearPoints": [
+        { "area": "eagleBreast", "description": "Eagle's breast feathers flatten with wear. Key reverse checkpoint." },
+        { "area": "leftLeg", "description": "Eagle's left leg shows wear in AU and lower grades." },
+        { "area": "wingFeathers", "description": "Upper edges of feathers wear first. In VF, many outer feathers blur together." }
+      ],
+      "gradeDistinctions": {
+        "MS-65+": "Full luster, minimal marks. Liberty and eagle should be nearly mark-free.",
+        "MS-60-64": "No wear, full luster. Contact marks common due to high relief design.",
+        "AU-58": "Light wear on left leg and left breast only.",
+        "AU-50": "Collar visible. High points worn on top. Most luster present.",
+        "VF-35": "Left breast almost completely outlined. Eagle breast and leg have little detail.",
+        "F-15": "Gap between breasts creates 'hook' appearance. Inner wing feathers clear.",
+        "F-12": "Stars above arm visible though flattened."
+      },
+      "specialConsiderations": {
+        "1920sIssues": "1920s coins often appear worn despite excellent condition with full luster.",
+        "sfMintIssues": "San Francisco coins from 1930s-40s may also appear worn when uncirculated.",
+        "highRelief": "Figure of Liberty very susceptible to contact marks from other coins."
+      }
+    },
+    "saint-gaudens-double-eagle": {
+      "name": "Saint-Gaudens Double Eagle",
+      "years": "1907-1933",
+      "obverseWearPoints": [
+        { "area": "breast", "description": "Liberty's breast is highest point. Shows wear first. Most marks occur here." },
+        { "area": "knee", "description": "Liberty's knee is key wear point. Should be sharp in AU and above." },
+        { "area": "nose", "description": "Trace wear visible on nose in AU grades." },
+        { "area": "gownFolds", "description": "Marks can hide within folds of Liberty's gown." }
+      ],
+      "reverseWearPoints": [
+        { "area": "eagleWing", "description": "Eagle's wing shows wear in circulated grades." },
+        { "area": "breastFeathers", "description": "Eagle's breast feathers worn in lower grades." }
+      ],
+      "gradeDistinctions": {
+        "MS-65+": "Minimal marks on breast and knee. Full luster and exceptional eye appeal.",
+        "MS-63": "Some blemishes in focal areas. Luster may not be as prominent.",
+        "MS-60": "Full luster but may look unappealing with heavy marks across surfaces.",
+        "AU-55-58": "Trace wear on nose, breast, and knee. Eagle's wing shows slight wear.",
+        "EF-40": "Eagle's left wing and breast feathers worn. Wear below knee visible."
+      },
+      "gradingWeight": "Marks on date, mintmark, or Liberty's face weigh more heavily than marks in protected areas.",
+      "commonIssues": ["Rim bumps", "Hairlines", "Heavy contact marks in fields", "Bag marks from handling"]
+    },
+    "buffalo-nickel": {
+      "name": "Buffalo Nickel",
+      "years": "1913-1938",
+      "obverseWearPoints": [
+        { "area": "indianCheek", "description": "Just under the eye, the cheek is highest point. Wear shows as color change and smoothing of texture." },
+        { "area": "hairStrands", "description": "Hair strands should remain bold in EF and higher." },
+        { "area": "feathers", "description": "Long feather at back of head begins to merge with hair in F grade." },
+        { "area": "braid", "description": "Braid detail can be weak from strike, not just wear." }
+      ],
+      "reverseWearPoints": [
+        { "area": "horn", "description": "Buffalo's horn is CRITICAL. Full horn = VF or better. Base only = F. Gone = G or below." },
+        { "area": "furDetails", "description": "Fur details on head and shoulder wear progressively." },
+        { "area": "tail", "description": "Tail visibility helps determine grade." }
+      ],
+      "gradeDistinctions": {
+        "MS-65+": "Full mint luster. No wear on cheek or any high points.",
+        "EF-40": "Hair strands bold. Most fur details remain. Horn complete with tip defined.",
+        "VF-20": "Hair and cheek show considerable flatness. Partial feather detail. Horn point visible.",
+        "F-12": "Feather merging with hair. Upper half of horn missing but strong base visible.",
+        "G-4": "Hair, cheek, and feathers blended. Horn completely missing."
+      },
+      "specialConsiderations": {
+        "strikeIssues": "Denver and San Francisco mints 1917-27 often indistinct on high points. Grading becomes challenging.",
+        "hornAnomaly": "Many mint state coins lack fully visible horn! VF-20 standard now notes 'Point of horn not always visible.'"
+      }
+    },
+    "mercury-dime": {
+      "name": "Mercury Dime (Winged Liberty Head)",
+      "years": "1916-1945",
+      "obverseWearPoints": [
+        { "area": "hairAboveEar", "description": "Hair above Liberty's ear shows wear first. Critical at every grade." },
+        { "area": "wingTips", "description": "Wing tips should be sharp and well-defined in high grades." },
+        { "area": "cheek", "description": "Cheek area shows wear in circulated grades." }
+      ],
+      "reverseWearPoints": [
+        { "area": "centralBands", "description": "Center horizontal bands on fasces are KEY. High profile means quick wear." },
+        { "area": "diagonalBands", "description": "Two crossing diagonal bands must show for VF/EF. Show only slight wear in EF." },
+        { "area": "verticalSticks", "description": "Clarity of vertical sticks confirms strike quality and grade. Half visible = G." }
+      ],
+      "gradeDistinctions": {
+        "MS-65+FB": "Full Bands designation. Central bands completely separated with no breaks or bridges.",
+        "MS-65+": "No wear. Strong luster. Minor hairlines acceptable.",
+        "AU-50-58": "Trace wear on hair and wing tips. Bands may be flat from strike.",
+        "EF-40": "Light wear on hair. Diagonal bands show only slight wear.",
+        "VF-20": "Diagonal bands must show. Some flatness acceptable.",
+        "F-12": "All sticks defined. Diagonal bands worn nearly flat.",
+        "G-4": "One-half of sticks discernible in fasces."
+      },
+      "fullBandsDesignation": {
+        "description": "PCGS Full Bands (FB) requires central horizontal bands completely separated, no breaks, bridges, or interruptions.",
+        "eligibility": "Generally MS-60 and above. AU-50 allowed for 1916-D, 1942/1, and 1942/1-D.",
+        "note": "Even minor connection or abrasion in bands prevents FB designation."
+      },
+      "specialConsiderations": {
+        "strikeVsWear": "San Francisco and mid-1920s often show weak bands from poor strike, NOT wear. Check luster uniformity to distinguish."
+      }
+    },
+    "lincoln-wheat-cent": {
+      "name": "Lincoln Wheat Cent",
+      "years": "1909-1958",
+      "obverseWearPoints": [
+        { "area": "cheekbone", "description": "Lincoln's cheekbone shows wear early. Key area for grading." },
+        { "area": "jawline", "description": "Jaw and cheek should be separated in F grade and above." },
+        { "area": "hairDetails", "description": "Hair above ear shows progressive wear. Curls visible in VF." },
+        { "area": "ear", "description": "About 1/3 of ear present in F-12 grade." }
+      ],
+      "reverseWearPoints": [
+        { "area": "wheatStalks", "description": "Wheat stalk lines are primary reverse indicator. Check separation of parallel lines." },
+        { "area": "wheatTips": "Tips of wheat stalks show wear in AU grades." }
+      ],
+      "gradeDistinctions": {
+        "MS-65+": "Full red or red-brown color. No wear. Exceptional luster.",
+        "AU-58": "Minimal abrasion on cheekbone and jaw. Wheat tips show minimal wear.",
+        "AU-55": "Trace wear on highest point of jaw. Wheat stalks show trace wear.",
+        "EF-40": "Slight wear on hair, cheek, and jaw. Wheat stalk lines clearly defined. Half of luster remains.",
+        "VF-20": "Hair curls visible. Jaw and cheek smooth but defined. Wheat line separation clear.",
+        "F-12": "About 2/3 of wheat lines show. Jawline and cheekbone take shape.",
+        "VG-8": "1/3 of wheat lines show. Hint of jawline and cheekbone.",
+        "G-4": "Half of lines show in wheat heads. Hair outline only."
+      },
+      "colorDesignations": {
+        "RD": "Red - 95%+ original red color",
+        "RB": "Red-Brown - Between 5-95% red color",
+        "BN": "Brown - Less than 5% red color remaining"
+      }
+    }
+  },
+  "problemDetection": {
+    "cleaning": {
+      "signs": [
+        "Microscopic scratches or hairline marks visible under magnification",
+        "Unnatural brightness or color that seems 'off'",
+        "Breakups in natural luster",
+        "Flat or muted details",
+        "Incuse parallel lines visible when rotating coin",
+        "Loss of mint frost",
+        "Harsh, bright appearance inconsistent with age"
+      ],
+      "gradingImpact": "Cleaned coins receive 'Details' grade from PCGS/NGC rather than numeric grade. Value typically 40-70% less than uncleaned equivalent.",
+      "types": {
+        "dipped": "Chemical cleaning, often leaves coin bright but strips natural toning",
+        "wiped": "Cloth or abrasive cleaning leaves fine parallel lines",
+        "polished": "Aggressive cleaning removes surface metal, creates unnatural shine"
+      }
+    },
+    "whizzing": {
+      "description": "Use of rotating wire brush to simulate mint luster on circulated coins",
+      "signs": [
+        "Unnatural 'sheen' instead of true cartwheel luster effect",
+        "Light bounces differently - diffused effect",
+        "Fine scratches or grooves disrupting original design details",
+        "Lettering, hairlines, and stars appear less sharp",
+        "Soft or blurred fine details from metal removal",
+        "Directional marks inconsistent with minting process"
+      ],
+      "gradingImpact": "Labeled as 'Altered Surfaces' or 'Cleaned' - not eligible for numeric grade",
+      "detection": "Easily spotted by experts due to distorted lettering and design details"
+    },
+    "tooling": {
+      "description": "Smoothing fields to remove damage or restoring lost details with graver or knife",
+      "types": {
+        "fieldSmoothing": "Removing scratches, corrosion, or damage from coin fields",
+        "detailRestoration": "Re-engraving lost design details",
+        "rimRepair": "Mechanical repair of rim damage",
+        "holeFilling": "Plugging holes from previous mounting"
+      },
+      "gradingImpact": "Cannot be hidden. Coins labeled 'OBV TOOLED' or 'REV TOOLED' as appropriate."
+    },
+    "artificialToning": {
+      "description": "Chemical application to create appearance of natural toning, often to hide problems",
+      "signs": [
+        "Colors inconsistent with natural toning patterns",
+        "Toning may hide underlying hairlines or cleaning",
+        "Can worsen or change over time as chemicals continue reacting",
+        "Unnatural color progression",
+        "Color concentrated in unusual areas"
+      ],
+      "gradingImpact": "Coins with artificial toning refused numeric grade by major services"
+    },
+    "environmentalDamage": {
+      "types": [
+        "PVC damage - greenish residue from improper storage",
+        "Corrosion spots",
+        "Water spots or staining",
+        "Fingerprints etched into surface"
+      ],
+      "gradingImpact": "May receive 'Environmental Damage' details grade"
+    }
+  },
+  "gradingTips": {
+    "lighting": "Position light at 45 degrees and slowly rotate coin. Watch how light plays across surface. Breaks in luster indicate wear.",
+    "magnification": "Use 5x-10x magnification for surface examination. 5x is standard for MS-70 verification.",
+    "comparison": "Compare to reference images at same grade level. PCGS Photograde has 2,580 high-resolution photos.",
+    "edgesFirst": "Start by examining edges and rims for dents, bumps, or defects. Work clockwise from outer fields inward.",
+    "bothSides": "Note wear, hairlines, bag marks, cleaning, and defects on both obverse and reverse.",
+    "focusWeight": "Most coins weight obverse more heavily (2/3 for Morgan dollars). Major focal points matter most."
+  }
+}

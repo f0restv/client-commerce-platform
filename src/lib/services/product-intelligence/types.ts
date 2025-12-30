@@ -45,6 +45,20 @@ export interface GradeEstimate {
   edges?: string;
   strike?: string;
   luster?: string;
+  /** Whether visual comparison with reference images was used */
+  visualComparisonUsed?: boolean;
+  /** Which reference grade images were compared against */
+  referenceGradesCompared?: string[];
+  /** The closest matching reference grade (when visual comparison is used) */
+  closestReference?: string;
+  /** Detailed notes from comparing to reference images */
+  comparisonNotes?: string;
+  /** Overall eye appeal assessment */
+  eyeAppeal?: string;
+  /** Detected problems (cleaning, whizzing, tooling, etc.) */
+  problems?: string[];
+  /** Details grade designation if problems detected */
+  detailsGrade?: string | null;
 }
 
 export interface MarketComparable {

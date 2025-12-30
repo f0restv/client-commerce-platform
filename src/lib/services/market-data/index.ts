@@ -371,7 +371,7 @@ export async function getPrice(
           category: 'pokemon',
           source: 'PokemonTracker',
           prices: {
-            raw: card.prices.tcgplayer ? {
+            raw: card.prices?.tcgplayer ? {
               low: card.prices.tcgplayer.low,
               mid: card.prices.tcgplayer.market,
               high: card.prices.tcgplayer.high,

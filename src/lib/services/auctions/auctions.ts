@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/db";
-import { Decimal } from "@prisma/client/runtime/library";
+import { Prisma } from "@prisma/client";
 
 export interface AuctionBidInput {
   auctionId: string;
@@ -16,24 +16,32 @@ export interface CreateAuctionInput {
 }
 
 // Helper to convert Decimal to number
-function toNumber(val: Decimal | number | null | undefined): number {
+function toNumber(val: Prisma.Decimal | number | null | undefined): number {
   if (val === null || val === undefined) return 0;
   return typeof val === 'number' ? val : Number(val);
 }
 
 // Create an auction for a product
-export async function createAuction(sellerId: string, input: CreateAuctionInput) {
+export async function createAuction(userId: string, input: CreateAuctionInput) {
   const product = await prisma.product.findUnique({
     where: { id: input.productId },
-    select: { sellerId: true, listingType: true },
+    select: { clientId: true, listingType: true },
   });
 
   if (!product) {
     throw new Error("Product not found");
   }
 
-  if (product.sellerId !== sellerId) {
-    throw new Error("You can only create auctions for your own products");
+  // Check authorization - user must be associated with the product's client
+  // For platform-owned products, this would need admin check
+  if (product.clientId) {
+    const user = await prisma.user.findUnique({
+      where: { id: userId },
+      select: { clientId: true, role: true },
+    });
+    if (!user || (user.clientId !== product.clientId && !['ADMIN', 'STAFF'].includes(user.role))) {
+      throw new Error("You can only create auctions for your own products");
+    }
   }
 
   // Validate end time
@@ -94,8 +102,8 @@ export async function getAuction(auctionId: string) {
       product: {
         include: {
           images: true,
-          seller: {
-            select: { id: true, name: true, image: true },
+          client: {
+            select: { id: true, name: true },
           },
         },
       },
@@ -145,7 +153,7 @@ export async function placeBid(bidderId: string, input: AuctionBidInput) {
   const auction = await prisma.auction.findUnique({
     where: { id: input.auctionId },
     include: {
-      product: { select: { sellerId: true, title: true } },
+      product: { select: { clientId: true, title: true } },
     },
   });
 
@@ -161,8 +169,15 @@ export async function placeBid(bidderId: string, input: AuctionBidInput) {
     throw new Error("Auction has ended");
   }
 
-  if (auction.product.sellerId === bidderId) {
-    throw new Error("You cannot bid on your own auction");
+  // Check if bidder owns the product via client relationship
+  if (auction.product.clientId) {
+    const bidder = await prisma.user.findUnique({
+      where: { id: bidderId },
+      select: { clientId: true },
+    });
+    if (bidder?.clientId === auction.product.clientId) {
+      throw new Error("You cannot bid on your own auction");
+    }
   }
 
   // Calculate minimum bid
@@ -336,7 +351,7 @@ export async function getActiveAuctions(
         product: {
           include: {
             images: { take: 1 },
-            seller: {
+            client: {
               select: { id: true, name: true },
             },
           },

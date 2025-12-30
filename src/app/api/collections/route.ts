@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
 
   try {
     const body = await request.json();
-    const { name, description, visibility } = body;
+    const { name, description, isPublic } = body;
 
     if (!name || typeof name !== "string" || name.trim().length === 0) {
       return NextResponse.json(
@@ -56,7 +56,7 @@ export async function POST(request: NextRequest) {
     const collection = await createCollection(session.user.id, {
       name: name.trim(),
       description: description?.trim(),
-      visibility,
+      isPublic,
     });
 
     return NextResponse.json({ collection }, { status: 201 });

@@ -1,0 +1,16 @@
+{
+  "series": "lincoln-wheat-cent",
+  "displayName": "Lincoln Wheat Cent",
+  "scrapedAt": "2025-12-30T00:51:23.692Z",
+  "source": "wikimedia-commons",
+  "grades": [
+    {
+      "grade": "MS-65",
+      "numericGrade": 65,
+      "obversePath": "/Users/capitalpawn/Documents/GitHub/client-commerce-platform/data/grading-reference/lincoln-wheat-cent/MS65_obverse.png",
+      "reversePath": null,
+      "obverseUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2e/US_One_Cent_Obv.png",
+      "reverseUrl": "https://upload.wikimedia.org/wikipedia/commons/3/37/US_One_Cent_Rev.png"
+    }
+  ]
+}

@@ -20,7 +20,7 @@ export interface CounterOfferInput {
 export async function createOffer(buyerId: string, input: CreateOfferInput) {
   const product = await prisma.product.findUnique({
     where: { id: input.productId },
-    select: { id: true, sellerId: true, price: true, title: true, status: true },
+    select: { id: true, clientId: true, price: true, title: true, status: true },
   });
 
   if (!product) {
@@ -31,7 +31,7 @@ export async function createOffer(buyerId: string, input: CreateOfferInput) {
     throw new Error("Product is not available for offers");
   }
 
-  if (product.sellerId === buyerId) {
+  if (product.clientId === buyerId) {
     throw new Error("Cannot make an offer on your own product");
   }
 
@@ -60,7 +60,6 @@ export async function createOffer(buyerId: string, input: CreateOfferInput) {
     data: {
       productId: input.productId,
       buyerId,
-      sellerId: product.sellerId,
       amount: input.amount,
       message: input.message,
       expiresAt,
@@ -83,10 +82,10 @@ export async function createOffer(buyerId: string, input: CreateOfferInput) {
 export async function getProductOffers(productId: string, sellerId: string) {
   const product = await prisma.product.findUnique({
     where: { id: productId },
-    select: { sellerId: true },
+    select: { clientId: true },
   });
 
-  if (!product || product.sellerId !== sellerId) {
+  if (!product || product.clientId !== sellerId) {
     throw new Error("Access denied");
   }
 
@@ -112,7 +111,7 @@ export async function getBuyerOffers(buyerId: string, status?: OfferStatus) {
       product: {
         include: {
           images: { take: 1 },
-          seller: {
+          client: {
             select: { id: true, name: true },
           },
         },
@@ -126,7 +125,7 @@ export async function getBuyerOffers(buyerId: string, status?: OfferStatus) {
 export async function getSellerOffers(sellerId: string, status?: OfferStatus) {
   return prisma.offer.findMany({
     where: {
-      sellerId,
+      product: { clientId: sellerId },
       ...(status && { status }),
     },
     include: {
@@ -152,7 +151,7 @@ export async function acceptOffer(offerId: string, sellerId: string) {
     throw new Error("Offer not found");
   }
 
-  if (offer.sellerId !== sellerId) {
+  if (offer.product.clientId !== sellerId) {
     throw new Error("Access denied");
   }
 
@@ -192,13 +191,14 @@ export async function acceptOffer(offerId: string, sellerId: string) {
 export async function declineOffer(offerId: string, sellerId: string) {
   const offer = await prisma.offer.findUnique({
     where: { id: offerId },
+    include: { product: { select: { clientId: true } } },
   });
 
   if (!offer) {
     throw new Error("Offer not found");
   }
 
-  if (offer.sellerId !== sellerId) {
+  if (offer.product.clientId !== sellerId) {
     throw new Error("Access denied");
   }
 
@@ -216,13 +216,14 @@ export async function declineOffer(offerId: string, sellerId: string) {
 export async function counterOffer(sellerId: string, input: CounterOfferInput) {
   const offer = await prisma.offer.findUnique({
     where: { id: input.offerId },
+    include: { product: { select: { clientId: true } } },
   });
 
   if (!offer) {
     throw new Error("Offer not found");
   }
 
-  if (offer.sellerId !== sellerId) {
+  if (offer.product.clientId !== sellerId) {
     throw new Error("Access denied");
   }
 
@@ -243,7 +244,8 @@ export async function counterOffer(sellerId: string, input: CounterOfferInput) {
       status: "COUNTERED",
       counterAmount: input.amount,
       counterMessage: input.message,
-      counterExpiresAt: expiresAt,
+      counteredAt: new Date(),
+      expiresAt: expiresAt,
     },
   });
 }
@@ -266,7 +268,7 @@ export async function acceptCounterOffer(offerId: string, buyerId: string) {
     throw new Error("No counter offer to accept");
   }
 
-  if (offer.counterExpiresAt && offer.counterExpiresAt < new Date()) {
+  if (offer.expiresAt && offer.expiresAt < new Date()) {
     throw new Error("Counter offer has expired");
   }
 
@@ -323,16 +325,8 @@ export async function expireOldOffers() {
 
   const expired = await prisma.offer.updateMany({
     where: {
-      OR: [
-        {
-          status: "PENDING",
-          expiresAt: { lt: now },
-        },
-        {
-          status: "COUNTERED",
-          counterExpiresAt: { lt: now },
-        },
-      ],
+      status: { in: ["PENDING", "COUNTERED"] },
+      expiresAt: { lt: now },
     },
     data: { status: "EXPIRED" },
   });
