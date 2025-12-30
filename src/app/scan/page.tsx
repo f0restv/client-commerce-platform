@@ -33,6 +33,12 @@ interface AnalysisResult {
   possibleIdentification: string;
   confidence: number;
   suggestedCategory: string;
+  estimatedGrade?: string;
+  gradeConfidence?: number;
+  year?: number;
+  mint?: string;
+  certification?: string;
+  additionalNotes?: string;
   estimatedValue?: {
     low: number;
     mid: number;
@@ -426,7 +432,7 @@ export default function ScanPage() {
             <Card>
               <CardContent className="p-4">
                 <div className="flex items-start justify-between gap-4">
-                  <div>
+                  <div className="flex-1">
                     <div className="flex items-center gap-2">
                       <Sparkles className="h-4 w-4 text-amber-500" />
                       <span className="text-sm text-gray-500">Identified as</span>
@@ -434,15 +440,42 @@ export default function ScanPage() {
                     <h2 className="mt-1 text-lg font-semibold">
                       {analysis.possibleIdentification}
                     </h2>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {analysis.suggestedCategory && (
+                        <Badge variant="secondary">
+                          {analysis.suggestedCategory}
+                        </Badge>
+                      )}
+                      {analysis.year && (
+                        <Badge variant="outline">{analysis.year}</Badge>
+                      )}
+                      {analysis.mint && (
+                        <Badge variant="outline">{analysis.mint} Mint</Badge>
+                      )}
+                      {analysis.certification && (
+                        <Badge variant="outline">{analysis.certification}</Badge>
+                      )}
+                    </div>
                   </div>
-                  <Badge variant="outline">
-                    {Math.round(analysis.confidence * 100)}% match
-                  </Badge>
+                  {/* Grade - prominent display */}
+                  {analysis.estimatedGrade && (
+                    <div className="text-center">
+                      <p className="text-xs text-gray-400">Grade</p>
+                      <p className="text-2xl font-bold text-blue-600">
+                        {analysis.estimatedGrade}
+                      </p>
+                      {analysis.gradeConfidence && (
+                        <p className="text-xs text-gray-400">
+                          {Math.round(analysis.gradeConfidence * 100)}% conf
+                        </p>
+                      )}
+                    </div>
+                  )}
                 </div>
-                {analysis.suggestedCategory && (
-                  <Badge className="mt-2" variant="secondary">
-                    {analysis.suggestedCategory}
-                  </Badge>
+                {analysis.additionalNotes && (
+                  <p className="mt-3 text-sm text-gray-600 border-t pt-3">
+                    {analysis.additionalNotes}
+                  </p>
                 )}
               </CardContent>
             </Card>

@@ -8,6 +8,11 @@ interface CoinIdentification {
   confidence?: number;
   suggestedCategory?: string;
   additionalNotes?: string;
+  estimatedGrade?: string;
+  gradeConfidence?: number;
+  year?: number;
+  mint?: string;
+  certification?: string;
 }
 
 export async function POST(request: NextRequest) {
@@ -68,9 +73,15 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       analysis: {
-        possibleIdentification: (identification as CoinIdentification | null)?.possibleIdentification || title,
-        confidence: (identification as CoinIdentification | null)?.confidence || analysis.confidence,
-        suggestedCategory: (identification as CoinIdentification | null)?.suggestedCategory || category,
+        possibleIdentification: identification?.possibleIdentification || title,
+        confidence: identification?.confidence || analysis.confidence,
+        suggestedCategory: identification?.suggestedCategory || category,
+        estimatedGrade: identification?.estimatedGrade,
+        gradeConfidence: identification?.gradeConfidence,
+        year: identification?.year,
+        mint: identification?.mint,
+        certification: identification?.certification,
+        additionalNotes: identification?.additionalNotes,
         estimatedValue: analysis.estimatedValue,
         marketTrend: analysis.marketTrend,
         avgDaysToSell: analysis.avgDaysToSell,

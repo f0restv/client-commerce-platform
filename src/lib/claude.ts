@@ -222,12 +222,17 @@ export async function identifyCoin(imageBase64: string): Promise<{
   confidence: number;
   suggestedCategory: string;
   additionalNotes: string;
+  estimatedGrade: string;
+  gradeConfidence: number;
+  year?: number;
+  mint?: string;
+  certification?: string;
 }> {
   try {
     const anthropic = getAnthropic();
     const message = await anthropic.messages.create({
       model: "claude-sonnet-4-20250514",
-      max_tokens: 500,
+      max_tokens: 1000,
       messages: [
         {
           role: "user",
@@ -242,12 +247,31 @@ export async function identifyCoin(imageBase64: string): Promise<{
             },
             {
               type: "text",
-              text: `Analyze this coin/collectible image and identify it. Provide your analysis in JSON format:
+              text: `You are an expert numismatist and coin grader. Analyze this coin/collectible image carefully.
+
+IMPORTANT: If you see a PCGS, NGC, or other grading service holder/slab, read the label to get the exact grade. If the coin is raw (not in a holder), estimate the grade based on wear, luster, and surface preservation.
+
+Grading scale for reference:
+- AG3, G4, G6: Heavy wear, major features visible
+- VG8, VG10: Moderate wear, some detail visible
+- F12, F15: Even wear, all lettering visible
+- VF20-VF35: Light wear on high points
+- EF40, EF45: Slight wear on highest points only
+- AU50-AU58: Trace wear, nearly full luster
+- MS60-MS70: Uncirculated (MS60=many marks, MS65=gem, MS67+=superb)
+- PF60-PF70: Proof coins
+
+Provide your analysis in JSON format:
 {
-  "possibleIdentification": "<your best identification of this item>",
-  "confidence": <0.0-1.0>,
-  "suggestedCategory": "<category like 'US Coins', 'World Coins', 'Bullion', etc.>",
-  "additionalNotes": "<any observations about condition, authenticity concerns, or notable features>"
+  "possibleIdentification": "<full identification: e.g. '1921 Morgan Silver Dollar'>",
+  "year": <year as number or null if unknown>,
+  "mint": "<mint mark: P, D, S, O, CC, W, or null>",
+  "estimatedGrade": "<grade: e.g. 'MS65', 'VF30', 'AU58'>",
+  "gradeConfidence": <0.0-1.0 confidence in grade estimate>,
+  "certification": "<PCGS, NGC, ANACS, ICG, or null if raw>",
+  "confidence": <0.0-1.0 overall confidence>,
+  "suggestedCategory": "<category: 'US Coins', 'World Coins', 'Bullion', 'Trading Cards', 'Collectibles'>",
+  "additionalNotes": "<observations: toning, problems, eye appeal, CAC sticker, etc.>"
 }
 
 Respond ONLY with the JSON object.`,
@@ -270,6 +294,8 @@ Respond ONLY with the JSON object.`,
       confidence: 0,
       suggestedCategory: "Unknown",
       additionalNotes: "Image analysis failed",
+      estimatedGrade: "Unknown",
+      gradeConfidence: 0,
     };
   }
 }
