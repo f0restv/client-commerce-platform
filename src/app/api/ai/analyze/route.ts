@@ -59,9 +59,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       analysis: {
-        possibleIdentification: identification?.possibleIdentification || title,
-        confidence: identification?.confidence || analysis.confidence,
-        suggestedCategory: identification?.suggestedCategory || category,
+        possibleIdentification: (identification as CoinIdentification | null)?.possibleIdentification || title,
+        confidence: (identification as CoinIdentification | null)?.confidence || analysis.confidence,
+        suggestedCategory: (identification as CoinIdentification | null)?.suggestedCategory || category,
         estimatedValue: analysis.estimatedValue,
         marketTrend: analysis.marketTrend,
         avgDaysToSell: analysis.avgDaysToSell,
