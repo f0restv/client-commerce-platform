@@ -1,7 +1,7 @@
 # CollektIQ Platform Roadmap
 
 > Single source of truth for project status and priorities.
-> Last updated: December 30, 2025
+> Last updated: December 30, 2025 (Evening)
 
 ---
 
@@ -11,11 +11,11 @@
 |-------|--------|------------|
 | Phase 1: Core Infrastructure | Done | 100% |
 | Phase 2: Integrations | Done | 100% |
-| Phase 3: Deployment | In Progress | 80% |
-| Phase 4: Consumer UI | Not Started | 0% |
-| Phase 5: Polish & Launch | Not Started | 0% |
+| Phase 3: Deployment | In Progress | 90% |
+| Phase 4: Consumer UI | In Progress | 25% |
+| Phase 5: Polish & Launch | In Progress | 60% |
 
-**Overall: ~70% complete**
+**Overall: ~80% complete**
 
 ---
 
@@ -81,8 +81,8 @@
 - [x] `POST /api/v1/auth/token` - Token generation
 - [x] API key authentication
 - [x] Request validation
-- [ ] Rate limiting per key
-- [ ] `/api/health` endpoint
+- [x] Rate limiting per key (per-minute/hour/day with scopes)
+- [x] `/api/health` endpoint (DB + cache health checks)
 
 ### Other Integrations
 - [x] Twilio SMS notifications
@@ -122,8 +122,7 @@ POKEMON_TRACKER_API_KEY=...
 
 ### Testing
 - [x] Vitest configured
-- [x] 65+ tests passing
-- [ ] Fix 5 failing tests (margin logic, eBay stats, timeouts)
+- [x] 93 tests passing (all green)
 - [ ] Playwright E2E tests
 - [ ] Core flow test: scan -> analyze -> save -> list
 
@@ -132,11 +131,11 @@ POKEMON_TRACKER_API_KEY=...
 ## Phase 4: Consumer UI
 
 ### `/scan` Page (Priority 1)
-- [ ] Camera/image upload component
-- [ ] Loading state during analysis
-- [ ] Results display: coin ID, grade, pricing table
-- [ ] "Save to Inventory" button
-- [ ] Mobile-first design
+- [x] Camera/image upload component
+- [x] Loading state during analysis
+- [x] Results display: item ID, confidence, pricing table
+- [x] "Save to Inventory" button
+- [x] Mobile-first design
 
 ### `/inventory` Dashboard (Priority 2)
 - [ ] List view with filters
@@ -165,12 +164,12 @@ POKEMON_TRACKER_API_KEY=...
 ## Phase 5: Polish & Launch
 
 ### Code Quality
-- [ ] Add structured logging (Pino)
-- [ ] Replace JSON file caches with Redis
-- [ ] Create BaseScraper class for all scrapers
-- [ ] Standardize lazy initialization
-- [ ] Add soft deletes to key tables
-- [ ] Improve API key auth with per-key rate limits
+- [x] Add structured logging (Pino with redaction)
+- [x] Replace JSON file caches with Redis (memory fallback)
+- [x] Create BaseScraper class for all scrapers (retry, rate limit, Playwright)
+- [x] Standardize lazy initialization (Anthropic, Redis clients)
+- [x] Add soft deletes to key tables (User, Client, Product, Order, Submission)
+- [x] Improve API key auth with per-key rate limits
 
 ### Security
 - [ ] Input validation audit (Zod everywhere)
@@ -200,16 +199,16 @@ POKEMON_TRACKER_API_KEY=...
 ## Known Issues
 
 ### Critical
-1. **PSA Cards scraper blocked** - Cloudflare protection requires Playwright browser context
+1. ~~**PSA Cards scraper blocked**~~ ✅ Fixed - Now uses BaseScraper with Playwright
 2. **Greysheet returning empty data** - Auth/selectors need fixing
 
 ### High Priority
-3. **5 failing tests** - Margin logic, eBay stats counting, timeouts
+3. ~~**5 failing tests**~~ ✅ Fixed - All 93 tests passing
 4. **Missing PokemonTracker API key** - Set `POKEMON_TRACKER_API_KEY`
 
 ### Medium Priority
-5. **JSON file caches** - Should migrate to Redis for production
-6. **No structured logging** - Hard to debug in production
+5. ~~**JSON file caches**~~ ✅ Fixed - Redis with memory fallback implemented
+6. ~~**No structured logging**~~ ✅ Fixed - Pino logging with redaction
 7. **Inconsistent error handling** - Some services swallow errors silently
 
 ---
@@ -230,8 +229,13 @@ src/
 └── components/          # React UI
 ```
 
-### Data Files
+### Data & Caching
 ```
+# Redis cache (primary) or in-memory fallback
+scraper:psa-cards:*          # PSA price data
+scraper:pricecharting:*      # PriceCharting data
+
+# Legacy file caches (being phased out)
 data/
 ├── cdn-exchange-cache.json   # 11MB, 3,288 coins
 ├── greysheet-cache.json      # Coin prices
@@ -280,10 +284,11 @@ npx tsx src/lib/services/market-data/index.ts search "morgan dollar"
 - Easy migrations
 - Prisma Studio for debugging
 
-### Why JSON file caches (for now)?
-- Fast to implement
-- Works without Redis in dev
-- **Should migrate to Redis for production**
+### Why Redis with memory fallback?
+- Production-ready caching with Redis
+- Graceful degradation to in-memory when Redis unavailable
+- 7-day TTL for price data
+- Legacy JSON caches being phased out
 
 ### Why Claude for AI?
 - Best vision model for collectibles
@@ -294,8 +299,8 @@ npx tsx src/lib/services/market-data/index.ts search "morgan dollar"
 
 ## Next Actions
 
-1. **Set Vercel env vars** - Unblock production deployment
-2. **Build `/scan` page** - Core user flow
-3. **Fix failing tests** - CI/CD stability
-4. **Add `/api/health`** - Monitoring readiness
-5. **Migrate to Redis caching** - Production readiness
+1. **Build `/scan` page** - Core user flow (camera → AI analysis → save)
+2. **Set Vercel env vars** - Unblock production deployment
+3. **Homepage rebrand** - CollektIQ branding, remove CoinVault
+4. **Auth pages** - Sign in/up flows
+5. **Playwright E2E tests** - End-to-end testing

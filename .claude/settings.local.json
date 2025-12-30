@@ -8,7 +8,13 @@
       "Bash(npm install:*)",
       "Bash(npm run test:*)",
       "Bash(npm run type-check:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd robust infrastructure: caching, logging, scraping, soft deletes\n\nMajor improvements to platform infrastructure:\n\n- Add /api/health endpoint with DB and cache health checks\n- Add Redis caching utility with automatic memory fallback\n- Add Pino structured logging with sensitive data redaction\n- Add BaseScraper class with retry, rate limiting, Playwright support\n- Refactor PSA Cards and PriceCharting scrapers to use BaseScraper\n- Add soft delete \\(deletedAt\\) fields to User, Client, Product, Order, Submission\n- Enhance API key auth with per-key rate limiting and scopes\n- Fix Anthropic client to use lazy initialization\n- Add ROADMAP.md consolidating all task files\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)",
+      "Bash(git push)",
+      "Bash(git commit:*)"
     ]
   }
 }
