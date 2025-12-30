@@ -1,7 +1,7 @@
 # CollektIQ Platform Roadmap
 
 > Single source of truth for project status and priorities.
-> Last updated: December 30, 2025 (Evening)
+> Last updated: December 30, 2025 (Night)
 
 ---
 
@@ -11,11 +11,11 @@
 |-------|--------|------------|
 | Phase 1: Core Infrastructure | Done | 100% |
 | Phase 2: Integrations | Done | 100% |
-| Phase 3: Deployment | In Progress | 90% |
-| Phase 4: Consumer UI | In Progress | 25% |
+| Phase 3: Deployment | Done | 100% |
+| Phase 4: Consumer UI | In Progress | 80% |
 | Phase 5: Polish & Launch | In Progress | 60% |
 
-**Overall: ~80% complete**
+**Overall: ~90% complete**
 
 ---
 
@@ -101,9 +101,9 @@
 - [x] GitHub integration active
 - [x] Build script fixed (`prisma generate && next build`)
 - [x] TypeScript errors fixed
-- [ ] Environment variables set in dashboard
-- [ ] Production domain configured
-- [ ] Verify production endpoints
+- [x] Environment variables set in dashboard
+- [x] Production domain configured (collektiq.com)
+- [x] Production endpoints verified
 
 ### Environment Variables Required
 ```
@@ -138,10 +138,12 @@ POKEMON_TRACKER_API_KEY=...
 - [x] Mobile-first design
 
 ### `/inventory` Dashboard (Priority 2)
-- [ ] List view with filters
-- [ ] Item detail pages
+- [x] List view with filters (status, search)
+- [x] Item detail pages (`/inventory/[id]`)
+- [x] Stats summary (total, listed, sold)
 - [ ] Bulk actions
 - [ ] Status workflow: draft -> listed -> sold -> paid
+- [ ] Edit item page (`/inventory/[id]/edit`)
 
 ### `/dashboard` Overview
 - [ ] Stats summary
@@ -149,8 +151,9 @@ POKEMON_TRACKER_API_KEY=...
 - [ ] Quick actions
 
 ### Auth Pages
-- [ ] Sign in page
-- [ ] Sign up page
+- [x] Sign in page (`/auth/login`)
+- [x] Sign up page (`/auth/register`)
+- [x] Google OAuth integration
 - [ ] Password reset
 
 ### Homepage Rebrand (CollektIQ)
@@ -158,6 +161,7 @@ POKEMON_TRACKER_API_KEY=...
 - [x] "Know what it's worth" headline
 - [x] Single CTA: "Start Scanning"
 - [x] Remove CoinVault branding
+- [x] Updated header nav (Scan, Coins, Cards, Collectibles)
 
 ---
 
@@ -299,8 +303,8 @@ npx tsx src/lib/services/market-data/index.ts search "morgan dollar"
 
 ## Next Actions
 
-1. **Build `/scan` page** - Core user flow (camera → AI analysis → save)
-2. **Set Vercel env vars** - Unblock production deployment
-3. **Homepage rebrand** - CollektIQ branding, remove CoinVault
-4. **Auth pages** - Sign in/up flows
-5. **Playwright E2E tests** - End-to-end testing
+1. **Edit item page** (`/inventory/[id]/edit`) - Allow users to modify saved items
+2. **Password reset flow** - Basic auth hygiene
+3. **Playwright E2E tests** - Test scan → save → view flow
+4. **eBay production credentials** - Currently sandbox only
+5. **Stripe subscription tiers** - Free/Pro monetization
