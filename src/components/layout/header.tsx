@@ -33,10 +33,11 @@ export function Header({ user, cartCount = 0 }: HeaderProps) {
   const pathname = usePathname();
 
   const navLinks = [
+    { href: "/scan", label: "Scan" },
     { href: "/shop", label: "Shop" },
-    { href: "/shop/auctions", label: "Auctions" },
-    { href: "/shop/category/bullion", label: "Bullion" },
-    { href: "/about", label: "About" },
+    { href: "/shop/category/coins", label: "Coins" },
+    { href: "/shop/category/cards", label: "Cards" },
+    { href: "/shop/category/collectibles", label: "Collectibles" },
   ];
 
   return (
