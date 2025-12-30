@@ -272,8 +272,8 @@ export default async function PayoutsPage() {
           </p>
           <p className="mt-2 text-gray-500">
             Questions about payouts? Contact us at{" "}
-            <a href="mailto:support@coinvault.com" className="text-amber-600">
-              support@coinvault.com
+            <a href="mailto:support@collektiq.com" className="text-amber-600">
+              support@collektiq.com
             </a>
           </p>
         </CardContent>

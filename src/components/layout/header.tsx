@@ -9,7 +9,6 @@ import {
   X,
   ShoppingCart,
   User,
-  Coins,
   Bell,
   ChevronDown,
 } from "lucide-react";
@@ -45,11 +44,11 @@ export function Header({ user, cartCount = 0 }: HeaderProps) {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-yellow-600">
-            <Coins className="h-6 w-6 text-white" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-900">
+            <span className="text-lg font-bold text-white">IQ</span>
           </div>
           <span className="text-xl font-bold tracking-tight">
-            Coin<span className="text-amber-600">Vault</span>
+            Collekt<span className="text-gray-900">IQ</span>
           </span>
         </Link>
 

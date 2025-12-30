@@ -1,6 +1,6 @@
-# CoinVault - Coin & Collectibles E-commerce Platform
+# CollektIQ - AI-Powered Collectibles Platform
 
-A modern, Instagram-style shopable website for coins and collectibles with AI-powered valuations, multi-platform integration, and comprehensive client portal.
+Know what it's worth. Scan any coin, card, or collectible to get instant market values. AI-powered pricing for collectors and dealers.
 
 ## Features
 

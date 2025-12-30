@@ -14,7 +14,21 @@
       "Bash(git pull:*)",
       "Bash(git stash:*)",
       "Bash(git push)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(grep:*)",
+      "Bash(openssl rand:*)",
+      "Bash(ls:*)",
+      "Bash(npx prisma db push --skip-generate)",
+      "Bash(npx prisma db push:*)",
+      "Bash(node -e:*)",
+      "Bash(vercel --version:*)",
+      "Bash(vercel env:*)",
+      "Bash(vercel link:*)",
+      "Bash(vercel ls:*)",
+      "Bash(vercel domains ls:*)",
+      "Bash(vercel inspect:*)",
+      "Bash(vercel project:*)",
+      "WebFetch(domain:collektiq.com)"
     ]
   }
 }

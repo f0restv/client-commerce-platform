@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Coins, Facebook, Twitter, Instagram, Youtube } from "lucide-react";
+import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
@@ -10,16 +10,15 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-yellow-600">
-                <Coins className="h-6 w-6 text-white" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-900">
+                <span className="text-lg font-bold text-white">IQ</span>
               </div>
               <span className="text-xl font-bold tracking-tight">
-                Coin<span className="text-amber-600">Vault</span>
+                Collekt<span className="text-gray-900">IQ</span>
               </span>
             </Link>
             <p className="mt-4 text-sm text-gray-600">
-              Your trusted source for rare coins, bullion, and collectibles.
-              Serving collectors since 2024.
+              AI-powered collectibles pricing. Know what it&apos;s worth.
             </p>
             <div className="mt-4 flex gap-4">
               <Link href="#" className="text-gray-400 hover:text-amber-600">
@@ -182,7 +181,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 sm:flex-row">
           <p className="text-sm text-gray-500">
-            &copy; {new Date().getFullYear()} CoinVault. All rights reserved.
+            &copy; {new Date().getFullYear()} CollektIQ. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link

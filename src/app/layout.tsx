@@ -5,20 +5,20 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "CoinVault - Premium Coins & Collectibles",
-  description: "Your trusted source for rare coins, bullion, and collectibles. Shop certified coins, participate in auctions, and sell with our AI-powered consignment program.",
-  keywords: ["coins", "collectibles", "bullion", "gold", "silver", "numismatic", "PCGS", "NGC", "auction"],
-  authors: [{ name: "CoinVault" }],
+  title: "CollektIQ - Know What It's Worth",
+  description: "AI-powered collectibles pricing. Scan any coin, card, or collectible to get instant market values. Trusted by collectors worldwide.",
+  keywords: ["collectibles", "coins", "trading cards", "pokemon", "sports cards", "pricing", "AI", "grading", "PCGS", "NGC", "PSA"],
+  authors: [{ name: "CollektIQ" }],
   openGraph: {
-    title: "CoinVault - Premium Coins & Collectibles",
-    description: "Your trusted source for rare coins, bullion, and collectibles.",
+    title: "CollektIQ - Know What It's Worth",
+    description: "AI-powered collectibles pricing. Scan any coin, card, or collectible to get instant market values.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "CoinVault - Premium Coins & Collectibles",
-    description: "Your trusted source for rare coins, bullion, and collectibles.",
+    title: "CollektIQ - Know What It's Worth",
+    description: "AI-powered collectibles pricing. Scan any coin, card, or collectible to get instant market values.",
   },
 };
 

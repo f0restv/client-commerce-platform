@@ -33,9 +33,9 @@ function parseSortOption(sort: string | undefined): SortOption {
 
 // Mock data - replace with actual data fetching
 const shopProfile = {
-  shopName: "CoinVault",
-  shopHandle: "coinvault",
-  bio: "Premium coins, bullion, and collectibles. Trusted by collectors since 2024. We specialize in certified US coins, world coins, and precious metals.",
+  shopName: "CollektIQ",
+  shopHandle: "collektiq",
+  bio: "AI-powered collectibles marketplace. Coins, cards, and collectibles with instant pricing. Know what it's worth before you buy or sell.",
   avatarUrl: "/api/placeholder/150/150",
   stats: {
     posts: 1250,

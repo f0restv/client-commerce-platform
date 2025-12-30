@@ -154,10 +154,10 @@ POKEMON_TRACKER_API_KEY=...
 - [ ] Password reset
 
 ### Homepage Rebrand (CollektIQ)
-- [ ] Apple-minimal design
-- [ ] "Know what it's worth" headline
-- [ ] Single CTA: "Start Scanning"
-- [ ] Remove CoinVault branding
+- [x] Apple-minimal design
+- [x] "Know what it's worth" headline
+- [x] Single CTA: "Start Scanning"
+- [x] Remove CoinVault branding
 
 ---
 
