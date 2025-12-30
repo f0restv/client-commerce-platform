@@ -29,6 +29,8 @@ export async function POST(request: NextRequest) {
     let identification: CoinIdentification | null = null;
     const imageData = image || images?.[0];
 
+    console.log("[analyze] imageData exists:", !!imageData, "title:", title);
+
     if (imageData && !title) {
       // Extract base64 from data URL if needed
       let base64Data = imageData;
@@ -36,8 +38,15 @@ export async function POST(request: NextRequest) {
         base64Data = imageData.split(",")[1];
       }
 
+      console.log("[analyze] base64 length:", base64Data?.length);
+
       // Call Claude vision to identify the item
-      identification = await identifyCoin(base64Data);
+      try {
+        identification = await identifyCoin(base64Data);
+        console.log("[analyze] identification result:", identification?.possibleIdentification);
+      } catch (err) {
+        console.error("[analyze] identifyCoin error:", err);
+      }
     }
 
     // Step 2: Search for comparables

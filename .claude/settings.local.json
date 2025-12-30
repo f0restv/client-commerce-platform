@@ -31,7 +31,8 @@
       "WebFetch(domain:collektiq.com)",
       "Bash(npx prisma db seed:*)",
       "Bash(npx tsx:*)",
-      "Bash(source .env.local)"
+      "Bash(source .env.local)",
+      "Bash(vercel logs:*)"
     ]
   }
 }
