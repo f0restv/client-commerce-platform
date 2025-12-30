@@ -42,13 +42,13 @@ export async function POST(request: NextRequest) {
     // Step 3: Get AI market analysis
     const analysis = await analyzeMarketValue(
       {
-        title: title || identification?.possibleIdentification || "Unknown Item",
+        title: title || (identification as CoinIdentification | null)?.possibleIdentification || "Unknown Item",
         description,
         year,
         mint,
         grade,
         certification,
-        category: category || identification?.suggestedCategory,
+        category: category || (identification as CoinIdentification | null)?.suggestedCategory,
       },
       comparables
     );
